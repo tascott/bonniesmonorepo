@@ -2,8 +2,8 @@
 
 import { useAuth } from "@/contexts/auth-context"
 import { Button } from "@/components/ui/button"
-import { LogIn, LogOut, User } from "lucide-react"
-import Link from "next/link"
+import { LogOut, User } from "lucide-react"
+import { AuthDialog } from "@/components/auth-dialog"
 import { useRouter } from "next/navigation"
 import {
   DropdownMenu,
@@ -35,9 +35,9 @@ export function AuthButtons() {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-10 w-10 rounded-full">
               <Avatar>
-                <AvatarImage src={currentUser.photoURL || ""} alt={currentUser.displayName || "User"} />
-                <AvatarFallback className="bg-orange-100 text-orange-800">
-                  {currentUser.displayName ? currentUser.displayName.charAt(0).toUpperCase() : "U"}
+                <AvatarImage src={currentUser.photoURL || ""} alt={currentUser.email || "User"} />
+                <AvatarFallback className="bg-[#86BBD8] text-[#2F4858]">
+                  {currentUser.email ? currentUser.email.charAt(0).toUpperCase() : "U"}
                 </AvatarFallback>
               </Avatar>
             </Button>
@@ -45,16 +45,12 @@ export function AuthButtons() {
           <DropdownMenuContent className="w-56" align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
-              <Link href="/profile" className="cursor-pointer flex w-full items-center">
-                <User className="mr-2 h-4 w-4" />
-                <span>My Profile</span>
-              </Link>
+            <DropdownMenuItem onClick={() => router.push("/profile")}>
+              <User className="mr-2 h-4 w-4" />
+              <span>My Profile</span>
             </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/bookings" className="cursor-pointer flex w-full items-center">
-                <span>My Bookings</span>
-              </Link>
+            <DropdownMenuItem onClick={() => router.push("/bookings")}>
+              <span>My Bookings</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-600">
@@ -67,13 +63,6 @@ export function AuthButtons() {
     )
   }
 
-  return (
-    <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full">
-      <Link href="/login">
-        <LogIn className="mr-2 h-4 w-4" />
-        Log in
-      </Link>
-    </Button>
-  )
+  return <AuthDialog />
 }
 

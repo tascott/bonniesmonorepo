@@ -7,13 +7,15 @@ import { AuthProvider } from "@/contexts/auth-context"
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
-  variable: "--playfair-display"
+  variable: "--font-playfair",
+  display: "swap"
 })
 
 const fira = Fira_Sans({ 
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--fira-sans"
+  variable: "--font-fira",
+  display: "swap"
 })
 
 export const metadata: Metadata = {
@@ -27,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${playfair.variable} ${fira.variable} font-sans antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${fira.variable}`} suppressHydrationWarning>
+      <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <AuthProvider>{children}</AuthProvider>
         </ThemeProvider>

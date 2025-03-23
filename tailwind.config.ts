@@ -20,8 +20,8 @@ const config: Config = {
       },
     },
     fontFamily: {
-      sans: ["var(--fira-sans)", "system-ui", "sans-serif"],
-      display: ["var(--playfair-display)", "Georgia", "serif"],
+      sans: ["var(--font-fira)", "system-ui", "sans-serif"],
+      display: ["var(--font-playfair)", "Georgia", "serif"],
     },
     extend: {
       colors: {

@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook, Twitter, Menu, Star, Check } from "lucide-react"
-import { BackgroundElement, PlayfulDog, SleepyDog } from "@/components/svg-components"
+import { BackgroundElement } from "@/components/svg-components"
 import { AuthButtons } from "@/components/auth-buttons"
 
 export default function Home() {
   return (
-		<div className="flex flex-col min-h-screen bg-amber-50">
+		<div className="flex flex-col min-h-screen bg-secondary/10">
 			{/* Top Banner */}
 			{/* <div className="bg-orange-500 text-white py-3 text-center">
 				<p className="text-sm md:text-base font-medium">
@@ -25,7 +25,7 @@ export default function Home() {
 						<div className="bg-orange-500 text-white p-2 rounded-full">
 							<PawPrint className="h-6 w-6" />
 						</div>
-						<span className="text-2xl font-bold text-slate-800 font-display">
+						<span className="text-2xl font-bold text-foreground font-display">
 							Woof & Wag
 						</span>
 					</Link>
@@ -93,7 +93,7 @@ export default function Home() {
 					<div className="flex flex-col md:flex-row items-center gap-12">
 						<div className="md:w-1/2">
 							<Badge className="bg-orange-100 text-orange-700 mb-4 px-3 py-1 text-sm rounded-full">
-								London&apos;s Favorite Dog Care
+								North London, Hertfordshire and St Albans
 							</Badge>
 							<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 font-display leading-tight">
 								Where Dogs{' '}
@@ -117,7 +117,7 @@ export default function Home() {
 									</span>
 								</div>
 								<div className="flex items-center">
-									<div className="bg-lime-100 p-2 rounded-full mr-3">
+									<div className="bg-rose-100 p-2 rounded-full mr-3">
 										<Check className="h-5 w-5 text-lime-500" />
 									</div>
 									<span className="text-slate-700">
@@ -139,17 +139,16 @@ export default function Home() {
 						</div>
 						<div className="md:w-1/2 relative">
 							<div className="relative">
-								<div className="absolute -top-6 -left-6 w-full h-full bg-lime-400 rounded-3xl transform rotate-3"></div>
+								<div className="absolute -top-6 -left-6 w-full h-full bg-rose-400 rounded-3xl transform rotate-3"></div>
 								<div className="absolute -bottom-6 -right-6 w-full h-full bg-orange-400 rounded-3xl transform -rotate-3"></div>
 								<div className="relative bg-white rounded-3xl p-6 shadow-xl overflow-hidden">
 									<Image
-										src="/images/placeholder.svg?height=400&width=500"
+										src="/images/dog-sm-4511.jpg?height=400&width=500"
 										alt="Happy dogs playing"
 										width={500}
 										height={400}
 										className="rounded-2xl"
 									/>
-									<PlayfulDog className="absolute -bottom-10 -right-10 transform scale-75" />
 								</div>
 							</div>
 						</div>
@@ -172,7 +171,7 @@ export default function Home() {
 
 				<div className="container mx-auto px-4 relative z-10">
 					<div className="text-center mb-16">
-						<Badge className="bg-lime-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
+						<Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
 							Our Offerings
 						</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
@@ -242,12 +241,12 @@ export default function Home() {
 						</Card>
 
 						<Card className="border-0 shadow-xl rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl relative">
-							<div className="h-3 bg-lime-500"></div>
-							<Badge className="absolute top-4 right-4 bg-lime-500 text-white px-3 py-1 rounded-full">
+							<div className="h-3 bg-rose-500"></div>
+							<Badge className="absolute top-4 right-4 bg-rose-500 text-white px-3 py-1 rounded-full">
 								POPULAR
 							</Badge>
 							<CardHeader className="text-center pt-8">
-								<div className="w-16 h-16 bg-lime-100 rounded-full flex items-center justify-center mx-auto mb-4">
+								<div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
 									<PawPrint className="h-8 w-8 text-lime-500" />
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">
@@ -268,7 +267,7 @@ export default function Home() {
 								</div>
 								<ul className="space-y-3">
 									<li className="flex items-start">
-										<div className="bg-lime-100 p-1 rounded-full mr-3 mt-0.5">
+										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 text-lime-500" />
 										</div>
 										<span className="text-slate-700">
@@ -276,7 +275,7 @@ export default function Home() {
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-lime-100 p-1 rounded-full mr-3 mt-0.5">
+										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 text-lime-500" />
 										</div>
 										<span className="text-slate-700">
@@ -284,7 +283,7 @@ export default function Home() {
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-lime-100 p-1 rounded-full mr-3 mt-0.5">
+										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 text-lime-500" />
 										</div>
 										<span className="text-slate-700">
@@ -292,7 +291,7 @@ export default function Home() {
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-lime-100 p-1 rounded-full mr-3 mt-0.5">
+										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 text-lime-500" />
 										</div>
 										<span className="text-slate-700">
@@ -302,7 +301,7 @@ export default function Home() {
 								</ul>
 							</CardContent>
 							<CardFooter>
-								<Button className="w-full bg-lime-500 hover:bg-lime-600 rounded-xl py-6">
+								<Button className="w-full bg-rose-500 hover:bg-rose-600 rounded-xl py-6">
 									Select Location
 								</Button>
 							</CardFooter>
@@ -369,10 +368,6 @@ export default function Home() {
 
 			{/* Pricing Section */}
 			<section id="pricing" className="py-24 bg-slate-50 relative">
-				<div className="absolute right-0 top-0">
-					<SleepyDog className="opacity-10 transform scale-150" />
-				</div>
-
 				<div className="container mx-auto px-4 relative z-10">
 					<div className="text-center mb-16">
 						<Badge className="bg-orange-100 text-orange-700 mb-4 px-3 py-1 text-sm rounded-full">
@@ -442,7 +437,7 @@ export default function Home() {
 
 						<Card className="border-2 border-lime-500 shadow-xl rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl">
 							<CardHeader className="text-center pb-2 pt-8">
-								<div className="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mx-auto mb-4">
+								<div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
 									<span className="text-lime-500 font-bold">
 										∞
 									</span>
@@ -458,7 +453,7 @@ export default function Home() {
 							<CardContent>
 								<ul className="space-y-3 mt-4">
 									<li className="flex items-center">
-										<div className="bg-lime-100 p-1 rounded-full mr-3">
+										<div className="bg-rose-100 p-1 rounded-full mr-3">
 											<Check className="h-4 w-4 text-lime-500" />
 										</div>
 										<span className="text-slate-700">
@@ -466,7 +461,7 @@ export default function Home() {
 										</span>
 									</li>
 									<li className="flex items-center">
-										<div className="bg-lime-100 p-1 rounded-full mr-3">
+										<div className="bg-rose-100 p-1 rounded-full mr-3">
 											<Check className="h-4 w-4 text-lime-500" />
 										</div>
 										<span className="text-slate-700">
@@ -474,7 +469,7 @@ export default function Home() {
 										</span>
 									</li>
 									<li className="flex items-center">
-										<div className="bg-lime-100 p-1 rounded-full mr-3">
+										<div className="bg-rose-100 p-1 rounded-full mr-3">
 											<Check className="h-4 w-4 text-lime-500" />
 										</div>
 										<span className="text-slate-700">
@@ -484,7 +479,7 @@ export default function Home() {
 								</ul>
 							</CardContent>
 							<CardFooter>
-								<Button className="w-full bg-lime-500 hover:bg-lime-600 rounded-xl">
+								<Button className="w-full bg-rose-500 hover:bg-rose-600 rounded-xl">
 									Get Started
 								</Button>
 							</CardFooter>
@@ -579,7 +574,7 @@ export default function Home() {
 								placeholder="Enter your email address"
 								className="bg-white/90 border-0 rounded-full py-6 px-6"
 							/>
-							<Button className="bg-lime-500 hover:bg-lime-600 text-white whitespace-nowrap rounded-full py-6 px-8 shadow-lg">
+							<Button className="bg-rose-500 hover:bg-rose-600 text-white whitespace-nowrap rounded-full py-6 px-8 shadow-lg">
 								Get Early Access
 							</Button>
 						</div>
@@ -591,7 +586,7 @@ export default function Home() {
 			<section id="locations" className="py-24 bg-white">
 				<div className="container mx-auto px-4">
 					<div className="text-center mb-16">
-						<Badge className="bg-lime-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
+						<Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
 							Our Locations
 						</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
@@ -790,7 +785,7 @@ export default function Home() {
 			<section id="testimonials" className="py-24 bg-white">
 				<div className="container mx-auto px-4">
 					<div className="text-center mb-16">
-						<Badge className="bg-lime-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
+						<Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
 							Happy Clients
 						</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
@@ -838,11 +833,11 @@ export default function Home() {
 								</div>
 
 								<p className="text-slate-600 text-center italic mb-6">
-									&ldquo;My dog Bella absolutely loves going to Woof
-									& Wag! The staff are amazing and she comes
-									home happy and tired. I&apos;ve noticed such an
-									improvement in her social skills with other
-									dogs too.&rdquo;
+									&ldquo;My dog Bella absolutely loves going
+									to Woof & Wag! The staff are amazing and she
+									comes home happy and tired. I&apos;ve
+									noticed such an improvement in her social
+									skills with other dogs too.&rdquo;
 								</p>
 
 								<div className="flex justify-center">
@@ -864,7 +859,7 @@ export default function Home() {
 											height={80}
 											className="rounded-full object-cover"
 										/>
-										<div className="absolute -bottom-2 -right-2 bg-lime-500 text-white p-1 rounded-full">
+										<div className="absolute -bottom-2 -right-2 bg-rose-500 text-white p-1 rounded-full">
 											<PawPrint className="h-4 w-4" />
 										</div>
 									</div>
@@ -888,15 +883,16 @@ export default function Home() {
 								</div>
 
 								<p className="text-slate-600 text-center italic mb-6">
-									&ldquo;The Woof & Wag difference is real! My dog
-									Max gets so much exercise and stimulation at
-									their countryside parks. The weekly
-									enrichment activities are his favorite and
-									the staff truly care about each dog.&rdquo;
+									&ldquo;The Woof & Wag difference is real! My
+									dog Max gets so much exercise and
+									stimulation at their countryside parks. The
+									weekly enrichment activities are his
+									favorite and the staff truly care about each
+									dog.&rdquo;
 								</p>
 
 								<div className="flex justify-center">
-									<Badge className="bg-lime-100 text-lime-700 px-3 py-1 text-sm rounded-full">
+									<Badge className="bg-rose-100 text-lime-700 px-3 py-1 text-sm rounded-full">
 										Social Hound Member
 									</Badge>
 								</div>
@@ -929,8 +925,8 @@ export default function Home() {
 					</h2>
 					<p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
 						Treat your furry family member to a tail-wagging
-						experience they&apos;ll run to tell their friends about! Get
-						in touch to enrol today.
+						experience they&apos;ll run to tell their friends about!
+						Get in touch to enrol today.
 					</p>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
@@ -960,9 +956,9 @@ export default function Home() {
 								</span>
 							</div>
 							<p className="text-slate-600 mb-6">
-								London&apos;s premier dog day care service, providing
-								expert care and off-leash fun for your furry
-								friends.
+								London&apos;s premier dog day care service,
+								providing expert care and off-leash fun for your
+								furry friends.
 							</p>
 							<div className="flex space-x-4">
 								<a
@@ -1088,8 +1084,8 @@ export default function Home() {
 
 					<div className="border-t border-slate-100 pt-8">
 						<p className="text-center text-slate-500">
-							&copy; {new Date().getFullYear()} Woof & Wag London. All
-							rights reserved.
+							&copy; {new Date().getFullYear()} Woof & Wag London.
+							All rights reserved.
 						</p>
 					</div>
 				</div>

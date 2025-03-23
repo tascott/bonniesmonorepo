@@ -41,7 +41,7 @@ export default function ProfilePage() {
       setLoading(true)
       await updateUserProfile(displayName, photoURL)
       setSuccess("Profile updated successfully!")
-    } catch (error) {
+    } catch {
       setError("Failed to update profile. Please try again.")
     } finally {
       setLoading(false)
@@ -85,7 +85,7 @@ export default function ProfilePage() {
                 <div className="relative">
                   <Avatar className="h-24 w-24">
                     <AvatarImage src={photoURL} alt={displayName} />
-                    <AvatarFallback className="bg-orange-100 text-orange-800 text-2xl">
+                    <AvatarFallback className="bg-[#86BBD8] text-[#2F4858] text-2xl">
                       {displayName ? displayName.charAt(0).toUpperCase() : "U"}
                     </AvatarFallback>
                   </Avatar>
