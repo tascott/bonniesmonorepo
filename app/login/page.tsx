@@ -43,7 +43,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center justify-center">
-            <div className="bg-orange-500 text-white p-2 rounded-full">
+            <div className="primary-bg text-white p-2 rounded-full">
               <PawPrint className="h-6 w-6" />
             </div>
             <span className="text-2xl font-bold text-slate-800 ml-2 font-display">Woof & Wag</span>
@@ -78,7 +78,7 @@ export default function LoginPage() {
                 <div className="grid gap-2">
                   <div className="flex items-center justify-between">
                     <Label htmlFor="password">Password</Label>
-                    <Link href="/forgot-password" className="text-sm text-orange-500 hover:text-orange-600">
+                    <Link href="/forgot-password" className="text-sm secondary hover:text-orange-600">
                       Forgot password?
                     </Link>
                   </div>
@@ -92,7 +92,7 @@ export default function LoginPage() {
                 </div>
                 <Button
                   type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white w-full"
+                  className="primary-bg hover:bg-orange-600 text-white w-full"
                   disabled={loading}
                 >
                   {loading ? "Signing in..." : "Sign In"}
@@ -103,7 +103,7 @@ export default function LoginPage() {
           <CardFooter className="flex justify-center">
             <p className="text-sm text-slate-600">
               Don't have an account?{" "}
-              <Link href="/register" className="text-orange-500 hover:text-orange-600 font-medium">
+              <Link href="/register" className="secondary hover:text-orange-600 font-medium">
                 Sign up
               </Link>
             </p>

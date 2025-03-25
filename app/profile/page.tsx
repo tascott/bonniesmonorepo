@@ -56,7 +56,7 @@ export default function ProfilePage() {
     <div className="min-h-screen bg-amber-50 py-12">
       <div className="container mx-auto px-4">
         <div className="mb-8">
-          <Link href="/" className="inline-flex items-center text-slate-700 hover:text-orange-500">
+          <Link href="/" className="inline-flex items-center text-slate-700 hover:secondary">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Link>
@@ -91,7 +91,7 @@ export default function ProfilePage() {
                   </Avatar>
                   <Button
                     size="icon"
-                    className="absolute bottom-0 right-0 h-8 w-8 rounded-full bg-orange-500 hover:bg-orange-600"
+                    className="absolute bottom-0 right-0 h-8 w-8 rounded-full primary-bg hover:bg-orange-600"
                     onClick={() => {
                       const url = prompt("Enter image URL (for demo purposes)")
                       if (url) setPhotoURL(url)
@@ -120,7 +120,7 @@ export default function ProfilePage() {
                       required
                     />
                   </div>
-                  <Button type="submit" className="bg-orange-500 hover:bg-orange-600 text-white" disabled={loading}>
+                  <Button type="submit" className="primary-bg hover:bg-orange-600 text-white" disabled={loading}>
                     {loading ? "Updating..." : "Update Profile"}
                   </Button>
                 </div>

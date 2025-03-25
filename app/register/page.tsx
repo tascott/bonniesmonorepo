@@ -52,7 +52,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center justify-center">
-            <div className="bg-orange-500 text-white p-2 rounded-full">
+            <div className="primary-bg text-white p-2 rounded-full">
               <PawPrint className="h-6 w-6" />
             </div>
             <span className="text-2xl font-bold text-slate-800 ml-2 font-display">Woof & Wag</span>
@@ -118,7 +118,7 @@ export default function RegisterPage() {
                 </div>
                 <Button
                   type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white w-full"
+                  className="primary-bg hover:bg-orange-600 text-white w-full"
                   disabled={loading}
                 >
                   {loading ? "Creating account..." : "Create Account"}
@@ -129,7 +129,7 @@ export default function RegisterPage() {
           <CardFooter className="flex justify-center">
             <p className="text-sm text-slate-600">
               Already have an account?{" "}
-              <Link href="/login" className="text-orange-500 hover:text-orange-600 font-medium">
+              <Link href="/login" className="secondary hover:text-orange-600 font-medium">
                 Sign in
               </Link>
             </p>

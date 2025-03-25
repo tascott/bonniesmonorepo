@@ -41,6 +41,8 @@
   .destructive { color: hsl(var(--destructive)); }
   .destructive-foreground { color: hsl(var(--destructive-foreground)); }
   .destructive-bg { background-color: hsl(var(--destructive)); }
+
+  .white { color: hsl(var(--white)); }
 }
 
 @layer base {
@@ -91,6 +93,8 @@
     --ring: 207 47% 37%;
 
     --radius: 0.5rem;
+
+    --white: 0 0% 100%;
   }
 
   .dark {

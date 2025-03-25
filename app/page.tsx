@@ -17,7 +17,7 @@ export default function Home() {
   return (
 		<div className="flex flex-col min-h-screen bg-secondary/10">
 			{/* Top Banner */}
-			{/* <div className="bg-orange-500 text-white py-3 text-center">
+			{/* <div className="primary-bg text-white py-3 text-center">
 				<p className="text-sm md:text-base font-medium">
 					🐾 For London Dogs Who Love to Run Free! Enrol Today! 🐾
 				</p>
@@ -27,7 +27,7 @@ export default function Home() {
 			<header className="sticky top-0 z-50 bg-white shadow-md">
 				<div className="container mx-auto px-4 py-4 flex items-center justify-between">
 					<Link href="/" className="flex items-center space-x-2">
-						<div className="bg-orange-500 text-white p-2 rounded-full">
+						<div className="primary-bg text-white p-2 rounded-full">
 							<PawPrint className="h-6 w-6" />
 						</div>
 						<span className="text-2xl font-bold text-foreground font-display">
@@ -38,31 +38,31 @@ export default function Home() {
 					<nav className="hidden md:flex items-center space-x-8">
 						<Link
 							href="#services"
-							className="text-slate-700 hover:text-orange-500 font-medium transition-colors"
+							className="text-slate-700 hover:secondary font-medium transition-colors"
 						>
 							Services
 						</Link>
 						<Link
 							href="#locations"
-							className="text-slate-700 hover:text-orange-500 font-medium transition-colors"
+							className="text-slate-700 hover:secondary font-medium transition-colors"
 						>
 							Locations
 						</Link>
 						{/* <Link
 							href="#pricing"
-							className="text-slate-700 hover:text-orange-500 font-medium transition-colors"
+							className="text-slate-700 hover:secondary font-medium transition-colors"
 						>
 							Pricing
 						</Link> */}
 						<Link
 							href="#gallery"
-							className="text-slate-700 hover:text-orange-500 font-medium transition-colors"
+							className="text-slate-700 hover:secondary font-medium transition-colors"
 						>
 							Gallery
 						</Link>
 						<Link
 							href="#testimonials"
-							className="text-slate-700 hover:text-orange-500 font-medium transition-colors"
+							className="text-slate-700 hover:secondary font-medium transition-colors"
 						>
 							Testimonials
 						</Link>
@@ -97,46 +97,43 @@ export default function Home() {
 				<div className="container mx-auto px-4 relative z-10">
 					<div className="flex flex-col md:flex-row items-center gap-12">
 						<div className="md:w-1/2">
-							<Badge className="bg-orange-100 text-orange-700 mb-4 px-3 py-1 text-sm rounded-full">
+							<Badge className="primary-bg mb-4 px-3 py-1 text-sm rounded-full white">
 								North London, Hertfordshire and St Albans
 							</Badge>
 							<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 font-display leading-tight">
 								Where Dogs Play & Roam
 							</h1>
-							<h2 className="secondary text-4xl">
-								Test thing
-							</h2>
 							<p className="text-slate-600 mb-6 text-lg leading-relaxed">
 								When a walk is not enough and daycare is too
 								much...try our fun play mornings
 							</p>
 							<div className="flex flex-wrap gap-4 mb-8">
 								<div className="flex items-center">
-									<div className="bg-orange-100 p-2 rounded-full mr-3">
-										<Check className="h-5 w-5 text-orange-500" />
+									<div className="primary-bg p-2 rounded-full mr-3">
+										<Check className="h-5 w-5 secondary" />
 									</div>
 									<span className="text-slate-700">
 										Free pickup
 									</span>
 								</div>
 								<div className="flex items-center">
-									<div className="bg-orange-100 p-2 rounded-full mr-3">
-										<Check className="h-5 w-5 text-orange-500" />
+									<div className="primary-bg p-2 rounded-full mr-3">
+										<Check className="h-5 w-5 secondary" />
 									</div>
 									<span className="text-slate-700">
 										Canine first aid trained
 									</span>
 								</div>
 								<div className="flex items-center">
-									<div className="bg-orange-100 p-2 rounded-full mr-3">
-										<Check className="h-5 w-5 text-orange-500" />
+									<div className="primary-bg p-2 rounded-full mr-3">
+										<Check className="h-5 w-5 secondary" />
 									</div>
 									<span className="text-slate-700">
 										Fenced and secure site
 									</span>
 								</div>
 							</div>
-							<Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
+							<Button className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
 								Contact Us To Book
 							</Button>
 						</div>
@@ -190,8 +187,8 @@ export default function Home() {
 						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
 							<div className="h-3 bg-orange-400"></div>
 							<CardHeader className="text-center pt-8">
-								<div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-									<PawPrint className="h-8 w-8 text-orange-500" />
+								<div className="w-16 h-16 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
+									<PawPrint className="h-8 w-8 secondary" />
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">
 									Turn up & roam
@@ -199,8 +196,8 @@ export default function Home() {
 								<p className="text-slate-500">
 									2 Hour sessions
 								</p>
-								<div className="inline-block bg-rose-50 px-6 py-2 rounded-full mt-4 border-2 border-rose-100">
-									<span className="text-2xl font-bold text-rose-600">
+								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-2 border-amber-100">
+									<span className="text-2xl font-bold white">
 										£15
 									</span>
 								</div>
@@ -216,8 +213,8 @@ export default function Home() {
 								</div>
 								<ul className="space-y-3">
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Supervise your dog in our open
@@ -225,24 +222,24 @@ export default function Home() {
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Parking on site
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Dogs matched by size and energy
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Sessions every day of the week
@@ -251,7 +248,7 @@ export default function Home() {
 								</ul>
 							</CardContent>
 							{/* <CardFooter>
-								<Button className="w-full bg-orange-500 hover:bg-orange-600 rounded-xl py-6">
+								<Button className="w-full primary-bg hover:bg-orange-600 rounded-xl py-6">
 									Select Location
 								</Button>
 							</CardFooter> */}
@@ -272,8 +269,8 @@ export default function Home() {
 								<p className="text-slate-500">
 									2 hour sessions
 								</p>
-								<div className="inline-block bg-rose-50 px-6 py-2 rounded-full mt-4 border-2 border-rose-100">
-									<span className="text-2xl font-bold text-rose-600">
+								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-2 border-amber-100">
+									<span className="text-2xl font-bold white">
 										£27
 									</span>
 								</div>
@@ -289,8 +286,8 @@ export default function Home() {
 								</div>
 								<ul className="space-y-3">
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Social play with dogs of their own
@@ -298,24 +295,24 @@ export default function Home() {
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Using all their senses
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Free pick up & drop off
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Dogs matched by size and energy
@@ -333,8 +330,8 @@ export default function Home() {
 						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
 							<div className="h-3 bg-orange-400"></div>
 							<CardHeader className="text-center pt-8">
-								<div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-									<PawPrint className="h-8 w-8 text-orange-500" />
+								<div className="w-16 h-16 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
+									<PawPrint className="h-8 w-8 secondary" />
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">
 									Lunchtime Walks
@@ -342,8 +339,8 @@ export default function Home() {
 								<p className="text-slate-500">
 									1 or 2 hour walks
 								</p>
-								<div className="inline-block bg-rose-50 px-6 py-2 rounded-full mt-4 border-2 border-rose-100">
-									<span className="text-2xl font-bold text-rose-600">
+								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-2 border-amber-100">
+									<span className="text-2xl font-bold white">
 										£17
 									</span>
 								</div>
@@ -359,24 +356,24 @@ export default function Home() {
 								</div>
 								<ul className="space-y-3">
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Walks in parks or our fields
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Discounts for multiple dogs
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Free pick up & drop off
@@ -385,7 +382,7 @@ export default function Home() {
 								</ul>
 							</CardContent>
 							{/* <CardFooter>
-								<Button className="w-full bg-orange-500 hover:bg-orange-600 rounded-xl py-6">
+								<Button className="w-full primary-bg hover:bg-orange-600 rounded-xl py-6">
 									Select Location
 								</Button>
 							</CardFooter> */}
@@ -398,7 +395,7 @@ export default function Home() {
 			{/* <section id="pricing" className="py-24 bg-slate-50 relative">
 				<div className="container mx-auto px-4 relative z-10">
 					<div className="text-center mb-16">
-						<Badge className="bg-orange-100 text-orange-700 mb-4 px-3 py-1 text-sm rounded-full">
+						<Badge className="primary-bg mb-4 px-3 py-1 text-sm rounded-full">
 							Simple Pricing
 						</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
@@ -412,8 +409,8 @@ export default function Home() {
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
 						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
 							<CardHeader className="text-center pb-2 pt-8">
-								<div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-									<span className="text-orange-500 font-bold">
+								<div className="w-12 h-12 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
+									<span className="secondary font-bold">
 										1x
 									</span>
 								</div>
@@ -428,24 +425,24 @@ export default function Home() {
 							<CardContent>
 								<ul className="space-y-3 mt-4">
 									<li className="flex items-center">
-										<div className="bg-orange-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											One play session
 										</span>
 									</li>
 									<li className="flex items-center">
-										<div className="bg-orange-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											7-9am pickup & drop-off
 										</span>
 									</li>
 									<li className="flex items-center">
-										<div className="bg-orange-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											No commitment
@@ -456,7 +453,7 @@ export default function Home() {
 							<CardFooter>
 								<Button
 									variant="outline"
-									className="w-full border-orange-200 text-orange-500 hover:bg-orange-50 rounded-xl"
+									className="w-full border-orange-200 secondary hover:bg-orange-50 rounded-xl"
 								>
 									Get Started
 								</Button>
@@ -515,8 +512,8 @@ export default function Home() {
 
 						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
 							<CardHeader className="text-center pb-2 pt-8">
-								<div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-									<span className="text-orange-500 font-bold">
+								<div className="w-12 h-12 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
+									<span className="secondary font-bold">
 										1y
 									</span>
 								</div>
@@ -531,24 +528,24 @@ export default function Home() {
 							<CardContent>
 								<ul className="space-y-3 mt-4">
 									<li className="flex items-center">
-										<div className="bg-orange-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Unlimited play sessions
 										</span>
 									</li>
 									<li className="flex items-center">
-										<div className="bg-orange-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											7-9am pickup & drop-off
 										</span>
 									</li>
 									<li className="flex items-center">
-										<div className="bg-orange-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-orange-500" />
+										<div className="primary-bg p-1 rounded-full mr-3">
+											<Check className="h-4 w-4 secondary" />
 										</div>
 										<span className="text-slate-700">
 											Best value option
@@ -559,7 +556,7 @@ export default function Home() {
 							<CardFooter>
 								<Button
 									variant="outline"
-									className="w-full border-orange-200 text-orange-500 hover:bg-orange-50 rounded-xl"
+									className="w-full border-orange-200 secondary hover:bg-orange-50 rounded-xl"
 								>
 									Get Started
 								</Button>
@@ -585,7 +582,7 @@ export default function Home() {
 
 				<div className="container mx-auto px-4 text-center relative z-10">
 					<div className="max-w-2xl mx-auto">
-						<Badge className="bg-white text-orange-700 mb-4 px-3 py-1 text-sm rounded-full">
+						<Badge className="bg-white mb-4 px-3 py-1 text-sm rounded-full">
 							Early Birds Get The Treats
 						</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
@@ -655,7 +652,7 @@ export default function Home() {
 						All staff are DBS checked and canine first aid trained
 					</h3>
 					<div className="flex flex-wrap justify-center gap-4">
-						<Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
+						<Button className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
 							Contact us
 						</Button>
 						{/* <Button
@@ -714,7 +711,7 @@ export default function Home() {
 									</p>
 									<Button
 										variant="outline"
-										className="w-full border-orange-200 text-orange-500 hover:bg-orange-50 rounded-xl"
+										className="w-full border-orange-200 secondary hover:bg-orange-50 rounded-xl"
 									>
 										View Details
 									</Button>
@@ -750,7 +747,7 @@ export default function Home() {
 									</p>
 									<Button
 										variant="outline"
-										className="w-full border-orange-200 text-orange-500 hover:bg-orange-50 rounded-xl"
+										className="w-full border-orange-200 secondary hover:bg-orange-50 rounded-xl"
 										onClick={() => setIsImageOpen(true)}
 									>
 										View Details
@@ -803,7 +800,7 @@ export default function Home() {
 									</p>
 									<Button
 										variant="outline"
-										className="w-full border-orange-200 text-orange-500 hover:bg-orange-50 rounded-xl"
+										className="w-full border-orange-200 secondary hover:bg-orange-50 rounded-xl"
 									>
 										View Details
 									</Button>
@@ -818,7 +815,7 @@ export default function Home() {
 			<section id="gallery" className="py-24 bg-amber-50">
 				<div className="container mx-auto px-4">
 					<div className="text-center mb-16">
-						<Badge className="bg-orange-100 text-orange-700 mb-4 px-3 py-1 text-sm rounded-full">
+						<Badge className="primary-bg mb-4 px-3 py-1 text-sm rounded-full white">
 							Happy Pups
 						</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
@@ -910,7 +907,7 @@ export default function Home() {
 											height={80}
 											className="rounded-full object-cover"
 										/>
-										<div className="absolute -bottom-2 -right-2 bg-orange-500 text-white p-1 rounded-full">
+										<div className="absolute -bottom-2 -right-2 primary-bg text-white p-1 rounded-full">
 											<PawPrint className="h-4 w-4" />
 										</div>
 									</div>
@@ -942,7 +939,7 @@ export default function Home() {
 								</p>
 
 								{/* <div className="flex justify-center">
-									<Badge className="bg-orange-100 text-orange-700 px-3 py-1 text-sm rounded-full">
+									<Badge className="primary-bg text-orange-700 px-3 py-1 text-sm rounded-full">
 										Playful Pup Member
 									</Badge>
 								</div> */}
@@ -1012,7 +1009,7 @@ export default function Home() {
 					<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
 						<div>
 							<div className="flex items-center space-x-2 mb-6">
-								<div className="bg-orange-500 text-white p-2 rounded-full">
+								<div className="primary-bg text-white p-2 rounded-full">
 									<PawPrint className="h-6 w-6" />
 								</div>
 								<span className="text-xl font-bold text-slate-800 font-display">
@@ -1025,13 +1022,13 @@ export default function Home() {
 							<div className="flex space-x-4">
 								<a
 									href="#"
-									className="bg-slate-100 p-2 rounded-full text-slate-600 hover:bg-orange-100 hover:text-orange-500 transition-colors"
+									className="bg-slate-100 p-2 rounded-full text-slate-600 hover:primary-bg hover:secondary transition-colors"
 								>
 									<Facebook className="h-5 w-5" />
 								</a>
 								<a
 									href="#"
-									className="bg-slate-100 p-2 rounded-full text-slate-600 hover:bg-orange-100 hover:text-orange-500 transition-colors"
+									className="bg-slate-100 p-2 rounded-full text-slate-600 hover:primary-bg hover:secondary transition-colors"
 								>
 									<Instagram className="h-5 w-5" />
 								</a>
@@ -1046,7 +1043,7 @@ export default function Home() {
 								<li>
 									<Link
 										href="#services"
-										className="text-slate-600 hover:text-orange-500 transition-colors"
+										className="text-slate-600 hover:secondary transition-colors"
 									>
 										Our Services
 									</Link>
@@ -1054,7 +1051,7 @@ export default function Home() {
 								<li>
 									<Link
 										href="#locations"
-										className="text-slate-600 hover:text-orange-500 transition-colors"
+										className="text-slate-600 hover:secondary transition-colors"
 									>
 										Locations
 									</Link>
@@ -1062,7 +1059,7 @@ export default function Home() {
 								<li>
 									<Link
 										href="#pricing"
-										className="text-slate-600 hover:text-orange-500 transition-colors"
+										className="text-slate-600 hover:secondary transition-colors"
 									>
 										Pricing
 									</Link>
@@ -1070,7 +1067,7 @@ export default function Home() {
 								<li>
 									<Link
 										href="#gallery"
-										className="text-slate-600 hover:text-orange-500 transition-colors"
+										className="text-slate-600 hover:secondary transition-colors"
 									>
 										Gallery
 									</Link>
@@ -1078,7 +1075,7 @@ export default function Home() {
 								<li>
 									<Link
 										href="#testimonials"
-										className="text-slate-600 hover:text-orange-500 transition-colors"
+										className="text-slate-600 hover:secondary transition-colors"
 									>
 										Testimonials
 									</Link>
@@ -1092,25 +1089,25 @@ export default function Home() {
 							</h3>
 							<ul className="space-y-3">
 								<li className="flex items-start">
-									<MapPin className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0 mt-0.5" />
+									<MapPin className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />
 									<span className="text-slate-600">
 										Rectory Road, Shenley, Hertfordshire
 									</span>
 								</li>
 								<li className="flex items-start">
-									<Phone className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0 mt-0.5" />
+									<Phone className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />
 									<span className="text-slate-600">
 										020 1234 5678
 									</span>
 								</li>
 								<li className="flex items-start">
-									<Mail className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0 mt-0.5" />
+									<Mail className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />
 									<span className="text-slate-600">
 										woof@woofandwag.com
 									</span>
 								</li>
 								<li className="flex items-start">
-									<Clock className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0 mt-0.5" />
+									<Clock className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />
 									<span className="text-slate-600">
 										Mon-Fri: 7am-7pm
 									</span>
@@ -1131,7 +1128,7 @@ export default function Home() {
 									placeholder="Your email address"
 									className="bg-slate-50 border-slate-200 rounded-xl"
 								/>
-								<Button className="bg-orange-500 hover:bg-orange-600 rounded-xl">
+								<Button className="primary-bg hover:bg-orange-600 rounded-xl">
 									Subscribe
 								</Button>
 							</div>
