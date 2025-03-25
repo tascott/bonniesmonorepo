@@ -67,6 +67,12 @@ export default function Home() {
 						>
 							Testimonials
 						</Link>
+						<Link
+							href="#contact"
+							className="text-slate-700 hover:secondary font-medium transition-colors"
+						>
+							Contact
+						</Link>
 						<AuthButtons />
 					</nav>
 
@@ -134,8 +140,8 @@ export default function Home() {
 									</span>
 								</div>
 							</div>
-							<Button className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-								Contact Us To Book
+							<Button asChild className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
+								<Link href="#contact">Contact Us To Book</Link>
 							</Button>
 						</div>
 						<div className="md:w-1/2 relative">
@@ -653,8 +659,8 @@ export default function Home() {
 						All staff are DBS checked and canine first aid trained
 					</h3>
 					<div className="flex flex-wrap justify-center gap-4">
-						<Button className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-							Contact us
+						<Button asChild className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
+							<Link href="#contact">Contact Us</Link>
 						</Button>
 						{/* <Button
 							variant="outline"
@@ -1002,7 +1008,7 @@ export default function Home() {
 			</section>
 
 			{/* Contact form */}
-			<section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
+			<section id="contact" className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
 				<div className="container mx-auto px-4">
 					<div className="max-w-xl mx-auto text-center mb-12">
 						<h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">
