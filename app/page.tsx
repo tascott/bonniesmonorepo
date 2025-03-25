@@ -1,7 +1,11 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
 // import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook, Menu, Star, Check } from "lucide-react"
@@ -9,6 +13,7 @@ import { BackgroundElement } from "@/components/svg-components"
 import { AuthButtons } from "@/components/auth-buttons"
 
 export default function Home() {
+  const [isImageOpen, setIsImageOpen] = useState(false)
   return (
 		<div className="flex flex-col min-h-screen bg-secondary/10">
 			{/* Top Banner */}
@@ -670,14 +675,14 @@ export default function Home() {
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
 							Where We Cover
 						</h2>
-						<p className="text-slate-600 max-w-2xl mx-auto">
+						{/* <p className="text-slate-600 max-w-2xl mx-auto">
 							Serving London&apos;s finest furry friends across
 							the city
-						</p>
+						</p> */}
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-						<div className="group">
+					<div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+						{/* <div className="group">
 							<div className="rounded-3xl overflow-hidden shadow-lg transform transition-all group-hover:scale-105 group-hover:shadow-xl">
 								<div className="relative">
 									<Image
@@ -712,46 +717,57 @@ export default function Home() {
 									</Button>
 								</div>
 							</div>
-						</div>
+						</div> */}
 
 						<div className="group">
 							<div className="rounded-3xl overflow-hidden shadow-lg transform transition-all group-hover:scale-105 group-hover:shadow-xl">
 								<div className="relative">
 									<Image
-										src="/images/placeholder.svg?height=200&width=400"
+										src="/images/map.png?height=400&width=600"
 										alt="Map location 2"
-										width={400}
-										height={200}
-										className="w-full h-48 object-cover"
+										width={600}
+										height={400}
+										className="w-full h-64 object-contain"
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 									<div className="absolute bottom-0 left-0 p-4 text-white">
 										<h3 className="font-bold text-xl">
-											South London
+											Hertfordshire
 										</h3>
 										<p className="flex items-center mt-1 text-sm opacity-90">
 											<MapPin className="h-4 w-4 mr-1" />
-											Dulwich, Brixton, Clapham
+											Shenley, Radlett, Hertfordshire
 										</p>
 									</div>
 								</div>
 								<div className="p-4 bg-white">
 									<p className="text-slate-600 mb-4">
-										Our South London locations feature large
-										open fields perfect for running and
-										playing.
+										Shenley, Radlett, Hertfordshire, other areas nearby considered
 									</p>
 									<Button
 										variant="outline"
 										className="w-full border-orange-200 text-orange-500 hover:bg-orange-50 rounded-xl"
+										onClick={() => setIsImageOpen(true)}
 									>
 										View Details
 									</Button>
 								</div>
 							</div>
+
+							<Dialog open={isImageOpen} onOpenChange={setIsImageOpen}>
+								<DialogContent className="max-w-[90vw] w-auto h-auto p-0">
+									<Image
+										src="/images/map.png"
+										alt="Map location 2"
+										width={1200}
+										height={800}
+										className="w-full h-auto"
+									/>
+								</DialogContent>
+							</Dialog>
 						</div>
 
-						<div className="group">
+						{/* <div className="group">
 							<div className="rounded-3xl overflow-hidden shadow-lg transform transition-all group-hover:scale-105 group-hover:shadow-xl">
 								<div className="relative">
 									<Image
@@ -786,7 +802,7 @@ export default function Home() {
 									</Button>
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</section>
