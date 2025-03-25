@@ -93,7 +93,6 @@ export default function ProfilePage() {
                     size="icon"
                     className="absolute bottom-0 right-0 h-8 w-8 rounded-full bg-orange-500 hover:bg-orange-600"
                     onClick={() => {
-                      // In a real app, this would open a file picker
                       const url = prompt("Enter image URL (for demo purposes)")
                       if (url) setPhotoURL(url)
                     }}

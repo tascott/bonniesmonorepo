@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+// import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook, Twitter, Menu, Star, Check } from "lucide-react"
+import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook, Menu, Star, Check } from "lucide-react"
 import { BackgroundElement } from "@/components/svg-components"
 import { AuthButtons } from "@/components/auth-buttons"
 
@@ -43,12 +43,12 @@ export default function Home() {
 						>
 							Locations
 						</Link>
-						<Link
+						{/* <Link
 							href="#pricing"
 							className="text-slate-700 hover:text-orange-500 font-medium transition-colors"
 						>
 							Pricing
-						</Link>
+						</Link> */}
 						<Link
 							href="#gallery"
 							className="text-slate-700 hover:text-orange-500 font-medium transition-colors"
@@ -96,16 +96,11 @@ export default function Home() {
 								North London, Hertfordshire and St Albans
 							</Badge>
 							<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 font-display leading-tight">
-								Where Dogs{' '}
-								<span className="text-orange-500">Play</span> &{' '}
-								<span className="text-lime-500">Stay</span>
+								Where Dogs Play & Roam
 							</h1>
 							<p className="text-slate-600 mb-6 text-lg leading-relaxed">
-								Welcome to Woof & Wag, where Londons furriest
-								residents are looked after with love and care!
-								From Dachshunds in Dulwich to Fulhams Frenchies,
-								we&apos;ve got the capital covered with our
-								countryside canine adventure parks.
+								When a walk is not enough and daycare is too
+								much...try our fun play mornings
 							</p>
 							<div className="flex flex-wrap gap-4 mb-8">
 								<div className="flex items-center">
@@ -113,15 +108,7 @@ export default function Home() {
 										<Check className="h-5 w-5 text-orange-500" />
 									</div>
 									<span className="text-slate-700">
-										Expert Care
-									</span>
-								</div>
-								<div className="flex items-center">
-									<div className="bg-rose-100 p-2 rounded-full mr-3">
-										<Check className="h-5 w-5 text-lime-500" />
-									</div>
-									<span className="text-slate-700">
-										Countryside Parks
+										Free pickup
 									</span>
 								</div>
 								<div className="flex items-center">
@@ -129,12 +116,20 @@ export default function Home() {
 										<Check className="h-5 w-5 text-orange-500" />
 									</div>
 									<span className="text-slate-700">
-										Daily Activities
+										Canine first aid trained
+									</span>
+								</div>
+								<div className="flex items-center">
+									<div className="bg-orange-100 p-2 rounded-full mr-3">
+										<Check className="h-5 w-5 text-orange-500" />
+									</div>
+									<span className="text-slate-700">
+										Fenced and secure site
 									</span>
 								</div>
 							</div>
 							<Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-								Book a Visit
+								Contact Us To Book
 							</Button>
 						</div>
 						<div className="md:w-1/2 relative">
@@ -170,17 +165,17 @@ export default function Home() {
 				</div>
 
 				<div className="container mx-auto px-4 relative z-10">
-					<div className="text-center mb-16">
-						<Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
+					<div className="text-center mb-16 mt-10">
+						{/* <Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
 							Our Offerings
-						</Badge>
+						</Badge> */}
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
-							Tailored Care Packages
+							What we do
 						</h2>
-						<p className="text-slate-600 max-w-2xl mx-auto">
+						{/* <p className="text-slate-600 max-w-2xl mx-auto">
 							Choose the perfect plan for your furry friends needs
 							and schedule
-						</p>
+						</p> */}
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -191,16 +186,21 @@ export default function Home() {
 									<PawPrint className="h-8 w-8 text-orange-500" />
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">
-									Playful Pup
+									Turn up & roam
 								</CardTitle>
 								<p className="text-slate-500">
-									1 full day per week
+									2 Hour sessions
 								</p>
+								<div className="inline-block bg-rose-50 px-6 py-2 rounded-full mt-4 border-2 border-rose-100">
+									<span className="text-2xl font-bold text-rose-600">
+										£15
+									</span>
+								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
 								<div className="aspect-video relative mb-6 overflow-hidden rounded-xl">
 									<Image
-										src="/images/placeholder.svg?height=200&width=400"
+										src="/images/dog3.jpeg?height=200&width=400"
 										alt="Dog playing with staff"
 										fill
 										className="object-cover"
@@ -212,7 +212,8 @@ export default function Home() {
 											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Expert dog care and off leash fun
+											Supervise your dog in our open
+											fields
 										</span>
 									</li>
 									<li className="flex items-start">
@@ -220,7 +221,7 @@ export default function Home() {
 											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Easy booking app
+											Parking on site
 										</span>
 									</li>
 									<li className="flex items-start">
@@ -228,16 +229,24 @@ export default function Home() {
 											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Weekly enrichment activities
+											Dogs matched by size and energy
+										</span>
+									</li>
+									<li className="flex items-start">
+										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 text-orange-500" />
+										</div>
+										<span className="text-slate-700">
+											Sessions every day of the week
 										</span>
 									</li>
 								</ul>
 							</CardContent>
-							<CardFooter>
+							{/* <CardFooter>
 								<Button className="w-full bg-orange-500 hover:bg-orange-600 rounded-xl py-6">
 									Select Location
 								</Button>
-							</CardFooter>
+							</CardFooter> */}
 						</Card>
 
 						<Card className="border-0 shadow-xl rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl relative">
@@ -250,16 +259,21 @@ export default function Home() {
 									<PawPrint className="h-8 w-8 text-lime-500" />
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">
-									Social Hound
+									Play Mornings
 								</CardTitle>
 								<p className="text-slate-500">
-									2/3 full days per week
+									2 hour sessions
 								</p>
+								<div className="inline-block bg-rose-50 px-6 py-2 rounded-full mt-4 border-2 border-rose-100">
+									<span className="text-2xl font-bold text-rose-600">
+										£27
+									</span>
+								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
 								<div className="aspect-video relative mb-6 overflow-hidden rounded-xl">
 									<Image
-										src="/images/placeholder.svg?height=200&width=400"
+										src="/images/dog2.jpg?height=200&width=400"
 										alt="Dog jumping through hoop"
 										fill
 										className="object-cover"
@@ -267,44 +281,45 @@ export default function Home() {
 								</div>
 								<ul className="space-y-3">
 									<li className="flex items-start">
-										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-lime-500" />
+										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Expert dog care and off leash fun
+											Social play with dogs of their own
+											energy levels
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-lime-500" />
+										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Easy booking app
+											Using all their senses
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-lime-500" />
+										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Weekly enrichment activities
+											Free pick up & drop off
 										</span>
 									</li>
 									<li className="flex items-start">
-										<div className="bg-rose-100 p-1 rounded-full mr-3 mt-0.5">
-											<Check className="h-4 w-4 text-lime-500" />
+										<div className="bg-orange-100 p-1 rounded-full mr-3 mt-0.5">
+											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Priority booking
+											Dogs matched by size and energy
 										</span>
 									</li>
 								</ul>
 							</CardContent>
-							<CardFooter>
+							{/* <CardFooter>
 								<Button className="w-full bg-rose-500 hover:bg-rose-600 rounded-xl py-6">
 									Select Location
 								</Button>
-							</CardFooter>
+							</CardFooter> */}
 						</Card>
 
 						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
@@ -314,16 +329,21 @@ export default function Home() {
 									<PawPrint className="h-8 w-8 text-orange-500" />
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">
-									Adventure Pup
+									Lunchtime Walks
 								</CardTitle>
 								<p className="text-slate-500">
-									4/5 full days per week
+									1 or 2 hour walks
 								</p>
+								<div className="inline-block bg-rose-50 px-6 py-2 rounded-full mt-4 border-2 border-rose-100">
+									<span className="text-2xl font-bold text-rose-600">
+										£17
+									</span>
+								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
 								<div className="aspect-video relative mb-6 overflow-hidden rounded-xl">
 									<Image
-										src="/images/placeholder.svg?height=200&width=400"
+										src="/images/dog5.jpeg?height=200&width=400"
 										alt="Dog catching ball"
 										fill
 										className="object-cover"
@@ -335,7 +355,7 @@ export default function Home() {
 											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											All standard benefits plus...
+											Walks in parks or our fields
 										</span>
 									</li>
 									<li className="flex items-start">
@@ -343,7 +363,7 @@ export default function Home() {
 											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											20% off dog grooming
+											Discounts for multiple dogs
 										</span>
 									</li>
 									<li className="flex items-start">
@@ -351,23 +371,23 @@ export default function Home() {
 											<Check className="h-4 w-4 text-orange-500" />
 										</div>
 										<span className="text-slate-700">
-											Exclusive access to events
+											Free pick up & drop off
 										</span>
 									</li>
 								</ul>
 							</CardContent>
-							<CardFooter>
+							{/* <CardFooter>
 								<Button className="w-full bg-orange-500 hover:bg-orange-600 rounded-xl py-6">
 									Select Location
 								</Button>
-							</CardFooter>
+							</CardFooter> */}
 						</Card>
 					</div>
 				</div>
 			</section>
 
 			{/* Pricing Section */}
-			<section id="pricing" className="py-24 bg-slate-50 relative">
+			{/* <section id="pricing" className="py-24 bg-slate-50 relative">
 				<div className="container mx-auto px-4 relative z-10">
 					<div className="text-center mb-16">
 						<Badge className="bg-orange-100 text-orange-700 mb-4 px-3 py-1 text-sm rounded-full">
@@ -539,11 +559,11 @@ export default function Home() {
 						</Card>
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			{/* Email Signup */}
-			<section className="py-24 bg-gradient-to-br from-orange-500 to-amber-600 text-white relative overflow-hidden">
-				{/* Background elements */}
+			{/* <section className="py-24 bg-gradient-to-br from-orange-500 to-amber-600 text-white relative overflow-hidden">
+
 				<BackgroundElement
 					type="circles"
 					className="absolute top-0 left-0 opacity-20"
@@ -578,6 +598,64 @@ export default function Home() {
 								Get Early Access
 							</Button>
 						</div>
+					</div>
+				</div>
+			</section> */}
+
+			{/* CTA Section */}
+			<section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
+				{/* Background elements */}
+				<BackgroundElement
+					type="paws"
+					className="absolute top-0 left-0 opacity-10"
+					fill="white"
+				/>
+				<BackgroundElement
+					type="paws"
+					className="absolute bottom-0 right-0 opacity-10"
+					fill="white"
+				/>
+
+				<div className="container mx-auto px-4 text-center relative z-10">
+					<Badge className="bg-white text-slate-800 mb-4 px-3 py-1 text-sm rounded-full">
+						Join Our Pack
+					</Badge>
+					<h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+						Ready for Tail-Wagging Adventures?
+					</h2>
+					<p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
+						We pick up your dog and take them to our secure and
+						fully fenced site.
+					</p>
+
+					<p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
+						Your dog spends 2+ hours on site with us where they will
+						participate in social play with dogs of their own energy
+						levels
+					</p>
+					<p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
+						They will use all their senses while walking and
+						exploring with us and their doggy friends
+					</p>
+					<p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
+						This all takes place in the stunning Hertfordshire
+						countryside with our ‘dog nut’ team who are all
+						professionally trained and super motivated to do what
+						they do.
+					</p>
+					<h3 className="text-1xl md:text-2xl font-bold mb-6 font-display">
+						All staff are DBS checked and canine first aid trained
+					</h3>
+					<div className="flex flex-wrap justify-center gap-4">
+						<Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
+							Contact us
+						</Button>
+						{/* <Button
+							variant="outline"
+							className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
+						>
+							Book a Tour
+						</Button> */}
 					</div>
 				</div>
 			</section>
@@ -721,7 +799,7 @@ export default function Home() {
 							Happy Pups
 						</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
-							Our Gallery
+							Gallery
 						</h2>
 						<p className="text-slate-600 max-w-2xl mx-auto">
 							See the joy and excitement of our furry clients
@@ -731,7 +809,7 @@ export default function Home() {
 					<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
 						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
 							<Image
-								src="/images/placeholder.svg?height=300&width=300"
+								src="/images/dog1.jpg?height=300&width=300"
 								alt="Dogs playing in field"
 								fill
 								className="object-cover"
@@ -739,7 +817,7 @@ export default function Home() {
 						</div>
 						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
 							<Image
-								src="/images/placeholder.svg?height=300&width=300"
+								src="/images/dog2.jpg?height=300&width=300"
 								alt="Dogs running together"
 								fill
 								className="object-cover"
@@ -747,7 +825,7 @@ export default function Home() {
 						</div>
 						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
 							<Image
-								src="/images/placeholder.svg?height=300&width=300"
+								src="/images/dog3.jpeg?height=300&width=300"
 								alt="Dogs playing with staff"
 								fill
 								className="object-cover"
@@ -755,7 +833,7 @@ export default function Home() {
 						</div>
 						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
 							<Image
-								src="/images/placeholder.svg?height=300&width=300"
+								src="/images/dog4.jpeg?height=300&width=300"
 								alt="Dog jumping through hoop"
 								fill
 								className="object-cover"
@@ -763,7 +841,7 @@ export default function Home() {
 						</div>
 						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
 							<Image
-								src="/images/placeholder.svg?height=300&width=300"
+								src="/images/dog5.jpeg?height=300&width=300"
 								alt="Dogs in park"
 								fill
 								className="object-cover"
@@ -771,7 +849,7 @@ export default function Home() {
 						</div>
 						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
 							<Image
-								src="/images/placeholder.svg?height=300&width=300"
+								src="/images/dog6.jpeg?height=300&width=300"
 								alt="Happy dog with ball"
 								fill
 								className="object-cover"
@@ -791,10 +869,10 @@ export default function Home() {
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">
 							What Pet Parents Say
 						</h2>
-						<p className="text-slate-600 max-w-2xl mx-auto">
+						{/* <p className="text-slate-600 max-w-2xl mx-auto">
 							Don&apos;t just take our word for it - hear from our
 							satisfied customers
-						</p>
+						</p> */}
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -840,11 +918,11 @@ export default function Home() {
 									skills with other dogs too.&rdquo;
 								</p>
 
-								<div className="flex justify-center">
+								{/* <div className="flex justify-center">
 									<Badge className="bg-orange-100 text-orange-700 px-3 py-1 text-sm rounded-full">
 										Playful Pup Member
 									</Badge>
-								</div>
+								</div> */}
 							</CardContent>
 						</Card>
 
@@ -891,56 +969,19 @@ export default function Home() {
 									dog.&rdquo;
 								</p>
 
-								<div className="flex justify-center">
+								{/* <div className="flex justify-center">
 									<Badge className="bg-rose-100 text-lime-700 px-3 py-1 text-sm rounded-full">
 										Social Hound Member
 									</Badge>
-								</div>
+								</div> */}
 							</CardContent>
 						</Card>
 					</div>
 				</div>
 			</section>
 
-			{/* CTA Section */}
-			<section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
-				{/* Background elements */}
-				<BackgroundElement
-					type="paws"
-					className="absolute top-0 left-0 opacity-10"
-					fill="white"
-				/>
-				<BackgroundElement
-					type="paws"
-					className="absolute bottom-0 right-0 opacity-10"
-					fill="white"
-				/>
-
-				<div className="container mx-auto px-4 text-center relative z-10">
-					<Badge className="bg-white text-slate-800 mb-4 px-3 py-1 text-sm rounded-full">
-						Join Our Pack
-					</Badge>
-					<h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-						Ready for Tail-Wagging Adventures?
-					</h2>
-					<p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
-						Treat your furry family member to a tail-wagging
-						experience they&apos;ll run to tell their friends about!
-						Get in touch to enrol today.
-					</p>
-					<div className="flex flex-wrap justify-center gap-4">
-						<Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-							Enrol Today
-						</Button>
-						<Button
-							variant="outline"
-							className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
-						>
-							Book a Tour
-						</Button>
-					</div>
-				</div>
-			</section>
+			{/* Contact form */}
+			<section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden"></section>
 
 			{/* Footer */}
 			<footer className="bg-white pt-16 pb-8">
@@ -956,9 +997,7 @@ export default function Home() {
 								</span>
 							</div>
 							<p className="text-slate-600 mb-6">
-								London&apos;s premier dog day care service,
-								providing expert care and off-leash fun for your
-								furry friends.
+								Hertfordshires premier dog care people.
 							</p>
 							<div className="flex space-x-4">
 								<a
@@ -972,12 +1011,6 @@ export default function Home() {
 									className="bg-slate-100 p-2 rounded-full text-slate-600 hover:bg-orange-100 hover:text-orange-500 transition-colors"
 								>
 									<Instagram className="h-5 w-5" />
-								</a>
-								<a
-									href="#"
-									className="bg-slate-100 p-2 rounded-full text-slate-600 hover:bg-orange-100 hover:text-orange-500 transition-colors"
-								>
-									<Twitter className="h-5 w-5" />
 								</a>
 							</div>
 						</div>
@@ -1038,7 +1071,7 @@ export default function Home() {
 								<li className="flex items-start">
 									<MapPin className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0 mt-0.5" />
 									<span className="text-slate-600">
-										123 Park Lane, London, W1K 7PL
+										Rectory Road, Shenley, Hertfordshire
 									</span>
 								</li>
 								<li className="flex items-start">
@@ -1062,7 +1095,7 @@ export default function Home() {
 							</ul>
 						</div>
 
-						<div>
+						{/* <div>
 							<h3 className="font-bold text-slate-800 mb-6 text-lg">
 								Newsletter
 							</h3>
@@ -1079,13 +1112,12 @@ export default function Home() {
 									Subscribe
 								</Button>
 							</div>
-						</div>
+						</div> */}
 					</div>
 
 					<div className="border-t border-slate-100 pt-8">
 						<p className="text-center text-slate-500">
-							&copy; {new Date().getFullYear()} Woof & Wag London.
-							All rights reserved.
+							&copy; {new Date().getFullYear()} Woof & Wag London
 						</p>
 					</div>
 				</div>
