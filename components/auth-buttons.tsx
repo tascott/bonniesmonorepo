@@ -2,7 +2,7 @@
 
 import { useAuth } from "@/contexts/auth-context"
 import { Button } from "@/components/ui/button"
-import { LogOut, User } from "lucide-react"
+import { LogOut, User, Calendar } from "lucide-react"
 import { AuthDialog } from "@/components/auth-dialog"
 import { useRouter } from "next/navigation"
 import {
@@ -33,7 +33,7 @@ export function AuthButtons() {
       <div className="flex items-center gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+            <Button variant="ghost" className="relative h-10 w-10 rounded-full cursor-pointer">
               <Avatar>
                 <AvatarImage src={currentUser.photoURL || ""} alt={currentUser.email || "User"} />
                 <AvatarFallback className="bg-[#86BBD8] text-[#2F4858]">
@@ -50,6 +50,7 @@ export function AuthButtons() {
               <span>My Profile</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => router.push("/bookings")}>
+              <Calendar className="mr-2 h-4 w-4" />
               <span>My Bookings</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />

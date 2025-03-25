@@ -147,7 +147,7 @@ export default function Home() {
 										alt="Happy dogs playing"
 										width={500}
 										height={400}
-										className="rounded-2xl"
+										className="rounded-2xl mx-auto"
 									/>
 								</div>
 							</div>
@@ -719,7 +719,7 @@ export default function Home() {
 							</div>
 						</div> */}
 
-						<div className="group">
+						<div className="group max-w-[500px] mx-auto">
 							<div className="rounded-3xl overflow-hidden shadow-lg transform transition-all group-hover:scale-105 group-hover:shadow-xl">
 								<div className="relative">
 									<Image
