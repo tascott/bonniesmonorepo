@@ -103,6 +103,9 @@ export default function Home() {
 							<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 font-display leading-tight">
 								Where Dogs Play & Roam
 							</h1>
+							<h2 className="secondary text-4xl">
+								Test thing
+							</h2>
 							<p className="text-slate-600 mb-6 text-lg leading-relaxed">
 								When a walk is not enough and daycare is too
 								much...try our fun play mornings
@@ -742,7 +745,8 @@ export default function Home() {
 								</div>
 								<div className="p-4 bg-white">
 									<p className="text-slate-600 mb-4">
-										Shenley, Radlett, Hertfordshire, other areas nearby considered
+										Shenley, Radlett, Hertfordshire, other
+										areas nearby considered
 									</p>
 									<Button
 										variant="outline"
@@ -754,7 +758,10 @@ export default function Home() {
 								</div>
 							</div>
 
-							<Dialog open={isImageOpen} onOpenChange={setIsImageOpen}>
+							<Dialog
+								open={isImageOpen}
+								onOpenChange={setIsImageOpen}
+							>
 								<DialogContent className="max-w-[90vw] w-auto h-auto p-0">
 									<Image
 										src="/images/map.png"

@@ -4,6 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /* White background with dark text */
+  .background { background-color: hsl(var(--background)); }
+  .foreground { color: hsl(var(--foreground)); }
+
+  /* White cards with dark text */
+  .card { background-color: hsl(var(--card)); }
+  .card-foreground { color: hsl(var(--card-foreground)); }
+
+  /* White popovers with dark text */
+  .popover { background-color: hsl(var(--popover)); }
+  .popover-foreground { color: hsl(var(--popover-foreground)); }
+
+  /* Deep blue - Primary brand color */
+  .primary { color: hsl(var(--primary)); }
+  .primary-foreground { color: hsl(var(--primary-foreground)); }
+  .primary-bg { background-color: hsl(var(--primary)); }
+
+  /* Light blue - Secondary color */
+  .secondary { color: hsl(var(--secondary)); }
+  .secondary-foreground { color: hsl(var(--secondary-foreground)); }
+  .secondary-bg { background-color: hsl(var(--secondary)); }
+
+  /* Very light blue - Subtle emphasis */
+  .muted { color: hsl(var(--muted)); }
+  .muted-foreground { color: hsl(var(--muted-foreground)); }
+  .muted-bg { background-color: hsl(var(--muted)); }
+
+  /* Golden yellow - Accent color */
+  .accent { color: hsl(var(--accent)); }
+  .accent-foreground { color: hsl(var(--accent-foreground)); }
+  .accent-bg { background-color: hsl(var(--accent)); }
+
+  /* Orange - Warning/Destructive actions */
+  .destructive { color: hsl(var(--destructive)); }
+  .destructive-foreground { color: hsl(var(--destructive-foreground)); }
+  .destructive-bg { background-color: hsl(var(--destructive)); }
+}
+
 @layer base {
   html {
     font-family: var(--font-fira);
@@ -14,43 +53,42 @@
   }
 
   :root {
-
     /* Base colors */
-    --background: 0, 0%, 100%;
-    --foreground: 206, 29%, 26%;
+    --background: 0 0% 100%;
+    --foreground: 206 29% 26%;
 
     /* Card colors */
-    --card: 0, 0%, 100%;
-    --card-foreground: 206, 29%, 26%;
+    --card: 0 0% 100%;
+    --card-foreground: 206 29% 26%;
 
     /* Popover colors */
-    --popover: 0, 0%, 100%;
-    --popover-foreground: 206, 29%, 26%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 206 29% 26%;
 
     /* Primary colors - Deep blue */
-    --primary: 207, 47%, 37%;
-    --primary-foreground: 0, 0%, 100%;
+    --primary: 207 47% 37%;
+    --primary-foreground: 0 0% 100%;
 
     /* Secondary colors - Light blue */
-    --secondary: 201, 53%, 69%;
-    --secondary-foreground: 206, 29%, 26%;
+    --secondary: 201 53% 69%;
+    --secondary-foreground: 206 29% 26%;
 
     /* Muted colors */
-    --muted: 201, 53%, 90%;
-    --muted-foreground: 206, 29%, 40%;
+    --muted: 201 53% 90%;
+    --muted-foreground: 206 29% 40%;
 
     /* Accent colors - Golden yellow */
-    --accent: 39, 92%, 57%;
-    --accent-foreground: 206, 29%, 26%;
+    --accent: 39 92% 57%;
+    --accent-foreground: 206 29% 26%;
 
     /* Destructive colors - Orange */
-    --destructive: 17, 89%, 52%;
-    --destructive-foreground: 0, 0%, 100%;
+    --destructive: 17 89% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Border and input colors */
-    --border: 207, 47%, 90%;
-    --input: 207, 47%, 90%;
-    --ring: 207, 47%, 37%;
+    /* Border and input colors - Light blue */
+    --border: 207 47% 90%;
+    --input: 207 47% 90%;
+    --ring: 207 47% 37%;
 
     --radius: 0.5rem;
   }
