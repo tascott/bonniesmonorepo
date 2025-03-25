@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import ContactForm from "@/components/contact-form"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 // import { Input } from "@/components/ui/input"
@@ -1001,7 +1002,21 @@ export default function Home() {
 			</section>
 
 			{/* Contact form */}
-			<section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden"></section>
+			<section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
+				<div className="container mx-auto px-4">
+					<div className="max-w-xl mx-auto text-center mb-12">
+						<h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">
+							Contact Us
+						</h2>
+						<p className="text-slate-300">
+							Have questions or want to book a service? Send us a message and we&apos;ll get back to you soon.
+						</p>
+					</div>
+					<div className="max-w-lg mx-auto">
+						<ContactForm />
+					</div>
+				</div>
+			</section>
 
 			{/* Footer */}
 			<footer className="bg-white pt-16 pb-8">
