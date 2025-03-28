@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import ContactForm from '@/components/contact-form';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 // import { Input } from "@/components/ui/input"
 import { Badge } from '@/components/ui/badge';
 import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook, Menu, Star, Check } from 'lucide-react';
@@ -172,7 +172,7 @@ export default function Home() {
 
 				<div className="container mx-auto px-4 relative z-10">
 					<div className="text-center mb-16 mt-10">
-						{/* <Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">
+						{/* <Badge className="bg-rose-100 primary mb-4 px-3 py-1 text-sm rounded-full">
 							Our Offerings
 						</Badge> */}
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">What we do</h2>
@@ -191,8 +191,8 @@ export default function Home() {
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">Turn up & roam</CardTitle>
 								<p className="text-slate-500">2 Hour sessions</p>
-								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-amber-100">
-									<span className="text-2xl font-bold white">£15</span>
+								<div className="mt-4">
+									<span className="text-2xl font-bold text-orange-500">£15</span>
 								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
@@ -238,12 +238,12 @@ export default function Home() {
 							<Badge className="absolute top-4 right-4 bg-rose-500 text-white px-3 py-1 rounded-full">POPULAR</Badge>
 							<CardHeader className="text-center pt-8">
 								<div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
-									<PawPrint className="h-8 w-8 text-lime-500" />
+									<PawPrint className="h-8 w-8 primary" />
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">Play Mornings</CardTitle>
 								<p className="text-slate-500">2 hour sessions</p>
-								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-amber-100">
-									<span className="text-2xl font-bold white">£27</span>
+								<div className="mt-4">
+									<span className="text-2xl font-bold text-orange-500">£27</span>
 								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
@@ -292,8 +292,8 @@ export default function Home() {
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">Lunchtime Walks</CardTitle>
 								<p className="text-slate-500">1 or 2 hour walks</p>
-								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-amber-100">
-									<span className="text-2xl font-bold white">£17</span>
+								<div className="mt-4">
+									<span className="text-2xl font-bold text-orange-500">£17</span>
 								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
@@ -403,7 +403,7 @@ export default function Home() {
 						<Card className="shadow-xl rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl">
 							<CardHeader className="text-center pb-2 pt-8">
 								<div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
-									<span className="text-lime-500 font-bold">
+									<span className="primary font-bold">
 										∞
 									</span>
 								</div>
@@ -419,7 +419,7 @@ export default function Home() {
 								<ul className="space-y-3 mt-4">
 									<li className="flex items-center">
 										<div className="bg-rose-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-lime-500" />
+											<Check className="h-4 w-4 primary" />
 										</div>
 										<span className="text-slate-700">
 											Unlimited play sessions
@@ -427,7 +427,7 @@ export default function Home() {
 									</li>
 									<li className="flex items-center">
 										<div className="bg-rose-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-lime-500" />
+											<Check className="h-4 w-4 primary" />
 										</div>
 										<span className="text-slate-700">
 											7-9am pickup & drop-off
@@ -435,7 +435,7 @@ export default function Home() {
 									</li>
 									<li className="flex items-center">
 										<div className="bg-rose-100 p-1 rounded-full mr-3">
-											<Check className="h-4 w-4 text-lime-500" />
+											<Check className="h-4 w-4 primary" />
 										</div>
 										<span className="text-slate-700">
 											Cancel anytime
@@ -592,7 +592,7 @@ export default function Home() {
 			<section id="locations" className="py-24 bg-white">
 				<div className="container mx-auto px-4">
 					<div className="text-center mb-16">
-						<Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">Our Locations</Badge>
+						<Badge className="bg-rose-100 primary mb-4 px-3 py-1 text-sm rounded-full">Our Locations</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">Where We Cover</h2>
 						{/* <p className="text-slate-600 max-w-2xl mx-auto">
 							Serving London&apos;s finest furry friends across
@@ -661,7 +661,7 @@ export default function Home() {
 									<p className="text-slate-600 mb-4">Shenley, Radlett, Hertfordshire, other areas nearby considered</p>
 									<Button
 										variant="outline"
-										className="w-full border-orange-200 secondary hover:bg-orange-50 rounded-xl"
+										className="w-full primary-bg text-white hover:muted-bg hover:primary cursor-pointer rounded-xl"
 										onClick={() => setIsImageOpen(true)}
 									>
 										View Details
@@ -670,8 +670,9 @@ export default function Home() {
 							</div>
 
 							<Dialog open={isImageOpen} onOpenChange={setIsImageOpen}>
-								<DialogContent className="max-w-[90vw] w-auto h-auto p-0">
-									<Image src="/images/map.png" alt="Map location 2" width={1200} height={800} className="w-full h-auto" />
+								<DialogContent className="w-screen h-auto sm:max-w-[800px] p-0">
+									<DialogTitle className="sr-only">Location Map</DialogTitle>
+									<Image src="/images/map.png" alt="Map location 2" width={1200} height={800} className="w-full" />
 								</DialogContent>
 							</Dialog>
 						</div>
@@ -752,7 +753,7 @@ export default function Home() {
 			<section id="testimonials" className="py-24 bg-white">
 				<div className="container mx-auto px-4">
 					<div className="text-center mb-16">
-						<Badge className="bg-rose-100 text-lime-700 mb-4 px-3 py-1 text-sm rounded-full">Happy Clients</Badge>
+						<Badge className="bg-rose-100 primary mb-4 px-3 py-1 text-sm rounded-full">Happy Clients</Badge>
 						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 font-display">What Pet Parents Say</h2>
 						{/* <p className="text-slate-600 max-w-2xl mx-auto">
 							Don&apos;t just take our word for it - hear from our
@@ -834,7 +835,7 @@ export default function Home() {
 								</p>
 
 								{/* <div className="flex justify-center">
-									<Badge className="bg-rose-100 text-lime-700 px-3 py-1 text-sm rounded-full">
+									<Badge className="bg-rose-100 primary px-3 py-1 text-sm rounded-full">
 										Social Hound Member
 									</Badge>
 								</div> */}
