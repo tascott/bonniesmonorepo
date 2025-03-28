@@ -183,7 +183,7 @@ export default function Home() {
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
+						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden">
 							<div className="h-3 bg-orange-400"></div>
 							<CardHeader className="text-center pt-8">
 								<div className="w-16 h-16 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
@@ -191,7 +191,7 @@ export default function Home() {
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">Turn up & roam</CardTitle>
 								<p className="text-slate-500">2 Hour sessions</p>
-								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-2 border-amber-100">
+								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-amber-100">
 									<span className="text-2xl font-bold white">£15</span>
 								</div>
 							</CardHeader>
@@ -233,7 +233,7 @@ export default function Home() {
 							</CardFooter> */}
 						</Card>
 
-						<Card className="border-0 shadow-xl rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl relative">
+						<Card className="shadow-xl rounded-3xl overflow-hidden">
 							<div className="h-3 bg-rose-500"></div>
 							<Badge className="absolute top-4 right-4 bg-rose-500 text-white px-3 py-1 rounded-full">POPULAR</Badge>
 							<CardHeader className="text-center pt-8">
@@ -242,7 +242,7 @@ export default function Home() {
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">Play Mornings</CardTitle>
 								<p className="text-slate-500">2 hour sessions</p>
-								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-2 border-amber-100">
+								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-amber-100">
 									<span className="text-2xl font-bold white">£27</span>
 								</div>
 							</CardHeader>
@@ -284,7 +284,7 @@ export default function Home() {
 							</CardFooter> */}
 						</Card>
 
-						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
+						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden">
 							<div className="h-3 bg-orange-400"></div>
 							<CardHeader className="text-center pt-8">
 								<div className="w-16 h-16 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
@@ -292,7 +292,7 @@ export default function Home() {
 								</div>
 								<CardTitle className="text-2xl font-display text-slate-800">Lunchtime Walks</CardTitle>
 								<p className="text-slate-500">1 or 2 hour walks</p>
-								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-2 border-amber-100">
+								<div className="inline-block primary-bg px-6 py-2 rounded-full mt-4 border-amber-100">
 									<span className="text-2xl font-bold white">£17</span>
 								</div>
 							</CardHeader>
@@ -400,7 +400,7 @@ export default function Home() {
 							</CardFooter>
 						</Card>
 
-						<Card className="border-2 border-lime-500 shadow-xl rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl">
+						<Card className="shadow-xl rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl">
 							<CardHeader className="text-center pb-2 pt-8">
 								<div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
 									<span className="text-lime-500 font-bold">
@@ -639,7 +639,7 @@ export default function Home() {
 						</div> */}
 
 						<div className="group max-w-[500px] mx-auto">
-							<div className="rounded-3xl overflow-hidden shadow-lg transform transition-all group-hover:scale-105 group-hover:shadow-xl">
+							<div className="rounded-3xl overflow-hidden shadow-lg">
 								<div className="relative">
 									<Image
 										src="/images/map.png?height=400&width=600"
@@ -726,22 +726,22 @@ export default function Home() {
 					</div>
 
 					<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
+						<div className="aspect-square relative rounded-3xl overflow-hidden">
 							<Image src="/images/dog1.jpg?height=300&width=300" alt="Dogs playing in field" fill className="object-cover" />
 						</div>
-						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
+						<div className="aspect-square relative rounded-3xl overflow-hidden">
 							<Image src="/images/dog2.jpg?height=300&width=300" alt="Dogs running together" fill className="object-cover" />
 						</div>
-						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
+						<div className="aspect-square relative rounded-3xl overflow-hidden">
 							<Image src="/images/dog3.jpeg?height=300&width=300" alt="Dogs playing with staff" fill className="object-cover" />
 						</div>
-						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
+						<div className="aspect-square relative rounded-3xl overflow-hidden">
 							<Image src="/images/dog4.jpeg?height=300&width=300" alt="Dog jumping through hoop" fill className="object-cover" />
 						</div>
-						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
+						<div className="aspect-square relative rounded-3xl overflow-hidden">
 							<Image src="/images/dog5.jpeg?height=300&width=300" alt="Dogs in park" fill className="object-cover" />
 						</div>
-						<div className="aspect-square relative rounded-3xl overflow-hidden transform transition-all hover:scale-105 hover:z-10">
+						<div className="aspect-square relative rounded-3xl overflow-hidden">
 							<Image src="/images/dog6.jpeg?height=300&width=300" alt="Happy dog with ball" fill className="object-cover" />
 						</div>
 					</div>
