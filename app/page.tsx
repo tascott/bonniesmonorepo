@@ -32,7 +32,7 @@ export default function Home() {
 						<div className="primary-bg text-white p-2 rounded-full">
 							<PawPrint className="h-6 w-6" />
 						</div>
-						<span className="text-2xl font-bold text-foreground font-display">Woof & Wag</span>
+						<span className="text-2xl font-bold text-foreground font-display">Bonnies</span>
 					</Link>
 
 					<nav className="hidden md:flex items-center space-x-8">
@@ -790,8 +790,8 @@ export default function Home() {
 								</div>
 
 								<p className="text-slate-600 text-center italic mb-6">
-									&ldquo;My dog Bella absolutely loves going to Woof & Wag! The staff are amazing and she comes home happy and
-									tired. I&apos;ve noticed such an improvement in her social skills with other dogs too.&rdquo;
+									&ldquo;My dog Bella absolutely loves going to Bonnies! The staff are amazing and she comes home happy and tired.
+									I&apos;ve noticed such an improvement in her social skills with other dogs too.&rdquo;
 								</p>
 
 								{/* <div className="flex justify-center">
@@ -830,7 +830,7 @@ export default function Home() {
 								</div>
 
 								<p className="text-slate-600 text-center italic mb-6">
-									&ldquo;The Woof & Wag difference is real! My dog Max gets so much exercise and stimulation at their countryside
+									&ldquo;The Bonnies difference is real! My dog Max gets so much exercise and stimulation at their countryside
 									parks. The weekly enrichment activities are his favorite and the staff truly care about each dog.&rdquo;
 								</p>
 
@@ -869,7 +869,7 @@ export default function Home() {
 								<div className="primary-bg text-white p-2 rounded-full">
 									<PawPrint className="h-6 w-6" />
 								</div>
-								<span className="text-xl font-bold text-slate-800 font-display">Woof & Wag</span>
+								<span className="text-xl font-bold text-slate-800 font-display">Bonnies</span>
 							</div>
 							<p className="text-slate-600 mb-6">Hertfordshires premier dog care people.</p>
 							<div className="flex space-x-4">
@@ -932,7 +932,7 @@ export default function Home() {
 								</li>
 								<li className="flex items-start">
 									<Mail className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />
-									<span className="text-slate-600">woof@woofandwag.com</span>
+									<span className="text-slate-600">admin@bonnies.dog</span>
 								</li>
 								<li className="flex items-start">
 									<Clock className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />
@@ -962,7 +962,7 @@ export default function Home() {
 					</div>
 
 					<div className="border-t border-slate-100 pt-8">
-						<p className="text-center text-slate-500">&copy; {new Date().getFullYear()} Woof & Wag London</p>
+						<p className="text-center text-slate-500">&copy; {new Date().getFullYear()} & Wag London</p>
 					</div>
 				</div>
 			</footer>

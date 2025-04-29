@@ -19,14 +19,8 @@ export default function ContactForm() {
 
 		try {
 			const formData = new FormData(event.currentTarget);
-			formData.append(
-				'access_key',
-				process.env.NEXT_PUBLIC_WEB3FORMS_KEY!
-			);
-			formData.append(
-				'subject',
-				'New Contact Form Submission - Woof & Wag'
-			);
+			formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY!);
+			formData.append('subject', 'New Contact Form Submission - Bonnies');
 
 			const object = Object.fromEntries(formData);
 			const json = JSON.stringify(object);
@@ -57,12 +51,8 @@ export default function ContactForm() {
 	if (isSuccess) {
 		return (
 			<div className="text-center p-8 bg-green-50 rounded-lg">
-				<h3 className="text-xl font-semibold text-green-800 mb-2">
-					Message Sent!
-				</h3>
-				<p className="text-green-600">
-					Thank you for your message. We&apos;ll get back to you as soon as possible.
-				</p>
+				<h3 className="text-xl font-semibold text-green-800 mb-2">Message Sent!</h3>
+				<p className="text-green-600">Thank you for your message. We&apos;ll get back to you as soon as possible.</p>
 			</div>
 		);
 	}
@@ -118,11 +108,7 @@ export default function ContactForm() {
 					/>
 				</div>
 
-				<Button
-					type="submit"
-					disabled={isSubmitting}
-					className="w-full bg-white/20 hover:bg-white/30 rounded-full"
-				>
+				<Button type="submit" disabled={isSubmitting} className="w-full bg-white/20 hover:bg-white/30 rounded-full">
 					{isSubmitting ? (
 						<>
 							<Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -132,12 +118,8 @@ export default function ContactForm() {
 						'Send Message'
 					)}
 				</Button>
-		</form>
-			{error && (
-				<div className="p-4 bg-red-50 text-red-600 rounded-lg mt-4">
-					{error}
-				</div>
-			)}
+			</form>
+			{error && <div className="p-4 bg-red-50 text-red-600 rounded-lg mt-4">{error}</div>}
 		</div>
 	);
 }
