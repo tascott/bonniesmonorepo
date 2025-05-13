@@ -955,7 +955,7 @@ export default function Home() {
 						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden">
 							<CardContent className="pt-8">
 								<div className="flex flex-col items-center mb-6">
-									<div className="relative w-20 h-20 mb-4">
+									{/* <div className="relative w-20 h-20 mb-4">
 										<Image
 											src="/images/placeholder.svg?height=80&width=80"
 											alt="Testimonial author"
@@ -966,7 +966,7 @@ export default function Home() {
 										<div className="absolute -bottom-2 -right-2 primary-bg text-white p-1 rounded-full">
 											<PawPrint className="h-4 w-4" />
 										</div>
-									</div>
+									</div> */}
 									<div className="text-center">
 										<p className="font-bold text-slate-800 text-lg">
 											Samantha & Bella
@@ -1005,7 +1005,7 @@ export default function Home() {
 						<Card className="border-0 shadow-lg rounded-3xl overflow-hidden">
 							<CardContent className="pt-8">
 								<div className="flex flex-col items-center mb-6">
-									<div className="relative w-20 h-20 mb-4">
+									{/* <div className="relative w-20 h-20 mb-4">
 										<Image
 											src="/images/placeholder.svg?height=80&width=80"
 											alt="Testimonial author"
@@ -1016,7 +1016,7 @@ export default function Home() {
 										<div className="absolute -bottom-2 -right-2 bg-rose-500 text-white p-1 rounded-full">
 											<PawPrint className="h-4 w-4" />
 										</div>
-									</div>
+									</div> */}
 									<div className="text-center">
 										<p className="font-bold text-slate-800 text-lg">
 											James & Max
@@ -1183,7 +1183,7 @@ export default function Home() {
 								<li className="flex items-start">
 									<Clock className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />
 									<span className="text-slate-600">
-										Mon-Fri: 7am-7pm
+										Mon-Fri: 9am-5pm
 									</span>
 								</li>
 							</ul>
