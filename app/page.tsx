@@ -189,10 +189,10 @@ export default function Home() {
 								<div className="w-16 h-16 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
 									<PawPrint className="h-8 w-8 secondary" />
 								</div>
-								<CardTitle className="text-2xl font-display text-slate-800">Turn up & roam</CardTitle>
-								<p className="text-slate-500">2 Hour sessions</p>
+								<CardTitle className="text-2xl font-display text-slate-800">Whole Field Hire</CardTitle>
+								<p className="text-slate-500">Varying lengths</p>
 								<div className="mt-4">
-									<span className="text-2xl font-bold text-orange-500">£15</span>
+									<span className="text-2xl font-bold text-orange-500">From £50</span>
 								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
@@ -204,7 +204,7 @@ export default function Home() {
 										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 secondary" />
 										</div>
-										<span className="text-slate-700">Supervise your dog in our open fields</span>
+										<span className="text-slate-700">8.5 Acre field</span>
 									</li>
 									<li className="flex items-start">
 										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
@@ -216,14 +216,14 @@ export default function Home() {
 										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 secondary" />
 										</div>
-										<span className="text-slate-700">Dogs matched by size and energy</span>
+										<span className="text-slate-700">Varied terrain</span>
 									</li>
-									<li className="flex items-start">
+									{/* <li className="flex items-start">
 										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 secondary" />
 										</div>
-										<span className="text-slate-700">Sessions every day of the week</span>
-									</li>
+										<span className="text-slate-700"></span>
+									</li> */}
 								</ul>
 							</CardContent>
 							{/* <CardFooter>
@@ -235,7 +235,6 @@ export default function Home() {
 
 						<Card className="shadow-xl rounded-3xl overflow-hidden">
 							<div className="h-3 bg-rose-500"></div>
-							<Badge className="absolute top-4 right-4 bg-rose-500 text-white px-3 py-1 rounded-full">POPULAR</Badge>
 							<CardHeader className="text-center pt-8">
 								<div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
 									<PawPrint className="h-8 w-8 primary" />
@@ -248,7 +247,7 @@ export default function Home() {
 							</CardHeader>
 							<CardContent className="pt-6">
 								<div className="aspect-video relative mb-6 overflow-hidden rounded-xl">
-									<Image src="/images/dog2.jpg?height=200&width=400" alt="Dog jumping through hoop" fill className="object-cover" />
+									<Image src="/images/dog9.JPG?height=200&width=400" alt="Dog jumping through hoop" fill className="object-cover" />
 								</div>
 								<ul className="space-y-3">
 									<li className="flex items-start">
@@ -290,10 +289,10 @@ export default function Home() {
 								<div className="w-16 h-16 primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
 									<PawPrint className="h-8 w-8 secondary" />
 								</div>
-								<CardTitle className="text-2xl font-display text-slate-800">Lunchtime Walks</CardTitle>
-								<p className="text-slate-500">1 or 2 hour walks</p>
+								<CardTitle className="text-2xl font-display text-slate-800">Training/Integration</CardTitle>
+								<p className="text-slate-500">1 on 1 sessions</p>
 								<div className="mt-4">
-									<span className="text-2xl font-bold text-orange-500">£17</span>
+									<span className="text-2xl font-bold text-orange-500">From £75</span>
 								</div>
 							</CardHeader>
 							<CardContent className="pt-6">
@@ -305,7 +304,7 @@ export default function Home() {
 										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
 											<Check className="h-4 w-4 secondary" />
 										</div>
-										<span className="text-slate-700">Walks in parks or our fields</span>
+										<span className="text-slate-700">All sessions on private grounds</span>
 									</li>
 									<li className="flex items-start">
 										<div className="primary-bg p-1 rounded-full mr-3 mt-0.5">
