@@ -1022,7 +1022,7 @@ export default function Home() {
 											James & Max
 										</p>
 										<p className="text-slate-500 text-sm">
-											West London
+											Shenley
 										</p>
 									</div>
 								</div>
@@ -1037,12 +1037,8 @@ export default function Home() {
 								</div>
 
 								<p className="text-slate-600 text-center italic mb-6">
-									&ldquo;The Bonnies difference is real! My
-									dog Max gets so much exercise and
-									stimulation at their countryside parks. The
-									weekly enrichment activities are his
-									favorite and the staff truly care about each
-									dog.&rdquo;
+									&ldquo;My dog Max gets so much exercise and
+									stimulation at their fields. The staff truly care about each dog and mine is always so excited to see them! .&rdquo;
 								</p>
 
 								{/* <div className="flex justify-center">
