@@ -1,19 +1,17 @@
 "use client"
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react"
-import {
-  type User,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-  updateProfile,
-  sendPasswordResetEmail,
-} from "firebase/auth"
-import { auth } from "@/lib/firebase"
+
+// Define a simple user interface that mimics the necessary parts of Firebase User
+interface MockUser {
+  uid: string
+  email: string | null
+  displayName: string | null
+  photoURL: string | null
+}
 
 interface AuthContextType {
-  currentUser: User | null
+  currentUser: MockUser | null
   loading: boolean
   signup: (email: string, password: string) => Promise<void>
   login: (email: string, password: string) => Promise<void>
@@ -33,84 +31,43 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [currentUser, setCurrentUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [currentUser, setCurrentUser] = useState<MockUser | null>(null)
+  const [loading, setLoading] = useState(false)
 
+  // Mock implementations of auth functions
   async function signup(email: string, password: string) {
-    return createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed up successfully
-        console.log("User signed up:", userCredential.user)
-      })
-      .catch((error) => {
-        console.error("Error signing up:", error.code, error.message)
-        throw error
-      })
+    console.log("Mock signup called with:", email)
+    return Promise.resolve()
   }
 
   async function login(email: string, password: string) {
-    return signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in successfully
-        console.log("User signed in:", userCredential.user)
-      })
-      .catch((error) => {
-        console.error("Error signing in:", error.code, error.message)
-        throw error
-      })
+    console.log("Mock login called with:", email)
+    return Promise.resolve()
   }
 
   async function logout() {
-    return signOut(auth)
-      .then(() => {
-        // Sign-out successful
-        console.log("User signed out")
-      })
-      .catch((error) => {
-        console.error("Error signing out:", error)
-        throw error
-      })
+    console.log("Mock logout called")
+    return Promise.resolve()
   }
 
   async function resetPassword(email: string) {
-    return sendPasswordResetEmail(auth, email)
-      .then(() => {
-        // Password reset email sent
-        console.log("Password reset email sent")
-      })
-      .catch((error) => {
-        console.error("Error sending password reset email:", error)
-        throw error
-      })
+    console.log("Mock reset password called with:", email)
+    return Promise.resolve()
   }
 
   async function updateUserProfile(displayName: string, photoURL?: string) {
-    if (!auth.currentUser) return
-
-    return updateProfile(auth.currentUser, {
-      displayName,
-      photoURL: photoURL || auth.currentUser.photoURL,
-    })
-      .then(() => {
-        console.log("User profile updated")
-      })
-      .catch((error) => {
-        console.error("Error updating profile:", error)
-        throw error
-      })
+    console.log("Mock update profile called with:", displayName, photoURL)
+    return Promise.resolve()
   }
 
+  // This effect runs once on component mount
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user)
-      setLoading(false)
-    })
-
-    return unsubscribe
+    // Immediately set loading to false
+    setLoading(false)
   }, [])
 
   const value = {
-    currentUser,
+    currentUser, // Always null
     loading,
     signup,
     login,
@@ -119,6 +76,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     updateUserProfile,
   }
 
-  return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 

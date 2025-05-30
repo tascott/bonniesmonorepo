@@ -9,10 +9,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 // import { Input } from "@/components/ui/input"
 import { Badge } from '@/components/ui/badge';
-import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook, Menu, Star, Check } from 'lucide-react';
+import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook, Menu, Star, Check, ChevronDown } from 'lucide-react';
 import { BackgroundElement } from '@/components/svg-components';
 import { AuthButtons } from '@/components/auth-buttons';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from '@/components/ui/accordion';
 
 export default function Home() {
 	const [isImageOpen, setIsImageOpen] = useState(false);
@@ -1052,22 +1058,112 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* Contact form */}
-			<section
-				id="contact"
-				className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden"
-			>
+			{/* FAQ Section */}
+			<section id="faq" className="py-20 bg-slate-800">
 				<div className="container mx-auto px-4">
-					<div className="max-w-xl mx-auto text-center mb-12">
-						<h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">
-							Contact Us
+					<div className="max-w-4xl mx-auto text-center mb-16">
+						<h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-display">
+							Frequently Asked Questions
 						</h2>
-						<p className="text-slate-300">
-							Have questions or want to book a service? Send us a
-							message and we&apos;ll get back to you soon.
+						<p className="text-lg text-slate-200 mb-8">
+							Find answers to common questions about our dog care services.
 						</p>
 					</div>
-					<div className="max-w-lg mx-auto">
+
+					<div className="max-w-3xl mx-auto">
+						<Accordion type="single" collapsible className="space-y-4">
+							<AccordionItem value="item-1" className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+								<AccordionTrigger className="px-6 py-4 hover:bg-slate-50 transition-all duration-1000">
+									<div className="flex items-center justify-between w-full">
+										<span className="text-left font-medium text-slate-800">What services do you offer for dogs?</span>
+										<div className="flex items-center justify-center bg-slate-100 p-2 rounded-full ml-4 flex-shrink-0">
+											<ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-1000" />
+											<span className="sr-only">Toggle</span>
+										</div>
+									</div>
+								</AccordionTrigger>
+								<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
+									We offer a range of services including dog daycare, group walks in spacious fields, one-on-one walks, and special adventure days. All our services are designed to keep your dog happy, healthy, and well-socialized.
+								</AccordionContent>
+							</AccordionItem>
+
+							<AccordionItem value="item-2" className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+								<AccordionTrigger className="px-6 py-4 hover:bg-slate-50 transition-all duration-1000">
+									<div className="flex items-center justify-between w-full">
+										<span className="text-left font-medium text-slate-800">How do you ensure the safety of dogs in your care?</span>
+										<div className="flex items-center justify-center bg-slate-100 p-2 rounded-full ml-4 flex-shrink-0">
+											<ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-1000" />
+											<span className="sr-only">Toggle</span>
+										</div>
+									</div>
+								</AccordionTrigger>
+								<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
+									Safety is our top priority. We maintain low handler-to-dog ratios, use secure fields for off-lead play, conduct thorough temperament assessments, and ensure all staff are trained in dog behavior and first aid. We also carry full insurance for peace of mind.
+								</AccordionContent>
+							</AccordionItem>
+
+							<AccordionItem value="item-3" className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+								<AccordionTrigger className="px-6 py-4 hover:bg-slate-50 transition-all duration-1000">
+									<div className="flex items-center justify-between w-full">
+										<span className="text-left font-medium text-slate-800">What areas do you serve in Hertfordshire?</span>
+										<div className="flex items-center justify-center bg-slate-100 p-2 rounded-full ml-4 flex-shrink-0">
+											<ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-1000" />
+											<span className="sr-only">Toggle</span>
+										</div>
+									</div>
+								</AccordionTrigger>
+								<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
+									We currently serve Shenley, Radlett, Borehamwood, and surrounding areas in Hertfordshire. Please contact us to check if we cover your specific location, as our service areas are continually expanding.
+								</AccordionContent>
+							</AccordionItem>
+
+							<AccordionItem value="item-4" className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+								<AccordionTrigger className="px-6 py-4 hover:bg-slate-50 transition-all duration-1000">
+									<div className="flex items-center justify-between w-full">
+										<span className="text-left font-medium text-slate-800">How do I book services for my dog?</span>
+										<div className="flex items-center justify-center bg-slate-100 p-2 rounded-full ml-4 flex-shrink-0">
+											<ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-1000" />
+											<span className="sr-only">Toggle</span>
+										</div>
+									</div>
+								</AccordionTrigger>
+								<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
+									Booking is easy! You can contact us through our website form, give us a call, or send an email. We'll arrange an initial consultation to meet you and your dog, discuss your needs, and get your pup set up in our system for regular bookings.
+								</AccordionContent>
+							</AccordionItem>
+
+							<AccordionItem value="item-5" className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+								<AccordionTrigger className="px-6 py-4 hover:bg-slate-50 transition-all duration-1000">
+									<div className="flex items-center justify-between w-full">
+										<span className="text-left font-medium text-slate-800">Do you accept all dog breeds and ages?</span>
+										<div className="flex items-center justify-center bg-slate-100 p-2 rounded-full ml-4 flex-shrink-0">
+											<ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-1000" />
+											<span className="sr-only">Toggle</span>
+										</div>
+									</div>
+								</AccordionTrigger>
+								<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
+									We welcome dogs of all breeds, sizes, and ages, provided they pass our temperament assessment and are up-to-date with vaccinations. We create appropriate groupings based on size, energy levels, and play style to ensure every dog has a great experience with us.
+								</AccordionContent>
+							</AccordionItem>
+						</Accordion>
+					</div>
+				</div>
+			</section>
+
+			{/* Contact Section */}
+			<section id="contact" className="py-20 bg-white">
+				<div className="container mx-auto px-4">
+					<div className="max-w-4xl mx-auto text-center mb-16">
+						<h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 font-display">
+							Get in Touch
+						</h2>
+						<p className="text-lg text-slate-600 mb-8">
+							Have questions or want to book a session? Reach out to us today.
+						</p>
+					</div>
+
+					<div className="max-w-4xl mx-auto">
 						<ContactForm />
 					</div>
 				</div>
