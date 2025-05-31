@@ -68,11 +68,11 @@ export default function Home() {
 						>
 							Gallery
 						</Link>
-						<Link
-							href="#testimonials"
+						<Link 
+							href="#faq"
 							className="text-slate-700 hover:secondary font-medium transition-colors"
 						>
-							Testimonials
+							FAQ
 						</Link>
 						<Link
 							href="/blog"
@@ -131,13 +131,13 @@ export default function Home() {
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem asChild>
-									<Link
-										href="#testimonials"
-										className="text-slate-700 hover:secondary font-medium transition-colors"
-									>
-										Testimonials
-									</Link>
-								</DropdownMenuItem>
+    <Link
+        href="#faq"
+        className="text-slate-700 hover:secondary font-medium transition-colors"
+    >
+        FAQ
+    </Link>
+</DropdownMenuItem>
 								<DropdownMenuItem asChild>
 									<Link
 										href="#contact"
@@ -1272,13 +1272,13 @@ export default function Home() {
 									</Link>
 								</li>
 								<li>
-									<Link
-										href="#testimonials"
-										className="text-slate-600 hover:secondary transition-colors"
-									>
-										Testimonials
-									</Link>
-								</li>
+    <Link
+        href="#faq"
+        className="text-slate-600 hover:secondary transition-colors"
+    >
+        FAQ
+    </Link>
+</li>
 							</ul>
 						</div>
 

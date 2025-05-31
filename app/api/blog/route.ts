@@ -6,8 +6,7 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 async function isAuthenticated(req: Request) {
   try {
     // Create a Supabase client with the request cookies
-    const cookieStore = cookies();
-    const supabaseAuth = createServerComponentClient({ cookies: () => cookieStore });
+    const supabaseAuth = createServerComponentClient({ cookies: cookies });
     
     // Check if user is authenticated
     const { data: { session } } = await supabaseAuth.auth.getSession();
@@ -32,8 +31,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
   // Create the server-side Supabase client
-  const cookieStore = cookies();
-  const supabase = createServerComponentClient({ cookies: () => cookieStore });
+  const supabase = createServerComponentClient({ cookies: cookies });
   
   // Parse query parameters
   const page = parseInt(searchParams.get('page') || '1');
@@ -90,8 +88,7 @@ export async function GET(request: Request) {
 // POST endpoint to create a new blog post
 export async function POST(request: Request) {
   try {
-    const cookieStore = cookies();
-    const supabase = createServerComponentClient({ cookies: () => cookieStore });
+    const supabase = createServerComponentClient({ cookies: cookies });
 
     const body = await request.json();
     

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow admin areas and specific API routes if necessary
+Disallow: /admin/
+Disallow: /api/auth/ # Example: disallow auth specific API routes
+
+# Allow specific bots if needed, or disallow known bad bots
+# User-agent: GPTBot
+# Disallow: /
+
+# Sitemap location - update with your actual domain
+Sitemap: https://yourdomain.com/sitemap.xml

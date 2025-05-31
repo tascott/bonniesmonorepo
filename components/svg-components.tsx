@@ -1,6 +1,19 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
 interface ShapeProps {
-  className?: string
-  fill?: string
+  className?: string;
+  fill?: string;
+}
+
+interface PawPrintAttributes {
+  id: number;
+  x: number;
+  y: number;
+  rotation: number;
+  scale: number;
+  opacity: number;
 }
 
 export function WavyShape({ className = "", fill = "#F97316" }: ShapeProps) {
@@ -29,6 +42,20 @@ export function WavyShape({ className = "", fill = "#F97316" }: ShapeProps) {
 }
 
 export function CirclePattern({ className = "", fill = "#F97316" }: ShapeProps) {
+  const [circles, setCircles] = useState<{ cx: number, cy: number, r: number, opacity: number }[]>([]);
+
+  useEffect(() => {
+    const newCircles = [...Array(5)].flatMap((_, row) =>
+      [...Array(5)].map((_, col) => ({
+        cx: 20 + col * 40,
+        cy: 20 + row * 40,
+        r: Math.random() * 8 + 4,
+        opacity: Math.random() * 0.5 + 0.3,
+      }))
+    );
+    setCircles(newCircles);
+  }, []);
+
   return (
     <svg
       width="200"
@@ -39,23 +66,35 @@ export function CirclePattern({ className = "", fill = "#F97316" }: ShapeProps) 
       className={className}
       aria-hidden="true"
     >
-      {[...Array(5)].map((_, row) =>
-        [...Array(5)].map((_, col) => (
-          <circle
-            key={`${row}-${col}`}
-            cx={20 + col * 40}
-            cy={20 + row * 40}
-            r={Math.random() * 8 + 4}
-            fill={fill}
-            fillOpacity={Math.random() * 0.5 + 0.3}
-          />
-        )),
-      )}
+      {circles.map((circle, index) => (
+        <circle
+          key={index}
+          cx={circle.cx}
+          cy={circle.cy}
+          r={circle.r}
+          fill={fill}
+          fillOpacity={circle.opacity}
+        />
+      ))}
     </svg>
-  )
+  );
 }
 
 export function PawPrintPattern({ className = "", fill = "#F97316" }: ShapeProps) {
+  const [pawPrints, setPawPrints] = useState<PawPrintAttributes[]>([]);
+
+  useEffect(() => {
+    const newPawPrints = [...Array(6)].map((_, i) => ({
+      id: i,
+      x: Math.random() * 240 + 30,
+      y: Math.random() * 240 + 30,
+      rotation: Math.random() * 360,
+      scale: Math.random() * 0.5 + 0.5,
+      opacity: Math.random() * 0.4 + 0.1,
+    }));
+    setPawPrints(newPawPrints);
+  }, []);
+
   return (
     <svg
       width="300"
@@ -66,24 +105,16 @@ export function PawPrintPattern({ className = "", fill = "#F97316" }: ShapeProps
       className={className}
       aria-hidden="true"
     >
-      {[...Array(6)].map((_, i) => {
-        const x = Math.random() * 240 + 30
-        const y = Math.random() * 240 + 30
-        const rotation = Math.random() * 360
-        const scale = Math.random() * 0.5 + 0.5
-        const opacity = Math.random() * 0.4 + 0.1
-
-        return (
-          <g key={i} transform={`translate(${x}, ${y}) rotate(${rotation}) scale(${scale})`}>
-            <circle cx="0" cy="-10" r="5" fill={fill} fillOpacity={opacity} />
-            <circle cx="-8" cy="-5" r="5" fill={fill} fillOpacity={opacity} />
-            <circle cx="8" cy="-5" r="5" fill={fill} fillOpacity={opacity} />
-            <ellipse cx="0" cy="10" rx="8" ry="10" fill={fill} fillOpacity={opacity} />
-          </g>
-        )
-      })}
+      {pawPrints.map((paw) => (
+        <g key={paw.id} transform={`translate(${paw.x}, ${paw.y}) rotate(${paw.rotation}) scale(${paw.scale})`}>
+          <circle cx="0" cy="-10" r="5" fill={fill} fillOpacity={paw.opacity} />
+          <circle cx="-8" cy="-5" r="5" fill={fill} fillOpacity={paw.opacity} />
+          <circle cx="8" cy="-5" r="5" fill={fill} fillOpacity={paw.opacity} />
+          <ellipse cx="0" cy="10" rx="8" ry="10" fill={fill} fillOpacity={paw.opacity} />
+        </g>
+      ))}
     </svg>
-  )
+  );
 }
 
 export function PlayfulDog({ className = "" }: { className?: string }) {

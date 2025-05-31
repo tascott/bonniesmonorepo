@@ -4,8 +4,9 @@ import { supabase } from '@/lib/supabase';
 // GET endpoint to fetch a single blog post by slug
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params: paramsInput }: { params: { slug: string } | Promise<{ slug: string }> }
 ) {
+  const params = await paramsInput;
   try {
     // Use AbortController to set a timeout for the query
     const controller = new AbortController();
@@ -67,8 +68,9 @@ export async function GET(
 // PUT endpoint to update a blog post by slug
 export async function PUT(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params: paramsInput }: { params: { slug: string } | Promise<{ slug: string }> }
 ) {
+  const params = await paramsInput;
   try {
     const body = await request.json();
     
@@ -133,8 +135,9 @@ export async function PUT(
 // DELETE endpoint to delete a blog post by slug
 export async function DELETE(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params: paramsInput }: { params: { slug: string } | Promise<{ slug: string }> }
 ) {
+  const params = await paramsInput;
   try {
     const { error } = await supabase
       .from('blog_posts')
