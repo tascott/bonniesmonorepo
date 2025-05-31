@@ -76,7 +76,7 @@ export default function Home() {
 						</Link>
 						<Link
 							href="/blog"
-							className="text-slate-700 hover:secondary font-medium transition-colors"
+							className="bg-orange-100 text-orange-600 hover:bg-orange-200 font-medium transition-colors px-3 py-1 rounded-full"
 						>
 							Blog
 						</Link>
@@ -125,7 +125,7 @@ export default function Home() {
 								<DropdownMenuItem asChild>
 									<Link
 										href="/blog"
-										className="text-slate-700 hover:secondary font-medium transition-colors"
+										className="text-orange-600 font-medium"
 									>
 										Blog
 									</Link>
@@ -151,6 +151,17 @@ export default function Home() {
 					</div>
 				</div>
 			</header>
+			
+			{/* Launch Day Banner */}
+			<div className="bg-orange-500 text-white py-3 text-center shadow-md relative z-40">
+				<div className="container mx-auto px-4">
+					<Link href="/launchday" className="inline-flex items-center space-x-2 hover:underline">
+						<span className="font-bold">🎉 Join us for our Launch Day on July 5th, 2025! 🐾</span>
+						<span className="hidden md:inline">Special offers, activities, and more!</span>
+						<span className="ml-2 font-semibold underline">Learn More</span>
+					</Link>
+				</div>
+			</div>
 
 			{/* Hero Section */}
 			<section className="relative bg-gradient-to-b from-amber-50 to-white overflow-hidden pt-12 pb-24">
