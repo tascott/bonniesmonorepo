@@ -459,7 +459,7 @@ export default function EditBlogPostPage({ params }: { params: Promise<{ slug: s
               </Button>
               <Button
                 type="submit"
-                className="primary-bg hover:bg-orange-600"
+                className="primary-bg hover:bg-orange-600 text-white"
                 disabled={isSubmitting}
               >
                 <Save className="h-4 w-4 mr-2" />

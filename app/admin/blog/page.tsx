@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
@@ -227,7 +228,7 @@ export default function AdminBlogPage() {
             </h1>
           </div>
           <Button asChild className="primary-bg hover:bg-orange-600">
-            <Link href="/admin/blog/create" className="flex items-center">
+            <Link href="/admin/blog/create" className="flex items-center text-white">
               <Plus className="h-4 w-4 mr-2" /> New Post
             </Link>
           </Button>
@@ -268,7 +269,7 @@ export default function AdminBlogPage() {
                   Clear Search
                 </Button>
               ) : (
-                <Button asChild className="primary-bg hover:bg-orange-600">
+                <Button asChild className="primary-bg hover:bg-orange-600 text-white">
                   <Link href="/admin/blog/create">Create Your First Post</Link>
                 </Button>
               )}
@@ -310,7 +311,7 @@ export default function AdminBlogPage() {
                     <TableCell>
                       <div className="flex items-center">
                         <Calendar className="h-3 w-3 mr-2 text-slate-400" />
-                        {formatDate(post.date)}
+                        {format(new Date(post.date), 'EEEE do MMM')}
                       </div>
                     </TableCell>
                     <TableCell className="text-right">
@@ -399,7 +400,7 @@ export default function AdminBlogPage() {
             <Button variant="outline" onClick={() => setDeleteDialogOpen(false)}>
               Cancel
             </Button>
-            <Button variant="destructive" onClick={confirmDelete}>
+            <Button variant="destructive" onClick={confirmDelete} className="primary-bg hover:bg-orange-600 text-white">
               Delete
             </Button>
           </DialogFooter>
