@@ -44,10 +44,10 @@ export async function GET(request: Request) {
   const to = from + limit - 1;
   
   try {
-    console.log('[API] Fetching blog posts with params:', { page, limit, search, status, from, to });
-let query = supabase
-  .from('blog_posts')
-  .select('*', { count: 'exact' });
+    // Only select fields we need for the blog listing to reduce payload size
+    let query = supabase
+      .from('blog_posts')
+      .select('id, slug, title, excerpt, created_at, updated_at, author_name, cover_image, tags, status', { count: 'exact' });
     
     // Add filters if provided
     if (search) {
@@ -58,23 +58,26 @@ let query = supabase
       query = query.eq('status', status);
     }
     
-    // Add pagination
+    // Add pagination and execute query
     const { data, count, error } = await query
-  .order('created_at', { ascending: false })
-  .range(from, to);
-console.log('[API] Supabase returned:', { data, count, error });
+      .order('created_at', { ascending: false })
+      .range(from, to);
     
     if (error) {
       throw error;
     }
     
-    console.log('[API] Returning posts to client:', { posts: data });
-return NextResponse.json({
-  posts: data,
-  count,
-  page,
-  totalPages: Math.ceil((count || 0) / limit)
-});
+    // Add cache headers for better performance
+    const response = NextResponse.json({
+      posts: data,
+      count,
+      page,
+      totalPages: Math.ceil((count || 0) / limit)
+    });
+    
+    // Cache successful responses for 5 minutes
+    response.headers.set('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
+    return response;
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     return NextResponse.json(

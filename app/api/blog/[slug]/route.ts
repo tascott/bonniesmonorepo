@@ -7,26 +7,56 @@ export async function GET(
   { params }: { params: { slug: string } }
 ) {
   try {
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('slug', params.slug)
-      .single();
+    // Use AbortController to set a timeout for the query
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
     
-    if (error) {
-      throw error;
+    try {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*') // We need all fields for the individual post view
+        .eq('slug', params.slug)
+        .abortSignal(controller.signal)
+        .single();
+      
+      // Clear the timeout since the query completed
+      clearTimeout(timeoutId);
+      
+      if (error) {
+        throw error;
+      }
+      
+      if (!data) {
+        return NextResponse.json(
+          { error: 'Blog post not found' },
+          { status: 404 }
+        );
+      }
+      
+      // Create the response with the data
+      const response = NextResponse.json(data);
+      
+      // Add cache headers for better performance - cache for 1 hour
+      // Posts don't change frequently once published
+      response.headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=600');
+      
+      return response;
+    } catch (innerError) {
+      // Clear the timeout to prevent memory leaks
+      clearTimeout(timeoutId);
+      throw innerError;
     }
+  } catch (error) {
+    console.error('Error fetching blog post:', error);
     
-    if (!data) {
+    // Check for abort errors (timeout)
+    if (error instanceof Error && error.name === 'AbortError') {
       return NextResponse.json(
-        { error: 'Blog post not found' },
-        { status: 404 }
+        { error: 'Request timed out. Please try again.' },
+        { status: 408 }
       );
     }
     
-    return NextResponse.json(data);
-  } catch (error) {
-    console.error('Error fetching blog post:', error);
     return NextResponse.json(
       { error: 'Failed to fetch blog post' },
       { status: 500 }

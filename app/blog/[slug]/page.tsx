@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PawPrint, Calendar, User, ArrowLeft, Tag } from 'lucide-react';
+import { PawPrint, Calendar, User, ArrowLeft, Tag, AlertCircle, ChevronLeft } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import useSWR from 'swr';
 
 // Blog post type from Supabase
 interface BlogPost {
@@ -21,6 +21,7 @@ interface BlogPost {
   cover_image?: string;
   tags?: string[];
   status?: 'published' | 'draft';
+  date?: string;
 }
 
 // No need to initialize Supabase client here as we're using the API routes
@@ -28,61 +29,68 @@ interface BlogPost {
 import { format } from 'date-fns';
 import * as React from 'react';
 
+// Configure the fetcher function for SWR
+const fetcher = async (url: string) => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    if (response.status === 404) {
+      throw new Error('Post not found');
+    }
+    throw new Error('Failed to fetch post');
+  }
+  return response.json();
+};
+
 export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = React.use(params);
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
-
-  useEffect(() => {
-    const fetchPost = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch(`/api/blog/${slug}`);
-        if (!response.ok) {
-          if (response.status === 404) {
-            setNotFound(true);
-          } else {
-            throw new Error('Failed to fetch post');
-          }
-        } else {
-          const data = await response.json();
-          // Map created_at to date and provide fallback for author_name
-          setPost({
-            ...data,
-            date: data.created_at,
-            author_name: data.author_name || 'Anonymous',
-          });
-        }
-      } catch (error) {
-        console.error('Error fetching post:', error);
-        setNotFound(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchPost();
-  }, [slug]);
-
+  
+  // Use SWR for data fetching with caching
+  const { data, error, isLoading } = useSWR(
+    `/api/blog/${slug}`,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      dedupingInterval: 60000, // 1 minute
+      onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
+        // Only retry up to 3 times and don't retry for 404s
+        if (error.message === 'Post not found' || retryCount >= 3) return;
+        // Retry after 5 seconds
+        setTimeout(() => revalidate({ retryCount }), 5000);
+      },
+    }
+  );
+  
+  // Format post data
+  const post: BlogPost | null = data ? {
+    ...data,
+    date: data.created_at,
+    author_name: data.author_name || 'Anonymous',
+  } : null;
+  
+  // Check if post is not found
+  const notFound = error && error.message === 'Post not found';
+  
   const formatDate = (dateString?: string) => {
-  if (!dateString) return 'Unknown date';
-  try {
-    return format(new Date(dateString), 'EEEE do MMM');
-  } catch {
-    return 'Invalid date';
-  }
-};
+    if (!dateString) return 'Unknown date';
+    try {
+      return format(new Date(dateString), 'EEEE do MMM');
+    } catch {
+      return 'Invalid date';
+    }
+  };
 
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-50 pt-24 pb-20 flex justify-center items-center">
-        <div className="animate-pulse text-xl text-slate-400">Loading post...</div>
+        <div className="animate-pulse flex flex-col items-center">
+          <PawPrint className="h-12 w-12 text-slate-300 mb-4 animate-bounce" />
+          <div className="text-xl text-slate-400">Loading post...</div>
+        </div>
       </div>
     );
   }
 
-  if (notFound || !post) {
+  if (notFound) {
     return (
       <div className="min-h-screen bg-slate-50 pt-24 pb-20">
         <div className="container mx-auto px-4 text-center">
@@ -100,10 +108,62 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
       </div>
     );
   }
+  
+  if (error && !notFound) {
+    return (
+      <div className="min-h-screen bg-slate-50 pt-24 pb-20">
+        <div className="container mx-auto px-4 text-center">
+          <div className="mb-8">
+            <AlertCircle className="h-16 w-16 text-rose-500 mx-auto" />
+          </div>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">Error Loading Post</h1>
+          <p className="text-slate-600 mb-8">There was a problem loading this blog post. Please try again later.</p>
+          <div className="flex justify-center gap-4">
+            <Button 
+              variant="outline"
+              onClick={() => window.location.reload()}
+            >
+              Try Again
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/blog" className="flex items-center">
+                <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-slate-50 pt-24 pb-20 flex justify-center items-center">
+        <div className="animate-pulse text-xl text-slate-400">Loading post...</div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-20">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-slate-50 pb-20">
+      {/* Back to main website button - positioned at the very top */}
+      <div className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-3">
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="flex items-center text-slate-600 hover:text-slate-900"
+          >
+            <Link href="/">
+              <ChevronLeft className="h-4 w-4 mr-1" />
+              Back to Main Website
+            </Link>
+          </Button>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 pt-16">
         <div className="max-w-4xl mx-auto">
           <Button asChild variant="outline" className="mb-8">
             <Link href="/blog" className="flex items-center">
@@ -118,6 +178,8 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                 src={post.cover_image}
                 alt={post.title}
                 fill
+                priority={true} // This is the main content image, so prioritize loading
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 className="object-cover"
               />
             </div>
