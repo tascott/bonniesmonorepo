@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Playfair_Display, Fira_Sans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
-import { AuthProvider } from '@/contexts/auth-context';
+import { AuthProvider } from '@/components/auth-provider';
+import { Toaster } from '@/components/ui/toaster';
 
 const playfair = Playfair_Display({
 	subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
 			<body className="antialiased">
 				<ThemeProvider attribute="class" defaultTheme="light" enableSystem>
 					<AuthProvider>{children}</AuthProvider>
+					<Toaster />
 				</ThemeProvider>
 			</body>
 		</html>

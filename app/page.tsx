@@ -75,6 +75,12 @@ export default function Home() {
 							Testimonials
 						</Link>
 						<Link
+							href="/blog"
+							className="text-slate-700 hover:secondary font-medium transition-colors"
+						>
+							Blog
+						</Link>
+						<Link
 							href="#contact"
 							className="text-slate-700 hover:secondary font-medium transition-colors"
 						>
@@ -114,6 +120,14 @@ export default function Home() {
 										className="text-slate-700 hover:secondary font-medium transition-colors"
 									>
 										Gallery
+									</Link>
+								</DropdownMenuItem>
+								<DropdownMenuItem asChild>
+									<Link
+										href="/blog"
+										className="text-slate-700 hover:secondary font-medium transition-colors"
+									>
+										Blog
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem asChild>
@@ -1240,6 +1254,14 @@ export default function Home() {
 								</li>
 								<li>
 									<Link
+										href="/blog"
+										className="text-slate-600 hover:secondary transition-colors"
+									>
+										Blog
+									</Link>
+								</li>
+								<li>
+									<Link
 										href="#testimonials"
 										className="text-slate-600 hover:secondary transition-colors"
 									>
@@ -1302,9 +1324,14 @@ export default function Home() {
 					</div>
 
 					<div className="border-t border-slate-100 pt-8">
-						<p className="text-center text-slate-500">
-							&copy; {new Date().getFullYear()} Bonnies
-						</p>
+						<div className="flex flex-col items-center justify-center">
+							<p className="text-center text-slate-500 mb-2">
+								&copy; {new Date().getFullYear()} Bonnies
+							</p>
+							<Link href="/admin/blog" className="text-xs text-slate-400 hover:text-slate-600 transition-colors">
+								Team Access
+							</Link>
+						</div>
 					</div>
 				</div>
 			</footer>
