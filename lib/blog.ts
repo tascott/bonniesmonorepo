@@ -88,9 +88,34 @@ export async function getAllBlogPosts(status?: 'published' | 'draft'): Promise<B
  * In a real app, this would query Supabase.
  */
 export async function getBlogPostBySlug(slug: string): Promise<BlogPostFull | null> {
-  await delay(300);
-  const post = MOCK_POSTS.find(p => p.slug === slug && p.status === 'published');
-  return post || null;
+  // Construct the absolute URL for the API endpoint
+  // Ensure NEXT_PUBLIC_SITE_URL is set in your environment for server-side fetches
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'; 
+  const apiUrl = `${siteUrl}/api/blog/${slug}`;
+
+  try {
+    const response = await fetch(apiUrl, { cache: 'no-store' }); // Fetch fresh data
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        return null; // Post not found
+      }
+      // For other errors, log them and return null or throw, depending on desired handling
+      console.error(`API error fetching ${slug}: ${response.status} ${response.statusText}`);
+      const errorBody = await response.text();
+      console.error('Error body:', errorBody);
+      return null;
+    }
+
+    const post: BlogPostFull = await response.json();
+    // Ensure the fetched post is considered 'published' if your API doesn't filter by status
+    // Or, trust the API to only return published posts if it's designed that way.
+    // For now, we'll assume the API returns the post if it's accessible.
+    return post;
+  } catch (error) {
+    console.error(`Failed to fetch blog post ${slug} from API:`, error);
+    return null;
+  }
 }
 
 /**
