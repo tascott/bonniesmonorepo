@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/components/ui/use-toast';
+import { supabase } from '@/lib/supabase'; // Import Supabase client
 
 export default function CreateBlogPostPage() {
   const router = useRouter();
@@ -102,15 +103,71 @@ export default function CreateBlogPostPage() {
     }
     
     try {
-      // Prepare the blog post data
+      console.log('[CreatePost] handleSubmit initiated.');
       let cover_image_url = '';
-      
-      // TODO: In a production implementation, we would upload the cover image to Supabase Storage
-      // For now, we'll use the preview URL if available
-      if (coverImagePreview) {
-        cover_image_url = coverImagePreview;
-      }
-      
+      console.log('[CreatePost] cover_image_url initialized to:', cover_image_url);
+
+      // Upload cover image to Supabase Storage if selected
+      if (coverImage) {
+        console.log('[CreatePost] coverImage File object exists:', coverImage);
+        const fileName = `blog-covers/${slug}-${Date.now()}-${coverImage.name}`;
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from('images') // Ensure 'images' bucket exists and is public or has RLS for access
+          .upload(fileName, coverImage, {
+            cacheControl: '3600',
+            upsert: false, // true if you want to overwrite if file exists, false to error
+          });
+
+        console.log('[CreatePost] Supabase upload attempt completed. uploadData:', uploadData, 'uploadError:', uploadError);
+        if (uploadError) {
+          console.error('Supabase upload error:', uploadError);
+          toast({
+            title: 'Image Upload Failed',
+            description: `Could not upload cover image: ${uploadError.message}`,
+            variant: 'destructive',
+          });
+          setIsSubmitting(false);
+          return;
+        }
+
+        if (uploadData) {
+          const { data: publicUrlData } = supabase.storage
+            .from('images')
+            .getPublicUrl(fileName);
+          
+          console.log('[CreatePost] Supabase getPublicUrl attempt completed. publicUrlData:', publicUrlData);
+          if (publicUrlData && publicUrlData.publicUrl) {
+            cover_image_url = publicUrlData.publicUrl;
+            console.log('[CreatePost] cover_image_url updated with Supabase URL:', cover_image_url);
+            toast({
+              title: 'Image Uploaded',
+              description: 'Cover image successfully uploaded to storage.',
+              // variant: 'success', // Removed unsupported variant
+            });
+          } else {
+            console.warn('Could not get public URL for uploaded image.');
+            // Decide if this is a critical error. For now, we'll proceed without a URL if this fails.
+            // Or, you could make it critical:
+            // toast({
+            //   title: 'Image URL Error',
+            //   description: 'Uploaded image but could not retrieve its public URL.',
+            //   variant: 'destructive',
+            // });
+            // setIsSubmitting(false);
+            // return;
+          }
+        } else {
+          // This case should ideally not be reached if uploadError is not set, but as a safeguard:
+          toast({
+            title: 'Image Upload Issue',
+            description: 'Image uploaded but no data returned from Supabase.',
+            // variant: 'warning', // Removed unsupported variant
+          });
+        }
+      } 
+      // If no coverImage was selected, cover_image_url remains ''
+      console.log('[CreatePost] Before creating blogPost object, final cover_image_url is:', cover_image_url);
+
       // Create the blog post object
       const blogPost = {
         title,

@@ -146,18 +146,18 @@ export default function BlogPostClientPage({ slug }: BlogPostClientPageProps) {
             </Button>
 
             {post.cover_image && (
-              <div className="relative h-[400px] w-full mb-8 rounded-2xl overflow-hidden">
+              <div className="mb-8 flex justify-center">
                 <Image
-                  src={post.cover_image}
-                  alt={post.title}
-                  fill
-                  priority={true}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                  className="object-cover"
+                  src={post.cover_image} // This should now be the working Supabase URL
+                  alt={`${post.title} cover image`}
+                  width={1200} // Provide appropriate width
+                  height={630} // Provide appropriate height (adjust for aspect ratio)
+                  className="rounded-lg shadow-lg object-cover w-full max-w-3xl h-auto"
+                  style={{ maxHeight: '500px' }} // You can keep this for max height constraint
+                  priority // Add priority if it's LCP
                 />
               </div>
             )}
-
             <div className="mb-8">
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags && post.tags.map(tag => (

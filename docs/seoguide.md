@@ -31,7 +31,9 @@ Consistent and optimized metadata (titles, descriptions, social media tags) is c
     *   Article-specific tags (publish time, author, tags) for blog posts.
     *   `robots` meta tags (e.g., `noindex` for specific pages).
 *   **Usage**:
-    *   **Page-specific Metadata**: Implemented in individual page files (e.g., `app/blog/[slug]/page.tsx`) using `export async function generateMetadata({ params }) { ... }` to provide unique metadata for specific pages like individual blog posts.
+    *   **Page-specific Metadata**: Implemented in individual page server components (e.g., `app/page.tsx`, `app/blog/[slug]/page.tsx`) using `export async function generateMetadata({ params }) { ... }` (or a parameter-less version for static pages like the homepage) to provide unique metadata. This approach often involves the server component handling metadata and then rendering a separate client component for the UI if client-side interactivity is needed. Examples include:
+        *   The main homepage (`app/page.tsx`) defines its metadata and renders its UI from `app/home-client-page.tsx`.
+        *   Individual blog posts (`app/blog/[slug]/page.tsx`) use `params` to fetch and set post-specific metadata, often rendering a client component like `app/blog/[slug]/blog-post-client-page.tsx`.
     *   **Route Segment Metadata**: Implemented in `layout.tsx` files (e.g., `app/blog/layout.tsx`) to provide metadata for an entire route segment. For instance, `app/blog/layout.tsx` provides metadata for the main blog listing page (`/blog`) and serves as a default for any child pages within the `/blog` segment that do not define their own specific metadata.
 *   **Site URL**: Uses the `NEXT_PUBLIC_SITE_URL` environment variable to construct absolute URLs, which is critical for SEO.
 
@@ -70,6 +72,28 @@ This file instructs search engine crawlers on which parts of your site they can 
 *   **Customization**: You can modify this file if there are other areas you wish to disallow.
 
 ### 3.5. Blog SEO Enhancements
+
+### 3.6. Homepage SEO Optimizations (June 2025)
+
+Significant effort was invested in optimizing the homepage (`app/page.tsx` and its client component `app/home-client-page.tsx`) for local SEO and service discoverability. Key actions include:
+
+*   **Comprehensive Content Review**: All major sections of the homepage were reviewed and updated:
+    *   **Hero Section**: Enhanced H1, descriptive text, and added a contextual link to the `/about` page (or section, if SPA).
+    *   **Services Section**: Improved section title, service card titles, descriptions, and image alt texts. Added internal links from each service card to corresponding sections on a `/services` page (e.g., `/services#field-hire`) and an "Explore All Services" button linking to `/services`. *Note: If `/services` is not a separate page but part of the SPA homepage, these links should point to local anchors like `#field-hire`.*
+    *   **Locations Section**: Optimized section title and descriptive text to include all target service areas (Shenley, Radlett, Mill Hill, Barnet, Stanmore, London Colney, St Albans, Potters Bar, Elstree, Borehamwood). Improved image alt texts.
+    *   **FAQ Section**: Refined existing FAQs and added new, SEO-targeted FAQs focusing on specific services and locations.
+    *   **Call to Action (CTA) Section**: Updated heading and descriptive paragraph for better keyword integration and clarity.
+    *   **Gallery Section**: Revised section title, subtitle, and image alt texts to be more descriptive and include service/location keywords.
+    *   **Testimonials Section**: Updated section H2 title for better engagement.
+    *   **Contact Section**: Enhanced H2 title and subtitle. Added crucial NAP (Name, Address, Phone) information directly to the page for local SEO consistency.
+*   **`LocalBusiness` Structured Data**: Implemented JSON-LD schema markup (`@type: LocalBusiness`) directly in `app/page.tsx`. This schema details:
+    *   Business Name, Description, URL
+    *   Contact Information (Phone, Email - *ensure placeholders are updated with real info*)
+    *   Service Areas (listing all key locations)
+    *   Services Offered (Private Field Hire, Dog Day Care, 1-on-1 Training)
+    *   Link to a default Open Graph image.
+    *   This helps search engines understand the business's nature, offerings, and service locations, potentially leading to rich search results.
+*   **Metadata Refinement**: Ensured the default title, description, and keywords in `lib/seo/metadata.tsx` are highly relevant to Bonnie's services and target locations.
 
 *   **Blog Listing (`app/blog/page.tsx`)**: Uses SWR for client-side data fetching with pagination. SEO considerations include proper title/description (can be enhanced with `generateMetadata`), clear navigation, and optimized images.
 *   **Individual Blog Posts (`app/blog/[slug]/page.tsx`)**: As detailed above, heavily optimized with dynamic metadata and structured data.
@@ -138,7 +162,22 @@ SEO is an ongoing process. Continuous monitoring and improvement are key.
 *   **Core Web Vitals**: Monitor these metrics (LCP, FID/INP, CLS) via Google Search Console or PageSpeed Insights. Site speed and user experience are ranking factors.
 *   **Page Load Speed**: Optimize images, leverage browser caching, and minimize code to improve load times.
 
-### 6.3. Backlink Strategy
+### 6.3. Backlink Strategy (Off-Page SEO)
+
+Acquiring high-quality backlinks from reputable websites is a cornerstone of Off-Page SEO and can significantly boost your domain authority and search rankings. This involves:
+
+*   **Local Citations & Business Listings**:
+    *   **Google Business Profile (GBP)**: Claim and fully optimize your GBP listing. Ensure NAP (Name, Address, Phone) consistency with your website. Encourage customer reviews.
+    *   **Other Directories**: List your business on relevant local and industry-specific directories (e.g., Yelp, local chamber of commerce, pet service directories). Maintain NAP consistency.
+*   **Content Marketing & Outreach**:
+    *   **Create Link-Worthy Content**: Develop high-quality, informative, and unique content on your blog or as resources that others in your niche (e.g., local community sites, pet bloggers, complementary businesses like vets or groomers) would want to link to.
+    *   **Guest Blogging**: Offer to write articles for other relevant websites in exchange for a link back to your site.
+    *   **Broken Link Building**: Find broken links on other websites related to your services and suggest your relevant content as a replacement.
+*   **Public Relations & Local Partnerships**:
+    *   **Local News/Events**: If Bonnie's participates in local events or has newsworthy updates, reach out to local media.
+    *   **Partnerships**: Collaborate with local non-competing businesses for cross-promotion, which might include website links.
+*   **Social Media Signals**: While not direct ranking factors, active and engaging social media profiles can increase visibility and indirectly lead to links. Share your content widely.
+*   **Avoid**: Purchasing links or engaging in link schemes, as these can lead to penalties from search engines. Focus on earning natural, high-quality links.
 
 Acquiring high-quality backlinks from reputable websites can significantly boost your SEO. This involves outreach, creating link-worthy content, and guest blogging, among other tactics.
 
@@ -147,6 +186,41 @@ Acquiring high-quality backlinks from reputable websites can significantly boost
 Periodically audit your site's SEO (technical aspects, content, keywords, backlinks) to identify areas for improvement. This can be done manually or with SEO audit tools.
 
 ### 6.5. Broader Implementation Checklist
+
+### 6.6. Monitoring SEO Performance (Expanding on 6.1 & 6.2)
+
+Beyond just having the tools, actively monitoring specific metrics is crucial for understanding what's working and where to focus efforts:
+
+*   **Keyword Rankings**:
+    *   **Tools**: Use Google Search Console (Performance report), or paid tools like Ahrefs, SEMrush, Moz.
+    *   **What to Track**: Monitor rankings for your primary target keywords (e.g., "dog day care Shenley," "private dog field Hertfordshire"). Track changes over time.
+    *   **Action**: If rankings drop, investigate potential causes (e.g., competitor changes, technical issues, content becoming outdated). If rankings improve, identify what contributed.
+*   **Organic Traffic**:
+    *   **Tool**: Google Analytics (Acquisition > All Traffic > Channels > Organic Search).
+    *   **What to Track**: Overall organic traffic volume, traffic to key landing pages (especially the homepage), and user engagement metrics for organic visitors (bounce rate, pages per session, average session duration).
+    *   **Action**: Look for trends. Is organic traffic growing? Are users engaging with the content?
+*   **Click-Through Rate (CTR)**:
+    *   **Tool**: Google Search Console (Performance report).
+    *   **What to Track**: CTR for important keywords and pages. This shows how often users click your listing when it appears in search results.
+    *   **Action**: A low CTR might indicate your title tag or meta description isn't compelling enough, even if your ranking is good. Experiment with different copy.
+*   **Crawl Errors & Indexing Issues**:
+    *   **Tool**: Google Search Console (Coverage report).
+    *   **What to Track**: Any errors that prevent Google from crawling or indexing your pages (e.g., 404s, server errors, robots.txt blocks).
+    *   **Action**: Address errors promptly to ensure all important content is accessible to search engines.
+*   **Core Web Vitals & Page Speed**:
+    *   **Tools**: Google Search Console (Core Web Vitals report), PageSpeed Insights.
+    *   **What to Track**: LCP, INP (or FID), CLS.
+    *   **Action**: Address any "Poor" or "Needs Improvement" URLs. Faster, more stable pages provide a better user experience and can positively impact rankings.
+*   **Backlink Profile**:
+    *   **Tools**: Google Search Console (Links report), Ahrefs, SEMrush, Moz.
+    *   **What to Track**: Number of referring domains, quality of linking sites, anchor text used.
+    *   **Action**: Monitor for new backlinks. Disavow toxic or spammy links if necessary (use with caution).
+*   **Conversion Tracking (for SEO)**:
+    *   **Tool**: Google Analytics (set up Goals or track Events).
+    *   **What to Track**: How many organic visitors complete desired actions (e.g., contact form submissions, phone calls initiated from the website, bookings).
+    *   **Action**: Understand which keywords and pages drive conversions. Optimize underperforming content.
+
+Regularly review these metrics (e.g., weekly or monthly) to adapt your SEO strategy effectively.
 
 For a more exhaustive list of technical SEO considerations, refer to the [`docs/TECHNICAL-SEO-IMPLEMENTATION.md`](./TECHNICAL-SEO-IMPLEMENTATION.md).
 

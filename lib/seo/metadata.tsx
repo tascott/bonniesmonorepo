@@ -1,8 +1,15 @@
 import { Metadata } from 'next';
 
-const DEFAULT_TITLE = 'Bonnie\'s Monorepo - Next.js & Supabase Starter';
-const DEFAULT_DESCRIPTION = 'A feature-rich Next.js 14 monorepo starter with Supabase integration, blog, admin dashboard, and more.';
-const DEFAULT_KEYWORDS = ['Next.js', 'Supabase', 'React', 'TypeScript', 'Monorepo', 'Starter Kit', 'Blog', 'Admin'];
+const DEFAULT_TITLE = "Bonnie's Dog Day Care & Training | Shenley, Radlett, Mill Hill & More";
+const DEFAULT_DESCRIPTION = "Bonnie's offers exceptional dog day care, private field free-roam, and 1-on-1 training in Shenley, Radlett, Mill Hill, Barnet, Stanmore, London Colney, St Albans, Potters Bar, Elstree & Borehamwood. Safe socialization for happy dogs!";
+const DEFAULT_KEYWORDS = [
+  'dog day care Shenley', 'doggy day care Radlett', 'private dog fields Mill Hill',
+  'dog socialization Barnet', '1-on-1 dog training Stanmore', 'dog walker London Colney',
+  'secure dog play area St Albans', 'puppy day care Potters Bar', 'dog care Elstree',
+  'Borehamwood dog services', 'Bonnie\'s dog care', 'dog pick up drop off service',
+  'dog training Hertfordshire', 'dog day care Hertfordshire',
+  'safe dog socialization', 'lonely dog solutions'
+];
 
 export interface ArticleDetails {
   publishedTime?: string;
