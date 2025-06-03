@@ -13,16 +13,6 @@ export default function ContactSection() {
 					</p>
 				</div>
 
-				<div className="text-center mb-12 max-w-xl mx-auto">
-					<h3 className="text-2xl font-semibold text-slate-700 mb-4 font-display">Bonnie's Dog Services</h3>
-					<p className="text-slate-600 mb-1">Proudly serving Shenley, Radlett, Mill Hill, and surrounding Hertfordshire & North London areas.</p>
-					<p className="text-slate-600 mb-1"><strong>Phone:</strong> <a href="tel:+440123456789" className="hover:underline text-primary hover:text-orange-600 transition-colors">+44 (0)123 456 789</a></p>
-					<p className="text-slate-600 mb-4"><strong>Email:</strong> <a href="mailto:hello@bonniesdogcare.example.com" className="hover:underline text-primary hover:text-orange-600 transition-colors">hello@bonniesdogcare.example.com</a></p>
-					{/* Optional: Add operating hours or a specific address if suitable for public view */}
-					{/* <p className="text-slate-600">123 Playful Paw Path, Shenley, WD7 9XX</p> */}
-					{/* <p className="text-slate-500 mt-2 text-sm">Office Hours: Mon-Fri, 9am - 5pm</p> */}
-				</div>
-
 				<div className="max-w-4xl mx-auto">
 					<p className="text-center text-slate-700 font-semibold text-xl mb-6">Send us a message</p>
 					<ContactForm />

@@ -27,14 +27,12 @@ export default function HeroSection() {
 						<Badge className="primary-bg mb-4 px-3 py-1 text-sm rounded-full white">
 							North London, Hertfordshire and St Albans
 						</Badge>
-						<h1 className="text-4xl md:text-4xl lg:text-6xl font-bold text-slate-800 mb-4 font-display leading-tight">
-							Bonnie's: Dog Day Care & Private Fields in Shenley, Radlett & Hertfordshire
-						</h1>
-						<h2 className="text-2xl md:text-3xl text-orange-600 font-semibold mb-6">
+						<h1 className="text-2xl md:text-3xl text-orange-600 font-semibold mb-6">
 							Give Them Their Own Field Trip!
-						</h2>
+						</h1>
+						<h3 className="text-xl font-semibold text-slate-700 mb-4 font-display">Dog Day Care & Private Fields in Shenley</h3>
 						<p className="text-slate-600 mb-6 text-lg leading-relaxed">
-							Experience peace of mind with Bonnie's premier dog day care. We offer door-to-door pick-ups for exciting free-roam sessions in our secure private fields, plus expert 1-on-1 training. Serving Shenley, Radlett, Mill Hill, and across Hertfordshire. <Link href='/about' className='text-primary hover:text-orange-600 underline font-medium'>Learn more about our commitment to happy, healthy dogs</Link>.
+							Experience peace of mind with Bonnie's premier dog day care. We offer door-to-door pick-ups for exciting free-roam sessions in our secure private fields, plus expert 1-on-1 training. Serving Shenley, Radlett, Mill Hill, and across Hertfordshire.
 						</p>
 						<div className="flex flex-wrap gap-4 mb-8">
 							<div className="flex items-center">

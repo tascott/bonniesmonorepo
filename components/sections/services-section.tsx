@@ -210,12 +210,6 @@ export default function ServicesSection() {
 						</CardContent>
 					</Card>
 				</div> {/* End of grid */}
-
-					<div className="text-center mt-16 mb-8">
-						<Link href="/services" className="inline-block bg-primary text-white font-semibold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors text-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
-							Explore All Our Dog Services
-						</Link>
-					</div>
 			</div>
 		</section>
 	);
