@@ -5,6 +5,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { AuthProvider } from '@/components/auth-provider';
 import { Toaster } from '@/components/ui/toaster';
+import Script from 'next/script';
 
 const playfair = Playfair_Display({
 	subsets: ['latin'],
@@ -39,6 +40,23 @@ export default function RootLayout({
 					<AuthProvider>{children}</AuthProvider>
 					<Toaster />
 				</ThemeProvider>
+				<Script
+					strategy="afterInteractive"
+					src="https://www.googletagmanager.com/gtag/js?id=G-W0FD3HB2YB"
+				/>
+				<Script
+					id="google-analytics"
+					strategy="afterInteractive"
+					dangerouslySetInnerHTML={{
+						__html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-W0FD3HB2YB');
+            `,
+					}}
+				/>
 			</body>
 		</html>
 	);
