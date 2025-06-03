@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { generateMetadata as generateBaseMetadata } from '@/lib/seo/metadata'; // Assuming your utility is here
 
 export async function generateMetadata(): Promise<Metadata> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bonnies.dog'; // Ensure NEXT_PUBLIC_SITE_URL is set
   const pageUrl = `${siteUrl}/blog`;
 
   return generateBaseMetadata({
@@ -12,8 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: ['dog blog', 'dog care tips', 'dog training', 'pet adventures', 'Bonnies blog'],
     canonical: pageUrl,
     ogType: 'website', // generateBaseMetadata defaults to 'website' but can be explicit
-    imageUrl: `${siteUrl}/images/og-image-blog.jpg`, // Pass the image URL directly
-    // authorTwitterHandle: '@YourTwitterHandle' // Optional: if you have a specific handle for the blog section
+    imageUrl: `${siteUrl}/images/og-image-blog.jpg` // Pass the image URL directly
   });
 }
 

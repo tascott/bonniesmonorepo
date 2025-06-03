@@ -3,7 +3,7 @@ import { getBlogPostBySlug, BlogPostFull } from '../../../lib/blog';
 import { generateMetadata as generatePageSeoMetadata } from '../../../lib/seo/metadata';
 import BlogPostClientPage from './blog-post-client-page';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bonnies.dog'; // Ensure NEXT_PUBLIC_SITE_URL is set
 
 export async function generateMetadata({ params: paramsPromise }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await paramsPromise;

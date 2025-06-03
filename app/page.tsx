@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // The generateMetadata function will use the updated DEFAULT_TITLE, DEFAULT_DESCRIPTION, etc.
   return generatePageSeoMetadata({
     ogType: 'website',
-    siteUrl: siteUrl || 'http://localhost:3000', // Fallback for siteUrl for metadataBase construction
+    siteUrl: siteUrl || 'https://www.bonnies.dog', // Fallback for siteUrl. Ensure NEXT_PUBLIC_SITE_URL is set.
     // The canonical URL for the homepage will be the siteUrl itself,
     // which generateMetadata handles if `canonical` prop is not provided.
   });
@@ -34,7 +34,7 @@ export default function Page() {
             "@type": "LocalBusiness",
             "name": "Bonnie's Dog Day Care & Training",
             "description": "Bonnie's offers exceptional dog day care, private field free-roam, and 1-on-1 training in Shenley, Radlett, Mill Hill, Barnet, Stanmore, London Colney, St Albans, Potters Bar, Elstree & Borehamwood. Safe socialization for happy dogs!",
-            "url": process.env.NEXT_PUBLIC_SITE_URL || "https://www.bonniesdogcare.example.com", // Fallback if env var is not set
+            "url": process.env.NEXT_PUBLIC_SITE_URL || "https://www.bonnies.dog", // Fallback if env var is not set
             "telephone": "+440123456789", // Placeholder - UPDATE THIS
             "email": "hello@bonniesdogcare.example.com", // Placeholder - UPDATE THIS
             // If there's a specific physical address, add it here:
@@ -46,7 +46,7 @@ export default function Page() {
             //   "postalCode": "WD7 9XX",
             //   "addressCountry": "GB"
             // },
-            "image": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bonniesdogcare.example.com'}/default-og-image.png`, // Ensure you have this image
+            "image": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bonnies.dog'}/default-og-image.png`, // Ensure you have this image
             "areaServed": [
               { "@type": "Place", "name": "Shenley" },
               { "@type": "Place", "name": "Radlett" },

@@ -25,7 +25,6 @@ export interface CustomMetadataProps {
   canonical?: string; // Full canonical URL
   imageUrl?: string;
   ogType?: 'website' | 'article' | 'profile';
-  authorTwitterHandle?: string; // e.g., @username
   siteUrl: string; // Base site URL, e.g., https://yourdomain.com
   articleDetails?: ArticleDetails;
   noIndex?: boolean;
@@ -38,7 +37,6 @@ export function generateMetadata({
   canonical, // Changed from canonicalUrlPath
   imageUrl,
   ogType = 'website',
-  authorTwitterHandle,
   siteUrl,
   articleDetails,
   noIndex = false,
@@ -86,14 +84,6 @@ const metadata: Metadata = {
       ],
       locale: 'en_US',
       type: ogType,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: pageTitle,
-      description: pageDescription,
-      images: [effectiveImageUrl],
-      creator: authorTwitterHandle || '@yourtwitterhandle', // Replace with actual handle
-      site: authorTwitterHandle || '@yourtwitterhandle', // Replace with actual handle
     },
     robots: noIndex ? 'noindex, nofollow' : 'index, follow',
   };

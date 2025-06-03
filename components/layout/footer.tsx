@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PawPrint, MapPin, Clock, Phone, Mail, Instagram, Facebook } from 'lucide-react';
+import { PawPrint, MapPin, Clock, Phone, Mail, Instagram } from 'lucide-react';
 
 export default function Footer() {
 	return (
@@ -20,13 +20,9 @@ export default function Footer() {
 						</p>
 						<div className="flex space-x-4">
 							<a
-								href="#"
-								className="bg-slate-100 p-2 rounded-full text-slate-600 hover:primary-bg hover:secondary transition-colors"
-							>
-								<Facebook className="h-5 w-5" />
-							</a>
-							<a
-								href="#"
+								href="https://www.instagram.com/bonniesdogs"
+								target="_blank"
+								rel="noopener noreferrer"
 								className="bg-slate-100 p-2 rounded-full text-slate-600 hover:primary-bg hover:secondary transition-colors"
 							>
 								<Instagram className="h-5 w-5" />
