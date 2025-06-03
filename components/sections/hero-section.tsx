@@ -27,7 +27,7 @@ export default function HeroSection() {
 						<Badge className="primary-bg mb-4 px-3 py-1 text-sm rounded-full white">
 							North London, Hertfordshire and St Albans
 						</Badge>
-						<h1 className="text-2xl md:text-3xl text-orange-600 font-semibold mb-6">
+						<h1 className="text-2xl md:text-5xl text-orange-600 font-semibold mb-6">
 							Give Them Their Own Field Trip!
 						</h1>
 						<h3 className="text-xl font-semibold text-slate-700 mb-4 font-display">Dog Day Care & Private Fields in Shenley</h3>
