@@ -53,6 +53,7 @@ export default function ServicesSection() {
 									src="/images/dog3.jpeg?height=200&width=400"
 									alt="Spacious private dog field for hire at Bonnie's near Shenley"
 									fill
+									sizes="(max-width: 768px) 100vw, 33vw"
 									className="object-cover"
 								/>
 							</div>
@@ -108,9 +109,10 @@ export default function ServicesSection() {
 						<CardContent className="pt-6">
 							<div className="aspect-video relative mb-6 overflow-hidden rounded-xl">
 								<Image
-									src="/images/dog9.JPG?height=200&width=400"
+									src="/images/dog12.JPG?height=200&width=400"
 									alt="Dog enjoying agility and play during Bonnie's day care socialization morning"
 									fill
+									sizes="(max-width: 768px) 100vw, 33vw"
 									className="object-cover"
 								/>
 							</div>
@@ -178,6 +180,7 @@ export default function ServicesSection() {
 									src="/images/dog5.jpeg?height=200&width=400"
 									alt="Focused 1-on-1 dog training session at Bonnie's in Hertfordshire"
 									fill
+									sizes="(max-width: 768px) 100vw, 33vw"
 									className="object-cover"
 								/>
 							</div>

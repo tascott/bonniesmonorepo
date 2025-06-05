@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { PawPrint, MapPin, Clock, Phone, Mail, Instagram } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/svg-components/whatsapp-icon';
 
 export default function Footer() {
 	return (
@@ -102,6 +103,12 @@ export default function Footer() {
 								<span className="text-slate-600">
 									07476 976 633
 								</span>
+							</li>
+							<li className="flex items-start">
+								<a href="https://wa.me/447577449045" className="flex items-center text-slate-600 hover:text-[#25D366] transition-colors">
+									<WhatsAppIcon className="h-5 w-5 mr-3 flex-shrink-0 mt-0.5" />
+									<span>Message on WhatsApp</span>
+								</a>
 							</li>
 							<li className="flex items-start">
 								<Mail className="h-5 w-5 secondary mr-3 flex-shrink-0 mt-0.5" />

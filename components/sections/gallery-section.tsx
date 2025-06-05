@@ -28,7 +28,7 @@ export default function GallerySection() {
 					</div>
 					<div className="aspect-square relative rounded-3xl overflow-hidden">
 						<Image
-							src="/images/dog2.jpg?height=300&width=300"
+							src="/images/dog10.JPG?height=300&width=300"
 							alt="Group of dogs enjoying a socialization run at Bonnie's Hertfordshire dog day care"
 							fill
 							className="object-cover"
@@ -36,7 +36,7 @@ export default function GallerySection() {
 					</div>
 					<div className="aspect-square relative rounded-3xl overflow-hidden">
 						<Image
-							src="/images/dog3.jpeg?height=300&width=300"
+							src="/images/dog11.JPG?height=300&width=300"
 							alt="Bonnie's staff member playing with a happy dog during a day care session in Radlett area"
 							fill
 							className="object-cover"
@@ -52,7 +52,7 @@ export default function GallerySection() {
 					</div>
 					<div className="aspect-square relative rounded-3xl overflow-hidden">
 						<Image
-							src="/images/dog5.jpeg?height=300&width=300"
+							src="/images/dog12.JPG?height=300&width=300"
 							alt="Several dogs relaxing in the sun at Bonnie's private dog park facility in Hertfordshire"
 							fill
 							className="object-cover"
@@ -60,7 +60,7 @@ export default function GallerySection() {
 					</div>
 					<div className="aspect-square relative rounded-3xl overflow-hidden">
 						<Image
-							src="/images/dog6.jpeg?height=300&width=300"
+							src="/images/dog13.JPG?height=300&width=300"
 							alt="A joyful dog playing fetch at Bonnie's Dog Day Care, serving Shenley and surrounding areas"
 							fill
 							className="object-cover"

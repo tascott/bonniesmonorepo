@@ -67,7 +67,7 @@ export default function ContactForm() {
 						id="name"
 						name="name"
 						type="text"
-						className="bg-white/10 border-slate-600 text-white placeholder:text-slate-400"
+						className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-500"
 						placeholder="Your name"
 					/>
 				</div>
@@ -79,7 +79,7 @@ export default function ContactForm() {
 						id="email"
 						name="email"
 						type="email"
-						className="bg-white/10 border-slate-600 text-white placeholder:text-slate-400"
+						className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-500"
 						placeholder="your.email@example.com"
 					/>
 				</div>
@@ -91,7 +91,7 @@ export default function ContactForm() {
 						id="phone"
 						name="phone"
 						type="tel"
-						className="bg-white/10 border-slate-600 text-white placeholder:text-slate-400"
+						className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-500"
 						placeholder="Your phone number"
 					/>
 				</div>
@@ -102,13 +102,13 @@ export default function ContactForm() {
 						required
 						id="message"
 						name="message"
-						className="bg-white/10 border-slate-600 text-white placeholder:text-slate-400"
+						className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-500"
 						rows={4}
 						placeholder="Your message"
 					/>
 				</div>
 
-				<Button type="submit" disabled={isSubmitting} className="w-full bg-white/20 hover:bg-white/30 rounded-full">
+				<Button type="submit" disabled={isSubmitting} className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full cursor-pointer">
 					{isSubmitting ? (
 						<>
 							<Loader2 className="mr-2 h-4 w-4 animate-spin" />

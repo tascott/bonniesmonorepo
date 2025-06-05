@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/svg-components/whatsapp-icon';
 import { BackgroundElement } from '@/components/svg-components';
 
 export default function HeroSection() {
@@ -60,12 +61,18 @@ export default function HeroSection() {
 								</span>
 							</div>
 						</div>
-						<Button
-							asChild
-							className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
-						>
-							<Link href="#contact">Contact Us To Book</Link>
-						</Button>
+						<div className="flex flex-col sm:flex-row gap-4">
+							<Button asChild>
+								<Link href="https://wa.me/447577449045" passHref legacyBehavior>
+									<a className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-medium transition-all bg-[#25D366] hover:bg-[#20BA5C] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl"><WhatsAppIcon className="w-6 h-6" /> Message us on WhatsApp</a>
+								</Link>
+							</Button>
+							<Button asChild>
+								<Link href="#contact" passHref legacyBehavior>
+									<a className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-medium transition-all primary-bg hover:bg-orange-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl">Contact Us To Book</a>
+								</Link>
+							</Button>
+						</div>
 					</div>
 					<div className="md:w-1/2 relative">
 						<div className="relative">
@@ -73,10 +80,11 @@ export default function HeroSection() {
 							<div className="absolute -bottom-6 -right-6 w-full h-full bg-orange-400 rounded-3xl transform -rotate-3"></div>
 							<div className="relative bg-white rounded-3xl p-6 shadow-xl overflow-hidden">
 								<Image
-									src="/images/dog-sm-4511.jpg?height=400&width=500"
+									src="/images/dog14.JPG?height=400&width=500"
 									alt="Happy dogs enjoying Bonnie's secure private dog field in Hertfordshire"
 									width={500}
 									height={400}
+									priority
 									className="rounded-2xl mx-auto"
 								/>
 							</div>

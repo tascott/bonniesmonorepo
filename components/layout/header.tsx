@@ -59,8 +59,7 @@ export default function Header() {
 					{/* <AuthButtons /> */}
 				</nav>
 
-				<div className="flex md:hidden items-center space-x-4">
-					<AuthButtons />
+				<div className="flex md:hidden items-center">
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
 							<Button variant="ghost" className="p-2">
