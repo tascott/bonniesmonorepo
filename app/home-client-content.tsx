@@ -165,19 +165,6 @@ export default function HomeClientContent() { // Renamed component
 
 			{/* Hero Section */}
 			<section id="hero" className="relative bg-gradient-to-b from-amber-50 to-white overflow-hidden pt-12 pb-24">
-				{/* Background elements */}
-				<div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-					<BackgroundElement
-						type="paws"
-						className="absolute top-10 left-10 opacity-10"
-						fill="#F97316"
-					/>
-					<BackgroundElement
-						type="paws"
-						className="absolute bottom-10 right-10 opacity-10"
-						fill="#84CC16"
-					/>
-				</div>
 
 				<div className="container mx-auto px-4 relative z-10">
 					<div className="flex flex-col md:flex-row items-center gap-12">
