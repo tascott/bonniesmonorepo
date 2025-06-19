@@ -46,18 +46,22 @@ export default function LocationsSection() {
 							</div>
 							<div className="p-4 bg-white">
 								<div className="text-slate-600 mb-4">
-                  <p className="mb-3">Bonnie's proudly offers premier dog day care, private field hire, and 1-on-1 training with convenient pick-up and drop-off services to the following key areas in Hertfordshire and North London:</p>
+                  <p className="mb-3">Bonnie's proudly offers premier dog walks, private field hire, and 1-on-1 training with convenient pick-up and drop-off services to the following key areas in Hertfordshire and North London:</p>
                   <ul className="list-disc list-inside grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 mb-3">
-                    <li>Shenley</li>
-                    <li>Radlett</li>
-                    <li>Mill Hill</li>
                     <li>Barnet</li>
+                    <li>Whetstone</li>
+                    <li>Mill Hill</li>
+                    <li>Edgware</li>
                     <li>Stanmore</li>
-                    <li>London Colney</li>
+                    <li>Bushey</li>
+                    <li>Aldenham</li>
+                    <li>Radlett</li>
+                    <li>Shenley</li>
+                    <li>Napsbury Park</li>
                     <li>St Albans</li>
-                    <li>Potters Bar</li>
-                    <li>Elstree</li>
+                    <li>London Colney</li>
                     <li>Borehamwood</li>
+                    <li>Elstree</li>
                   </ul>
                   <p>If your specific location isn't listed, please don't hesitate to contact us. We always try to accommodate owners in nearby areas where possible.</p>
                 </div>
@@ -75,7 +79,7 @@ export default function LocationsSection() {
 							isOpen={isImageOpen}
 							onOpenChange={setIsImageOpen}
 							src="/images/map.png"
-							alt="Detailed map of Bonnie's dog day care service locations in Hertfordshire"
+							alt="Detailed map of Bonnie's service locations in Hertfordshire"
 						/>
 					</div>
 				</div>

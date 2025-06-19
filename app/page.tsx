@@ -32,8 +32,8 @@ export default function Page() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Bonnie's Dog Day Care & Training",
-            "description": "Bonnie's offers exceptional dog day care, private field free-roam, and 1-on-1 training in Shenley, Radlett, Mill Hill, Barnet, Stanmore, London Colney, St Albans, Potters Bar, Elstree & Borehamwood. Safe socialization for happy dogs!",
+            "name": "Bonnie's Private Dog Walks & Training",
+            "description": "Bonnie's offers exceptional care, private field free-roam, and 1-on-1 training in Barnet, Whetstone, Mill Hill, Edgware, Stanmore, Bushey, Aldenham, Radlett, Shenley, Napsbury Park, St Albans, London Colney, Borehamwood & Elstree. Safe socialisation for happy dogs!",
             "url": process.env.NEXT_PUBLIC_SITE_URL || "https://www.bonnies.dog", // Fallback if env var is not set
             "telephone": "+440123456789", // Placeholder - UPDATE THIS
             "email": "hello@bonniesdogcare.example.com", // Placeholder - UPDATE THIS
@@ -48,26 +48,30 @@ export default function Page() {
             // },
             "image": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bonnies.dog'}/default-og-image.png`, // Ensure you have this image
             "areaServed": [
-              { "@type": "Place", "name": "Shenley" },
-              { "@type": "Place", "name": "Radlett" },
-              { "@type": "Place", "name": "Mill Hill" },
               { "@type": "Place", "name": "Barnet" },
+              { "@type": "Place", "name": "Whetstone" },
+              { "@type": "Place", "name": "Mill Hill" },
+              { "@type": "Place", "name": "Edgware" },
               { "@type": "Place", "name": "Stanmore" },
-              { "@type": "Place", "name": "London Colney" },
+              { "@type": "Place", "name": "Bushey" },
+              { "@type": "Place", "name": "Aldenham" },
+              { "@type": "Place", "name": "Radlett" },
+              { "@type": "Place", "name": "Shenley" },
+              { "@type": "Place", "name": "Napsbury Park" },
               { "@type": "Place", "name": "St Albans" },
-              { "@type": "Place", "name": "Potters Bar" },
-              { "@type": "Place", "name": "Elstree" },
+              { "@type": "Place", "name": "London Colney" },
               { "@type": "Place", "name": "Borehamwood" },
+              { "@type": "Place", "name": "Elstree" },
               { "@type": "AdministrativeArea", "name": "Hertfordshire" },
               { "@type": "AdministrativeArea", "name": "North London" }
             ],
             "serviceType": [
-              "Dog Day Care Center",
-              "Pet Boarding Service (Private Field Hire)", // Schema.org doesn't have 'Private Dog Field Hire' directly
-              "Pet Grooming Service (1-on-1 Training)" // Using a broader category if 'Dog Trainer' isn't sufficient or for variety
+              "Dog Walks",
+              "Private Dog Field Hire",
+              "1-on-1 Training"
             ],
             "makesOffer": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dog Day Care & Socialization Mornings" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dog Walks & Socialisation" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private Dog Field Hire" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "1-on-1 Dog Training & Behavior" } }
             ],

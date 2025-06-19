@@ -39,7 +39,7 @@ export default function ServicesSection() {
 								</CardTitle>
 							</Link>
 							<p className="text-slate-500 px-2">
-								Secure 8.5-acre private field hire for exclusive use. Perfect for reactive dogs, training, or undisturbed play in the Shenley area.
+								Secure, nearly 10-acre private field hire for exclusive use. Perfect for reactive dogs, training, or undisturbed play in the Shenley area.
 							</p>
 							<div className="mt-4">
 								<span className="text-2xl font-bold text-orange-500">
@@ -63,7 +63,7 @@ export default function ServicesSection() {
 										<Check className="h-4 w-4 secondary" />
 									</div>
 									<span className="text-slate-700">
-										8.5 Acre field
+										Nearly 10 acres of private land
 									</span>
 								</li>
 								<li className="flex items-start">
@@ -94,11 +94,11 @@ export default function ServicesSection() {
 							</div>
 							<Link href="/services#day-care" className="inline-block">
 								<CardTitle className="text-2xl font-display text-slate-800 hover:text-primary transition-colors cursor-pointer">
-									Dog Day Care & Socialization Mornings
+									Dog Walks & Socialisation Mornings
 								</CardTitle>
 							</Link>
 							<p className="text-slate-500 px-2">
-								Fun & supervised 2-hour dog day care sessions. Ideal for dog socialization in small, energy-matched groups. Includes pick-up/drop-off in Radlett, Mill Hill, and nearby.
+								Fun & supervised 2-hour dog walks. Ideal for dog socialisation in small, energy-matched groups. Includes pick-up/drop-off in Radlett, Mill Hill, and nearby.
 							</p>
 							<div className="mt-4">
 								<span className="text-2xl font-bold text-orange-500">
@@ -110,7 +110,7 @@ export default function ServicesSection() {
 							<div className="aspect-video relative mb-6 overflow-hidden rounded-xl">
 								<Image
 									src="/images/dog12.JPG?height=200&width=400"
-									alt="Dog enjoying agility and play during Bonnie's day care socialization morning"
+									alt="Dog enjoying agility and play during Bonnie's socialisation morning"
 									fill
 									sizes="(max-width: 768px) 100vw, 33vw"
 									className="object-cover"

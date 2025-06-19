@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { PawPrint, Menu } from 'lucide-react';
+import Image from 'next/image';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { AuthButtons } from '@/components/auth-buttons'; // Assuming this is already a separate component
@@ -10,13 +11,15 @@ export default function Header() {
 	return (
 		<header className="sticky top-0 z-50 bg-white shadow-md">
 			<div className="container mx-auto px-4 py-4 flex items-center justify-between">
-				<Link href="/" className="flex items-center space-x-2">
-					<div className="primary-bg text-white p-2 rounded-full">
-						<PawPrint className="h-6 w-6" />
-					</div>
-					<span className="text-2xl font-bold text-foreground font-display">
-						Bonnies
-					</span>
+				<Link href="/" className="flex items-center">
+					<Image
+						src="/images/logo-final-01.png"
+						alt="Bonnies Logo"
+						width={200}
+						height={50}
+						className="h-10 w-auto"
+						priority
+					/>
 				</Link>
 
 				<nav className="hidden md:flex items-center space-x-8">

@@ -186,7 +186,7 @@ export default function HomeClientContent() { // Renamed component
 								North London, Hertfordshire & St Albans
 							</Badge>
 							<h1 className="text-4xl md:text-4xl lg:text-6xl font-bold text-slate-800 mb-6 font-display leading-tight">
-								Give Them Their Own Field Trip
+							Secure walks in nature, created just for dogs
 							</h1>
 							<p className="text-slate-600 mb-6 text-lg leading-relaxed">
 								Door-to-door pick-ups, small groups, and human-supervised play sessions on secure acreage.
@@ -250,7 +250,7 @@ export default function HomeClientContent() { // Renamed component
 					</div>
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 						{[{
-							title: "Doggy Day Care Field Trips",
+							title: "Private field walks and socialisation",
 							description: "Safe, secure, and stimulating play in our private fields. Includes pick-up and drop-off.",
 							icon: <PawPrint className="h-8 w-8 primary-text" />,
 							image: "/images/dog-daycare.jpg",
@@ -322,8 +322,8 @@ export default function HomeClientContent() { // Renamed component
 									name: "Barnet Fields (North London Gateway)",
 									description: "Spacious fields perfect for dogs from Finchley, Highgate, and surrounding North London areas."
 								}, {
-									name: "Potters Bar Pastures (Hertfordshire Hub)",
-									description: "Rolling acres ideal for pups from Potters Bar, Brookmans Park, and nearby Hertfordshire towns."
+									name: "Shenley Fields (Hertfordshire Hub)",
+									description: "Rolling acres ideal for pups from Shenley, Radlett, and nearby Hertfordshire towns."
 								}, {
 									name: "St Albans Green (Historic City Outskirts)",
 									description: "Secure play areas conveniently serving St Albans, Harpenden, and Radlett."
@@ -470,7 +470,7 @@ export default function HomeClientContent() { // Renamed component
 							</div>
 							<span className="text-2xl font-bold font-display">Bonnies</span>
 						</Link>
-						<p className="text-sm opacity-90">Premium Doggy Day Care Field Trips</p>
+						<p className="text-sm opacity-90">Premium Private Dog Walks & Socialisation</p>
 					</div>
 					<div className="flex justify-center space-x-6 mb-6">
 						<Link href="#services" className="hover:underline opacity-90 hover:opacity-100">Services</Link>
@@ -481,7 +481,7 @@ export default function HomeClientContent() { // Renamed component
 						<Link href="/terms-of-service" className="hover:underline opacity-90 hover:opacity-100">Terms of Service</Link>
 					</div>
 					<p className="text-xs opacity-70">
-						&copy; {new Date().getFullYear()} Bonnies Doggy Day Care. All rights reserved. 
+						&copy; {new Date().getFullYear()} Bonnie's. All rights reserved. 
 						Site by <a href="https://tom.scott.is" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-100">Tom Scott</a>.
 					</p>
 				</div>

@@ -16,17 +16,8 @@ import Link from 'next/link';
 
 export default function Home() {
 	return (
-		<div className="flex flex-col min-h-screen bg-secondary/10">
-			{/* Launch Day Banner */}
-			<div className="bg-orange-500 text-white py-3 text-center shadow-md relative z-40">
-				<div className="container mx-auto px-4">
-					<Link href="/launchday" className="inline-flex items-center space-x-2 hover:underline">
-						<span className="font-bold">🎉 Join us for our Launch Day on July 5th, 2025! 🐾</span>
-						<span className="hidden md:inline">Special offers, activities, and more!</span>
-						<span className="ml-2 font-semibold underline">Learn More</span>
-					</Link>
-				</div>
-			</div>
+		<div className="flex flex-col min-h-screen">
+
 			<Header />
 			<HeroSection />
 			<ServicesSection />

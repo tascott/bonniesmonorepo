@@ -1,14 +1,15 @@
 import { Metadata } from 'next';
 
-const DEFAULT_TITLE = "Bonnie's Dog Day Care & Training | Shenley, Radlett, Mill Hill & More";
-const DEFAULT_DESCRIPTION = "Bonnie's offers exceptional dog day care, private field free-roam, and 1-on-1 training in Shenley, Radlett, Mill Hill, Barnet, Stanmore, London Colney, St Albans, Potters Bar, Elstree & Borehamwood. Safe socialization for happy dogs!";
+const DEFAULT_TITLE = "Bonnie's Dog Walks & Training in Private Fields | Barnet, Mill Hill, St Albans & More";
+const DEFAULT_DESCRIPTION = "Bonnie's offers exceptional dog walks, private field free-roam, and 1-on-1 training in Barnet, Whetstone, Mill Hill, Edgware, Stanmore, Bushey, Aldenham, Radlett, Shenley, Napsbury Park, St Albans, London Colney, Borehamwood & Elstree. Safe socialisation for happy dogs!";
 const DEFAULT_KEYWORDS = [
-  'dog day care Shenley', 'doggy day care Radlett', 'private dog fields Mill Hill',
-  'dog socialization Barnet', '1-on-1 dog training Stanmore', 'dog walker London Colney',
-  'secure dog play area St Albans', 'puppy day care Potters Bar', 'dog care Elstree',
-  'Borehamwood dog services', 'Bonnie\'s dog care', 'dog pick up drop off service',
-  'dog training Hertfordshire', 'dog day care Hertfordshire',
-  'safe dog socialization', 'lonely dog solutions'
+  'dog walks Barnet', 'doggy care Mill Hill', 'private dog fields St Albans',
+  'dog socialisation Whetstone', '1-on-1 dog training Edgware', 'dog walker Stanmore',
+  'secure dog play area Bushey', 'puppy care Aldenham', 'dog care Radlett',
+  'Shenley dog services', 'Napsbury Park dog walking', 'London Colney pet care',
+  'Borehamwood dog training', 'Elstree dog walks', 'Bonnie\'s dog care',
+  'dog pick up drop off service', 'dog training Hertfordshire', 'dog walks North London',
+  'safe dog socialisation', 'lonely dog solutions'
 ];
 
 export interface ArticleDetails {

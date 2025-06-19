@@ -22,9 +22,11 @@ const fira = Fira_Sans({
 
 export const metadata: Metadata = {
 	title: 'Bonnies',
-	description: "London's premier dog day care service, providing expert care and off-leash fun for your furry friends.",
+	description: "London's premier private field walks and socialisation service, providing expert care and off-leash fun for your furry friends.",
 	icons: {
-		icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><style>.e%7Bfont-size:90px%7D.l%7Bdisplay:inline;fill:black%7D.d%7Bdisplay:none%7D@media(prefers-color-scheme:dark)%7B.l%7Bdisplay:none%7D.d%7Bdisplay:inline;fill:white%7D%7D@media(prefers-color-scheme:light)%7B.l%7Bdisplay:inline;fill:black%7D.d%7Bdisplay:none%7D%7D</style><text y=%22.9em%22 class=%22e l%22>🐾</text><text y=%22.9em%22 class=%22e d%22>🐾</text></svg>",
+		icon: '/images/logo-final-02.jpg',
+		shortcut: '/images/logo-final-02.jpg',
+		apple: '/images/logo-final-02.jpg',
 	},
 };
 

@@ -4,22 +4,31 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/svg-components/whatsapp-icon';
-import { BackgroundElement } from '@/components/svg-components';
+
 
 export default function HeroSection() {
 	return (
-		<section className="relative bg-gradient-to-b from-amber-50 to-white overflow-hidden pt-12 pb-24">
-			<div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-				<BackgroundElement
-					type="paws"
-					className="absolute top-10 left-10 opacity-10"
-					fill="#F97316"
+		<section className="relative overflow-hidden pt-12 pb-24 text-white">
+			<div className="absolute top-0 left-0 w-full h-full z-0">
+				{/* Mobile/Portrait Video */}
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					className="w-full h-full object-cover block md:hidden"
+					src="/images/portrait.mp4"
 				/>
-				<BackgroundElement
-					type="paws"
-					className="absolute bottom-10 right-10 opacity-10"
-					fill="#84CC16"
+				{/* Desktop/Landscape Video */}
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					className="w-full h-full object-cover hidden md:block"
+					src="/images/vid.mp4"
 				/>
+				<div className="absolute inset-0 bg-gradient-to-b from-black/[.65] to-black md:from-black/[.65] md:to-black/[.65]"></div>
 			</div>
 
 			<div className="container mx-auto px-4 relative z-10">
@@ -28,19 +37,19 @@ export default function HeroSection() {
 						<Badge className="primary-bg mb-4 px-3 py-1 text-sm rounded-full white">
 							North London, Hertfordshire and St Albans
 						</Badge>
-						<h1 className="text-2xl md:text-5xl text-orange-600 font-semibold mb-6">
-							Give Them Their Own Field Trip!
+						<h1 className="text-2xl md:text-5xl font-semibold mb-6">
+							Secure walks in nature, created just for dogs
 						</h1>
-						<h3 className="text-xl font-semibold text-slate-700 mb-4 font-display">Dog Day Care & Private Fields in Shenley</h3>
-						<p className="text-slate-600 mb-6 text-lg leading-relaxed">
-							Experience peace of mind with Bonnie's premier dog day care. We offer door-to-door pick-ups for exciting free-roam sessions in our secure private fields, plus expert 1-on-1 training. Serving Shenley, Radlett, Mill Hill, and across Hertfordshire.
+						<h3 className="text-xl font-semibold mb-4 font-display">Long dog walks, training and play sessions in Shenley</h3>
+						<p className="mb-6 text-lg leading-relaxed">
+						Experience peace of mind when your dogs are at Bonnie’s. We offer 2 hour dog walks in our nearly 10 acre fully fenced private dog park. Pick up and drop off in North London and Hertfordshire.
 						</p>
 						<div className="flex flex-wrap gap-4 mb-8">
 							<div className="flex items-center">
 								<div className="primary-bg p-2 rounded-full mr-3">
 									<Check className="h-5 w-5 secondary" />
 								</div>
-								<span className="text-slate-700">
+								<span>
 									Free pickup
 								</span>
 							</div>
@@ -48,7 +57,7 @@ export default function HeroSection() {
 								<div className="primary-bg p-2 rounded-full mr-3">
 									<Check className="h-5 w-5 secondary" />
 								</div>
-								<span className="text-slate-700">
+								<span>
 									Canine first aid trained
 								</span>
 							</div>
@@ -56,7 +65,7 @@ export default function HeroSection() {
 								<div className="primary-bg p-2 rounded-full mr-3">
 									<Check className="h-5 w-5 secondary" />
 								</div>
-								<span className="text-slate-700">
+								<span>
 									Fenced and secure site
 								</span>
 							</div>
@@ -74,7 +83,7 @@ export default function HeroSection() {
 							</Button>
 						</div>
 					</div>
-					<div className="md:w-1/2 relative">
+					{/* <div className="md:w-1/2 relative">
 						<div className="relative">
 							<div className="absolute -top-6 -left-6 w-full h-full bg-rose-400 rounded-3xl transform rotate-3"></div>
 							<div className="absolute -bottom-6 -right-6 w-full h-full bg-orange-400 rounded-3xl transform -rotate-3"></div>
@@ -89,7 +98,7 @@ export default function HeroSection() {
 								/>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</section>

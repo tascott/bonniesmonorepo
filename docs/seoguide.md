@@ -80,7 +80,7 @@ Significant effort was invested in optimizing the homepage (`app/page.tsx` and i
 *   **Comprehensive Content Review**: All major sections of the homepage were reviewed and updated:
     *   **Hero Section**: Enhanced H1, descriptive text, and added a contextual link to the `/about` page (or section, if SPA).
     *   **Services Section**: Improved section title, service card titles, descriptions, and image alt texts. Added internal links from each service card to corresponding sections on a `/services` page (e.g., `/services#field-hire`) and an "Explore All Services" button linking to `/services`. *Note: If `/services` is not a separate page but part of the SPA homepage, these links should point to local anchors like `#field-hire`.*
-    *   **Locations Section**: Optimized section title and descriptive text to include all target service areas (Shenley, Radlett, Mill Hill, Barnet, Stanmore, London Colney, St Albans, Potters Bar, Elstree, Borehamwood). Improved image alt texts.
+    *   **Locations Section**: Optimized section title and descriptive text to include all target service areas (Barnet, Whetstone, Mill Hill, Edgware, Stanmore, Bushey, Aldenham, Radlett, Shenley, Napsbury Park, St Albans, London Colney, Borehamwood, Elstree). Improved image alt texts.
     *   **FAQ Section**: Refined existing FAQs and added new, SEO-targeted FAQs focusing on specific services and locations.
     *   **Call to Action (CTA) Section**: Updated heading and descriptive paragraph for better keyword integration and clarity.
     *   **Gallery Section**: Revised section title, subtitle, and image alt texts to be more descriptive and include service/location keywords.
@@ -90,7 +90,7 @@ Significant effort was invested in optimizing the homepage (`app/page.tsx` and i
     *   Business Name, Description, URL
     *   Contact Information (Phone, Email - *ensure placeholders are updated with real info*)
     *   Service Areas (listing all key locations)
-    *   Services Offered (Private Field Hire, Dog Day Care, 1-on-1 Training)
+    *   Services Offered (Private Field Hire, Dog walks on private land, 1-on-1 Training)
     *   Link to a default Open Graph image.
     *   This helps search engines understand the business's nature, offerings, and service locations, potentially leading to rich search results.
 *   **Metadata Refinement**: Ensured the default title, description, and keywords in `lib/seo/metadata.tsx` are highly relevant to Bonnie's services and target locations.
@@ -193,7 +193,7 @@ Beyond just having the tools, actively monitoring specific metrics is crucial fo
 
 *   **Keyword Rankings**:
     *   **Tools**: Use Google Search Console (Performance report), or paid tools like Ahrefs, SEMrush, Moz.
-    *   **What to Track**: Monitor rankings for your primary target keywords (e.g., "dog day care Shenley," "private dog field Hertfordshire"). Track changes over time.
+    *   **What to Track**: Monitor rankings for your primary target keywords (e.g., "dog walker Shenley," "private dog field Hertfordshire"). Track changes over time.
     *   **Action**: If rankings drop, investigate potential causes (e.g., competitor changes, technical issues, content becoming outdated). If rankings improve, identify what contributed.
 *   **Organic Traffic**:
     *   **Tool**: Google Analytics (Acquisition > All Traffic > Channels > Organic Search).

@@ -33,7 +33,7 @@ export default function FaqSection() {
 								</div>
 							</AccordionTrigger>
 							<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
-								Bonnie's specializes in <strong>Private Dog Field Hire</strong> for exclusive, safe off-lead fun, <strong>Dog Day Care & Socialization Mornings</strong> focusing on positive play and learning, and expert <strong>1-on-1 Dog Training & Behavior</strong> sessions. We serve areas like Shenley, Radlett, Mill Hill, and more, ensuring your dog receives top-quality care and attention.
+								Bonnie's specializes in <strong>Private Dog Field Hire</strong> for exclusive, safe off-lead fun, <strong>Socialisation Mornings</strong> focusing on positive play and learning, and expert <strong>1-on-1 Dog Training & Behavior</strong> sessions. We serve areas like Shenley, Radlett, Mill Hill, and more, ensuring your dog receives top-quality care and attention.
 							</AccordionContent>
 						</AccordionItem>
 
@@ -55,7 +55,7 @@ export default function FaqSection() {
 						<AccordionItem value="item-3" className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
 							<AccordionTrigger className="px-6 py-4 hover:bg-slate-50 transition-all duration-1000">
 								<div className="flex items-center justify-between w-full">
-									<span className="text-left font-medium text-slate-800">Which towns do you cover for dog day care, field hire, and training pick-up/drop-off?</span>
+									<span className="text-left font-medium text-slate-800">Which towns do you cover for dog walks, field hire, and training pick-up/drop-off?</span>
 									<div className="flex items-center justify-center bg-slate-100 p-2 rounded-full ml-4 flex-shrink-0">
 										<ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-1000" />
 										<span className="sr-only">Toggle</span>
@@ -63,7 +63,7 @@ export default function FaqSection() {
 								</div>
 							</AccordionTrigger>
 							<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
-								We proudly offer our services, including free pick-up and drop-off for day care and training, to Shenley, Radlett, Mill Hill, Barnet, Stanmore, London Colney, St Albans, Potters Bar, Elstree, and Borehamwood. If you're nearby, don't hesitate to ask if we can accommodate you!
+								We proudly offer our services, including free pick-up and drop-off for walks and training, to Barnet, Whetstone, Mill Hill, Edgware, Stanmore, Bushey, Aldenham, Radlett, Shenley, Napsbury Park, St Albans, London Colney, Borehamwood, and Elstree. If you're nearby, don't hesitate to ask if we can accommodate you!
 							</AccordionContent>
 						</AccordionItem>
 
@@ -113,11 +113,11 @@ export default function FaqSection() {
 							</AccordionContent>
 						</AccordionItem>
 
-						{/* New FAQ 2: Socialization Mornings */}
+						{/* New FAQ 2: Socialisation Mornings */}
 						<AccordionItem value="item-7" className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
 							<AccordionTrigger className="px-6 py-4 hover:bg-slate-50 transition-all duration-1000">
 								<div className="flex items-center justify-between w-full">
-									<span className="text-left font-medium text-slate-800">What are the benefits of your Dog Socialization Mornings for dogs in Mill Hill or Barnet?</span>
+									<span className="text-left font-medium text-slate-800">What are the benefits of your Dog Socialisation Mornings for dogs in Mill Hill or Barnet?</span>
 									<div className="flex items-center justify-center bg-slate-100 p-2 rounded-full ml-4 flex-shrink-0">
 										<ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-1000" />
 										<span className="sr-only">Toggle</span>
@@ -125,7 +125,7 @@ export default function FaqSection() {
 								</div>
 							</AccordionTrigger>
 							<AccordionContent className="px-6 pb-4 pt-2 text-slate-600">
-								Our Dog Day Care & Socialization Mornings, easily accessible for dogs from Mill Hill and Barnet, provide structured play and learning in small, supervised groups. This helps dogs build confidence, learn appropriate social skills, and enjoy mental and physical stimulation.
+								Our walking & socialisation mornings, easily accessible for dogs from Mill Hill and Barnet, provide structured play and learning in small, supervised groups. This helps dogs build confidence, learn appropriate social skills, and enjoy mental and physical stimulation.
 							</AccordionContent>
 						</AccordionItem>
 

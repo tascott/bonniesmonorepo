@@ -9,7 +9,7 @@ export default function ContactSection() {
 						Contact Bonnie's Dog Care in Shenley
 					</h2>
 					<p className="text-lg text-slate-600 mb-8">
-						Ready to book private field hire, dog day care, or 1-on-1 training in the Shenley, Radlett, or Mill Hill area? Contact our friendly team today!
+						Ready to book private field hire, dog walks, or 1-on-1 training in the Shenley, Radlett, or Mill Hill area? Contact our friendly team today!
 					</p>
 				</div>
 

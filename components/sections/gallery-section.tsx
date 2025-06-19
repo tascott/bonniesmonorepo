@@ -13,7 +13,7 @@ export default function GallerySection() {
 						Happy Dogs Enjoying Bonnie's Care in Hertfordshire
 					</h2>
 					<p className="text-slate-600 max-w-2xl mx-auto">
-						A glimpse into the fun and adventures at our Shenley-based dog day care, private fields, and training sessions.
+						A glimpse into the fun and adventures at our Shenley-based private fields and training sessions.
 					</p>
 				</div>
 
@@ -29,7 +29,7 @@ export default function GallerySection() {
 					<div className="aspect-square relative rounded-3xl overflow-hidden">
 						<Image
 							src="/images/dog10.JPG?height=300&width=300"
-							alt="Group of dogs enjoying a socialization run at Bonnie's Hertfordshire dog day care"
+							alt="Group of dogs enjoying a socialisation run at Bonnie's"
 							fill
 							className="object-cover"
 						/>
@@ -37,7 +37,7 @@ export default function GallerySection() {
 					<div className="aspect-square relative rounded-3xl overflow-hidden">
 						<Image
 							src="/images/dog11.JPG?height=300&width=300"
-							alt="Bonnie's staff member playing with a happy dog during a day care session in Radlett area"
+							alt="Bonnie's staff member playing with a happy dog during a session in Radlett area"
 							fill
 							className="object-cover"
 						/>
@@ -61,7 +61,7 @@ export default function GallerySection() {
 					<div className="aspect-square relative rounded-3xl overflow-hidden">
 						<Image
 							src="/images/dog13.JPG?height=300&width=300"
-							alt="A joyful dog playing fetch at Bonnie's Dog Day Care, serving Shenley and surrounding areas"
+							alt="A joyful dog playing fetch at Bonnie's, serving Shenley and surrounding areas"
 							fill
 							className="object-cover"
 						/>

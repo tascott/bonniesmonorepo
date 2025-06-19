@@ -74,14 +74,14 @@ const mockBlogPosts: BlogPost[] = [
     id: '2',
     slug: 'socializing-your-dog',
     title: 'The Importance of Socializing Your Dog',
-    excerpt: 'Proper socialization helps dogs become well-adjusted companions. Learn why it matters and how to do it right.',
+    excerpt: 'Proper socialisation helps dogs become well-adjusted companions. Learn why it matters and how to do it right.',
     content: 'Full content would go here...',
     author: {
       name: 'Mike Thompson',
     },
     date: '2025-05-18',
     coverImage: '/images/blog/dog-socializing.jpg',
-    tags: ['Behavior', 'Training', 'Socialization'],
+    tags: ['Behavior', 'Training', 'Socialisation'],
     status: 'published'
   },
   {

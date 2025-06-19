@@ -25,7 +25,7 @@ export default function CtaSection() {
 					Give Your Dog the Best Day Out in Hertfordshire!
 				</h2>
 				<p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
-					Join Bonnie's for exceptional dog day care and socialization adventures in the stunning Hertfordshire countryside. We offer convenient pick-up for your furry friend, bringing them to our secure, fully-fenced site. Here, they'll enjoy 2+ hours of supervised social play with well-matched doggy pals, engaging all their senses while exploring and having fun. Our professionally trained, DBS-checked, and canine first-aid certified 'dog nut' team is dedicated to providing a safe, stimulating, and joyful experience for every dog in our care, whether they're from Shenley, Radlett, Mill Hill, or nearby areas.
+					Join Bonnie's for exceptional private dog walks and socialisation adventures in the stunning Hertfordshire countryside. We offer convenient pick-up for your furry friend, bringing them to our secure, fully-fenced site. Here, they'll enjoy 2+ hours of supervised social play with well-matched doggy pals, engaging all their senses while exploring and having fun. Our professionally trained, DBS-checked, and canine first-aid certified 'dog nut' team is dedicated to providing a safe, stimulating, and joyful experience for every dog in our care, whether they're from Shenley, Radlett, Mill Hill, or nearby areas.
 				</p>
 				<div className="flex flex-wrap justify-center gap-4">
 					<Button
