@@ -5,16 +5,16 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Loader2 } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function ContactForm() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [error, setError] = useState<string | null>(null);
+	const formRef = useRef<HTMLFormElement>(null);
 
 	async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
-		console.log('handleSubmit triggered. Setting isSubmitting to true.');
 		setIsSubmitting(true);
 		setError(null);
 
@@ -25,7 +25,6 @@ export default function ContactForm() {
 
 			const object = Object.fromEntries(formData);
 			const json = JSON.stringify(object);
-			console.log('Submitting form with data:', json);
 
 			const response = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
@@ -36,23 +35,18 @@ export default function ContactForm() {
 				body: json,
 			});
 
-			console.log(`Received response from API with status: ${response.status}`);
-			const responseText = await response.text();
-			console.log('API Response Body:', responseText);
-
 			if (response.ok) {
-				console.log('Response was OK. Setting success state.');
-				event.currentTarget.reset();
+				formRef.current?.reset();
 				setIsSuccess(true);
 			} else {
-				console.error('Response was not OK. Throwing error.');
-				throw new Error(`Server responded with ${response.status}. Body: ${responseText}`);
+				const errorText = await response.text();
+				console.error('Form submission failed:', errorText);
+				throw new Error('Failed to submit form');
 			}
 		} catch (error) {
-			console.error('Caught an error during form submission:', error);
+			console.error('Form submission error:', error);
 			setError('Failed to send message. Please try again. Alternatively, email or call us');
 		} finally {
-			console.log('handleSubmit finally block. Setting isSubmitting to false.');
 			setIsSubmitting(false);
 		}
 	}
@@ -71,7 +65,7 @@ export default function ContactForm() {
 
 	return (
 		<div className="space-y-6">
-			<form onSubmit={handleSubmit} className="space-y-6">
+			<form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
 				<div>
 					<Label htmlFor="name">Name</Label>
 					<Input
