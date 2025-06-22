@@ -34,11 +34,11 @@ export default function ContactForm() {
 				body: json,
 			});
 
-			const result = await response.json();
-			if (result.success) {
+			if (response.ok) {
 				event.currentTarget.reset();
 				setIsSuccess(true);
 			} else {
+				console.error('Form submission failed:', await response.text());
 				throw new Error('Failed to submit form');
 			}
 		} catch (error) {
