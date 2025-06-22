@@ -51,8 +51,11 @@ export default function ContactForm() {
 	if (isSuccess) {
 		return (
 			<div className="text-center p-8 bg-green-50 rounded-lg">
-				<h3 className="text-xl font-semibold text-green-800 mb-2">Message Sent!</h3>
-				<p className="text-green-600">Thank you for your message. We&apos;ll get back to you as soon as possible.</p>
+				<h3 className="text-xl font-semibold text-green-800 mb-2">Message sent, thank you!</h3>
+				<p className="text-green-600">
+					Occasionally spam filters will block legitimate emails - if you don&apos;t receive a reply within 1 working day, please call, WhatsApp or email
+					manually!
+				</p>
 			</div>
 		);
 	}
