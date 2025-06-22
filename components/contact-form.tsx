@@ -14,6 +14,7 @@ export default function ContactForm() {
 
 	async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
+		console.log('handleSubmit triggered. Setting isSubmitting to true.');
 		setIsSubmitting(true);
 		setError(null);
 
@@ -24,6 +25,7 @@ export default function ContactForm() {
 
 			const object = Object.fromEntries(formData);
 			const json = JSON.stringify(object);
+			console.log('Submitting form with data:', json);
 
 			const response = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
@@ -34,16 +36,23 @@ export default function ContactForm() {
 				body: json,
 			});
 
+			console.log(`Received response from API with status: ${response.status}`);
+			const responseText = await response.text();
+			console.log('API Response Body:', responseText);
+
 			if (response.ok) {
+				console.log('Response was OK. Setting success state.');
 				event.currentTarget.reset();
 				setIsSuccess(true);
 			} else {
-				console.error('Form submission failed:', await response.text());
-				throw new Error('Failed to submit form');
+				console.error('Response was not OK. Throwing error.');
+				throw new Error(`Server responded with ${response.status}. Body: ${responseText}`);
 			}
 		} catch (error) {
+			console.error('Caught an error during form submission:', error);
 			setError('Failed to send message. Please try again. Alternatively, email or call us');
 		} finally {
+			console.log('handleSubmit finally block. Setting isSubmitting to false.');
 			setIsSubmitting(false);
 		}
 	}
