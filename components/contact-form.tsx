@@ -42,7 +42,7 @@ export default function ContactForm() {
 				throw new Error('Failed to submit form');
 			}
 		} catch (error) {
-			setError('Failed to send message. Please try again. Alternativey, email or call us');
+			setError('Failed to send message. Please try again. Alternatively, email or call us');
 		} finally {
 			setIsSubmitting(false);
 		}
