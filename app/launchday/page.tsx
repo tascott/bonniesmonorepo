@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PawPrint, Calendar, MapPin, Clock } from 'lucide-react';
+import OpenDayBooking from '@/components/open-day-booking';
 
 export default function LaunchDayPage() {
   return (
@@ -12,13 +13,14 @@ export default function LaunchDayPage() {
       {/* Navigation */}
       <header className="sticky top-0 z-50 bg-white shadow-md">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="primary-bg text-white p-2 rounded-full">
-              <PawPrint className="h-6 w-6" />
-            </div>
-            <span className="text-2xl font-bold text-foreground font-display">
-              Bonnies
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo-final-01.png"
+              alt="Bonnies Logo"
+              width={150} // Adjust width as needed
+              height={40} // Adjust height as needed
+              priority
+            />
           </Link>
           <Button asChild variant="outline" className="primary hover:bg-orange-100">
             <Link href="/">Back to Home</Link>
@@ -131,6 +133,9 @@ export default function LaunchDayPage() {
               </div>
             </div>
           </div>
+
+          {/* Booking Section */}
+          <OpenDayBooking />
 
           <div className="text-center">
             <Button asChild className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">

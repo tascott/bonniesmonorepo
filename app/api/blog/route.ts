@@ -1,39 +1,42 @@
-import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { NextResponse, type NextRequest } from 'next/server';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
 
-// Helper to check if user is authenticated
-async function isAuthenticated(req: Request) {
+const createClient = (request: NextRequest) => {
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return request.cookies.get(name)?.value;
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          // request.cookies is read-only, so we can't set cookies here.
+        },
+        remove(name: string, options: CookieOptions) {
+          // request.cookies is read-only.
+        },
+      },
+    }
+  );
+};
+
+async function isAuthenticated(request: NextRequest) {
   try {
-    // Create a Supabase client with the request cookies
-    const supabaseAuth = createServerComponentClient({ cookies: cookies });
-    
-    // Check if user is authenticated
+    const supabaseAuth = createClient(request);
     const { data: { session } } = await supabaseAuth.auth.getSession();
-    
-    // Log the session for debugging
     console.log('API auth check - Session found:', !!session);
-    
-    // TEMPORARY: Return true to bypass auth check during development
-    // TODO: Remove this and use proper session check in production
-    return true;
-    
-    // Normal operation would be:
-    // return !!session;
+    return true; // TEMPORARY
   } catch (error) {
     console.error('Error checking authentication status:', error);
     return false;
   }
 }
 
-// GET endpoint to fetch all blog posts
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-
-  // Create the server-side Supabase client
-  const supabase = createServerComponentClient({ cookies: cookies });
+  const supabase = createClient(request);
   
-  // Parse query parameters
   const page = parseInt(searchParams.get('page') || '1');
   const limit = parseInt(searchParams.get('limit') || '10');
   const search = searchParams.get('search') || '';
@@ -42,12 +45,10 @@ export async function GET(request: Request) {
   const to = from + limit - 1;
   
   try {
-    // Only select fields we need for the blog listing to reduce payload size
     let query = supabase
       .from('blog_posts')
       .select('id, slug, title, excerpt, created_at, updated_at, author_name, cover_image, tags, status', { count: 'exact' });
     
-    // Add filters if provided
     if (search) {
       query = query.or(`title.ilike.%${search}%, excerpt.ilike.%${search}%`);
     }
@@ -56,16 +57,12 @@ export async function GET(request: Request) {
       query = query.eq('status', status);
     }
     
-    // Add pagination and execute query
     const { data, count, error } = await query
       .order('created_at', { ascending: false })
       .range(from, to);
     
-    if (error) {
-      throw error;
-    }
+    if (error) throw error;
     
-    // Add cache headers for better performance
     const response = NextResponse.json({
       posts: data,
       count,
@@ -73,56 +70,34 @@ export async function GET(request: Request) {
       totalPages: Math.ceil((count || 0) / limit)
     });
     
-    // Cache successful responses for 5 minutes
     response.headers.set('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
     return response;
   } catch (error) {
     console.error('Error fetching blog posts:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch blog posts' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to fetch blog posts' }, { status: 500 });
   }
 }
 
-// POST endpoint to create a new blog post
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const supabase = createServerComponentClient({ cookies: cookies });
-
+    const supabase = createClient(request);
     const body = await request.json();
     
-    // Basic validation
     if (!body.title || !body.content || !body.slug) {
-      console.error('API: Missing required fields', body);
-      return NextResponse.json(
-        { error: 'Title, content, and slug are required', details: 'Please provide all required fields' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Title, content, and slug are required' }, { status: 400 });
     }
 
-    // Check if slug already exists
     const { data: existingPosts, error: existingPostError } = await supabase
       .from('blog_posts')
       .select('slug')
       .eq('slug', body.slug);
     
-    if (existingPostError) {
-      console.error('API: Error checking for existing post', existingPostError);
-      return NextResponse.json(
-        { error: 'Failed to check for existing post', details: existingPostError instanceof Error ? existingPostError.message : String(existingPostError) },
-        { status: 500 }
-      );
-    }
+    if (existingPostError) throw existingPostError;
     
     if (existingPosts && existingPosts.length > 0) {
-      return NextResponse.json(
-        { error: 'A post with this slug already exists', details: 'Please choose a unique slug' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'A post with this slug already exists' }, { status: 400 });
     }
 
-    // Get the authenticated user (if any)
     const { data: { session } } = await supabase.auth.getSession();
     const user = session?.user;
 
@@ -138,29 +113,17 @@ export async function POST(request: Request) {
       status: body.status || 'draft',
     };
     
-    // User is authenticated as admin, so we can use the standard client
-    // RLS policies should allow admins to insert
     const { data, error } = await supabase
       .from('blog_posts')
       .insert(postData)
       .select()
       .single();
     
-    if (error) {
-      console.error('API: Error creating blog post', error);
-      return NextResponse.json(
-        { error: 'Failed to create blog post', details: error instanceof Error ? error.message : String(error) },
-        { status: 500 }
-      );
-    }
+    if (error) throw error;
     
-    console.log('API: Blog post created successfully', data);
     return NextResponse.json(data);
-  } catch (error) {
+  } catch (error: any) {
     console.error('API: Error creating blog post', error);
-    return NextResponse.json(
-      { error: 'Failed to create blog post', details: error instanceof Error ? error.message : String(error) },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to create blog post', details: error.message }, { status: 500 });
   }
 }

@@ -6,17 +6,6 @@ import { BackgroundElement } from '@/components/svg-components';
 export default function CtaSection() {
 	return (
 		<section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
-			<BackgroundElement
-				type="paws"
-				className="absolute top-0 left-0 opacity-10"
-				fill="white"
-			/>
-			<BackgroundElement
-				type="paws"
-				className="absolute bottom-0 right-0 opacity-10"
-				fill="white"
-			/>
-
 			<div className="container mx-auto px-4 text-center relative z-10">
 				<Badge className="bg-white text-slate-800 mb-4 px-3 py-1 text-sm rounded-full">
 					Join Our Pack
