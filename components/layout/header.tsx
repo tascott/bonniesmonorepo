@@ -47,12 +47,12 @@ export default function Header() {
 					>
 						FAQ
 					</Link>
-					<Link
+					{/* <Link
 						href="/blog"
 						className="bg-orange-100 text-orange-600 hover:bg-orange-200 font-medium transition-colors px-3 py-1 rounded-full"
 					>
 						Blog
-					</Link>
+					</Link> */}
 					<Link
 						href="#contact"
 						className="text-slate-700 hover:secondary font-medium transition-colors"
@@ -94,14 +94,14 @@ export default function Header() {
 									Gallery
 								</Link>
 							</DropdownMenuItem>
-							<DropdownMenuItem asChild>
+							{/* <DropdownMenuItem asChild>
 								<Link
 									href="/blog"
 									className="text-orange-600 font-medium"
 								>
 									Blog
 								</Link>
-							</DropdownMenuItem>
+							</DropdownMenuItem> */}
 							<DropdownMenuItem asChild>
 								<Link
 									href="#faq"
