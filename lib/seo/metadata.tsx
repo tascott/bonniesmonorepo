@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-const DEFAULT_TITLE = "Bonnie's Dog Walks & Training in Private Fields | Barnet, Mill Hill, St Albans & More";
-const DEFAULT_DESCRIPTION = "Bonnie's offers exceptional dog walks, private field free-roam, and 1-on-1 training in Barnet, Whetstone, Mill Hill, Edgware, Stanmore, Bushey, Aldenham, Radlett, Shenley, Napsbury Park, St Albans, London Colney, Borehamwood & Elstree. Safe socialisation for happy dogs!";
+const DEFAULT_TITLE = "Bonnie's Private Dog Fields - Radlett, Shenley & Surrounding";
+const DEFAULT_DESCRIPTION = "Bonnie's offers exceptional dog walks, private field free-roam, and 1-on-1 training in Barnet, Mill Hill, Edgware, Radlett, Shenley, St Albans, London Colney, Borehamwood & Elstree. Safe socialisation for happy dogs!";
 const DEFAULT_KEYWORDS = [
   'dog walks Barnet', 'doggy care Mill Hill', 'private dog fields St Albans',
   'dog socialisation Whetstone', '1-on-1 dog training Edgware', 'dog walker Stanmore',
