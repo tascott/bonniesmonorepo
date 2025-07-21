@@ -8,8 +8,8 @@ export default function ResetPasswordPage() {
     // Get the hash fragment and construct mobile deep link
     function getMobileDeepLink() {
       const hash = window.location.hash;
-      // e.g., com.bonnie.mobile://reset-password#access_token=...&refresh_token=...
-      return 'com.bonnie.mobile://reset-password' + hash;
+      // e.g., com.bonnie.mobile://password-reset#access_token=...&refresh_token=...
+      return 'com.bonnie.mobile://password-reset' + hash;
     }
 
     const button = document.getElementById('open-app-button') as HTMLAnchorElement | null;
@@ -135,7 +135,7 @@ export default function ResetPasswordPage() {
           <p className="small">
             Having trouble? Copy this link and open it in your mobile browser:
           </p>
-          <code id="fallback-link">com.bonnie.mobile://reset-password</code>
+          <code id="fallback-link">com.bonnie.mobile://password-reset</code>
         </div>
       </div>
     </>
