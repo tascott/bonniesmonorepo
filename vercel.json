@@ -1,12 +1,19 @@
 {
-   "rewrites": [
-     {
-       "source": "/walks",
-       "destination": "https://bookings-and-backend-web.vercel.app/walks"
-     },
-     {
-       "source": "/walks/:path*",
-       "destination": "https://bookings-and-backend-web.vercel.app/walks/:path*"
-     }
-   ]
- }
+  "rewrites": [
+    {
+      "source": "/walks",
+      "destination": "https://bookings-and-backend-web.vercel.app/walks"
+    },
+    {
+      "source": "/walks/:path*",
+      "destination": "https://bookings-and-backend-web.vercel.app/walks/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/puppymornings",
+      "destination": "/walks/puppymornings",
+      "permanent": false
+    }
+  ]
+}

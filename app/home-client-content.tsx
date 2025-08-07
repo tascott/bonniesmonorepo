@@ -155,7 +155,7 @@ export default function HomeClientContent() { // Renamed component
 			{/* Launch Day Banner */}
 			<div className="bg-orange-500 text-white py-3 text-center shadow-md relative z-40">
 				<div className="container mx-auto px-4">
-					<Link href="/launchday" className="inline-flex items-center space-x-2 hover:underline">
+					<Link href="/puppy-mornings" className="inline-flex items-center space-x-2 hover:underline">
 						<span className="font-bold">🎉 Join us for our Launch Day on July 5th, 2025! 🐾</span>
 						<span className="hidden md:inline">Special offers, activities, and more!</span>
 						<span className="ml-2 font-semibold underline">Learn More</span>

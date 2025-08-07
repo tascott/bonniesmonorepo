@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PawPrint, Calendar, MapPin, Clock } from 'lucide-react';
 import OpenDayBooking from '@/components/open-day-booking';
 
-export default function LaunchDayPage() {
+export default function PuppyMorningsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-amber-50">
       {/* Navigation */}
@@ -17,8 +17,8 @@ export default function LaunchDayPage() {
             <Image
               src="/images/logo-final-01.png"
               alt="Bonnies Logo"
-              width={150} // Adjust width as needed
-              height={40} // Adjust height as needed
+              width={150}
+              height={40}
               priority
             />
           </Link>
@@ -33,10 +33,10 @@ export default function LaunchDayPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 font-display">
-              Launch Day Celebration
+              Puppy Mornings
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Join us on July 5th, 2025 for our official launch! We're celebrating with special activities, treats, and exclusive offers.
+              The perfect way to socialise your new puppy in a safe and fun environment. Join our supervised play sessions!
             </p>
           </div>
 
@@ -52,8 +52,8 @@ export default function LaunchDayPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-lg text-slate-700 font-medium">July 5th, 2025</p>
-                <p className="text-slate-600">10:00 AM - 4:00 PM</p>
+                <p className="text-lg text-slate-700 font-medium">Every Saturday</p>
+                <p className="text-slate-600">9:00 AM - 11:00 AM</p>
               </CardContent>
             </Card>
 
@@ -68,7 +68,7 @@ export default function LaunchDayPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-lg text-slate-700 font-medium">Bonnies Main Field</p>
+                <p className="text-lg text-slate-700 font-medium">Bonnies Puppy Zone</p>
                 <p className="text-slate-600">North London, Hertfordshire</p>
               </CardContent>
             </Card>
@@ -84,15 +84,15 @@ export default function LaunchDayPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-lg text-slate-700 font-medium">Dog Play Sessions</p>
-                <p className="text-slate-600">Demonstrations & Special Offers</p>
+                <p className="text-lg text-slate-700 font-medium">Supervised Play</p>
+                <p className="text-slate-600">Basic Training & Socialisation</p>
               </CardContent>
             </Card>
           </div>
 
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-16">
             <h2 className="text-3xl font-bold text-slate-800 mb-6 font-display text-center">
-              Launch Day Special Offers
+              Puppy Morning Perks
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex items-start">
@@ -100,8 +100,8 @@ export default function LaunchDayPage() {
                   <PawPrint className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">20% Off Play Mornings</h3>
-                  <p className="text-slate-600">Book your dog's first play morning and receive 20% off.</p>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">First Session Free</h3>
+                  <p className="text-slate-600">Your puppy's first morning with us is completely free.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -109,8 +109,8 @@ export default function LaunchDayPage() {
                   <PawPrint className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">Free Field Session</h3>
-                  <p className="text-slate-600">Sign up for a membership and get a free field session.</p>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">Multi-buy Discount</h3>
+                  <p className="text-slate-600">Book 5 sessions and get the 6th one free.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -118,8 +118,8 @@ export default function LaunchDayPage() {
                   <PawPrint className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">Goodie Bags</h3>
-                  <p className="text-slate-600">The first 50 visitors will receive a special dog goodie bag.</p>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">Expert Supervision</h3>
+                  <p className="text-slate-600">Our team are experts in puppy behaviour and training.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -127,8 +127,8 @@ export default function LaunchDayPage() {
                   <PawPrint className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">Professional Dog Photos</h3>
-                  <p className="text-slate-600">Free professional photos of your dog during the event.</p>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">Puppy Photo Updates</h3>
+                  <p className="text-slate-600">Receive photos of your puppy playing during the session.</p>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function LaunchDayPage() {
 
           <div className="text-center">
             <Button asChild className="primary-bg hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-              <Link href="/#contact">RSVP Today</Link>
+              <Link href="/booking">Book a Spot</Link>
             </Button>
           </div>
         </div>
@@ -148,9 +148,9 @@ export default function LaunchDayPage() {
       {/* Footer */}
       <footer className="bg-slate-800 text-white py-12">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-lg font-medium mb-4">Bonnies Launch Day Celebration</p>
+          <p className="text-lg font-medium mb-4">Bonnies Puppy Mornings</p>
           <p className="text-sm text-slate-300">
-            July 5th, 2025 | North London, Hertfordshire | 10:00 AM - 4:00 PM
+            Every Saturday | North London, Hertfordshire | 9:00 AM - 11:00 AM
           </p>
         </div>
       </footer>
